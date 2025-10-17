@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
+import { PopularStylesSection } from "@/components/PopularStylesSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { WhyChooseSection } from "@/components/WhyChooseSection";
 import { MaterialsSection } from "@/components/MaterialsSection";
@@ -16,6 +17,7 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
+        <PopularStylesSection />
         <PortfolioSection />
         <WhyChooseSection />
         <MaterialsSection />
