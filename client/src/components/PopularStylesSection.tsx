@@ -1,35 +1,71 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import shakerStyles from "@assets/shaker-styles-1.png";
-import shakerStyles2 from "@assets/shaker-styles-2.png";
-import euroDeluxe from "@assets/euro-deluxe.png";
-import euroClassic from "@assets/euro-classic.png";
+import mountainTimber from "@assets/mountain-timber.png";
+import espressoShaker from "@assets/espresso-shaker.png";
+import modernSlateShaker from "@assets/modern-slate-shaker.png";
+import whiteShaker from "@assets/white-shaker.png";
+import greyShaker from "@assets/grey-shaker.png";
+import naturalOak from "@assets/natural-oak.png";
+import walnut from "@assets/walnut.png";
+import glossWhite from "@assets/gloss-white.png";
 
 const styles = [
   {
     id: 1,
-    name: "SHAKER STYLES",
-    image: shakerStyles,
-    description: "Mountain Timber, Espresso, Modern Slate, White & Grey"
+    name: "MOUNTAIN TIMBER",
+    image: mountainTimber,
+    description: "Warm wood-grain finish for traditional elegance",
+    category: "Shaker"
   },
   {
     id: 2,
-    name: "PREMIUM SHAKERS",
-    image: shakerStyles2,
-    description: "Signature Blue, Onyx, Dove White & Saige Green Slim"
+    name: "ESPRESSO SHAKER",
+    image: espressoShaker,
+    description: "Rich dark tones for sophisticated spaces",
+    category: "Shaker"
   },
   {
     id: 3,
-    name: "EURO FRAMELESS - DELUXE",
-    image: euroDeluxe,
-    description: "Gloss White & Matte White modern finishes"
+    name: "MODERN SLATE SHAKER",
+    image: modernSlateShaker,
+    description: "Contemporary charcoal for modern aesthetics",
+    category: "Shaker"
   },
   {
     id: 4,
-    name: "EURO FRAMELESS - CLASSIC",
-    image: euroClassic,
-    description: "Natural Oak & Walnut timeless finishes"
+    name: "WHITE SHAKER",
+    image: whiteShaker,
+    description: "Timeless classic for any design style",
+    category: "Shaker"
+  },
+  {
+    id: 5,
+    name: "GREY SHAKER",
+    image: greyShaker,
+    description: "Versatile neutral for contemporary homes",
+    category: "Shaker"
+  },
+  {
+    id: 6,
+    name: "NATURAL OAK",
+    image: naturalOak,
+    description: "Light wood finish for seamless sophistication",
+    category: "Euro Frameless"
+  },
+  {
+    id: 7,
+    name: "WALNUT",
+    image: walnut,
+    description: "Rich wood grain for enduring charm",
+    category: "Euro Frameless"
+  },
+  {
+    id: 8,
+    name: "GLOSS WHITE",
+    image: glossWhite,
+    description: "Modern seamless profile for elevated design",
+    category: "Euro Frameless"
   }
 ];
 
@@ -68,17 +104,20 @@ export function PopularStylesSection() {
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">
             {visibleStyles.map((style, idx) => (
               <div key={`${style.id}-${idx}`} className="text-center">
-                <div className="aspect-[4/3] bg-card rounded-lg overflow-hidden mb-6 flex items-center justify-center p-4">
+                <div className="aspect-[3/4] bg-card rounded-lg overflow-hidden mb-6 flex items-center justify-center p-8">
                   <img
                     src={style.image}
                     alt={style.name}
-                    className="w-full h-full object-contain"
+                    className="h-full w-auto object-contain drop-shadow-xl"
                     data-testid={`img-style-${style.id}`}
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-2 tracking-wide">
                   {style.name}
                 </h3>
+                <p className="text-muted-foreground text-sm mb-1">
+                  {style.category}
+                </p>
                 <p className="text-muted-foreground text-sm mb-4">
                   {style.description}
                 </p>
