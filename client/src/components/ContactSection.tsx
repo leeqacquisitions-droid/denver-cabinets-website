@@ -159,7 +159,7 @@ export function ContactSection() {
                 <Mail className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold mb-2">Email</h3>
-                  <p className="text-muted-foreground">j.quiroz90@gmail.com</p>
+                  <p className="text-muted-foreground">josue@denvercabinets.net</p>
                 </div>
               </div>
             </Card>

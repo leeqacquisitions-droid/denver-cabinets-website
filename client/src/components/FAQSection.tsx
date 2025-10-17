@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     question: "How do I get started?",
-    answer: "Contact us at (720) 224-2908 or j.quiroz90@gmail.com to schedule your free 30-minute in-home design consultation. We'll assess your space and provide a detailed quote."
+    answer: "Contact us at (720) 224-2908 or josue@denvercabinets.net to schedule your free 30-minute in-home design consultation. We'll assess your space and provide a detailed quote."
   },
   {
     question: "What payment methods do you accept?",

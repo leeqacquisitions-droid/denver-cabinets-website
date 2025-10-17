@@ -47,7 +47,7 @@ export function ChatAssistant() {
     } catch (error) {
       setMessages(prev => [...prev, { 
         role: "assistant", 
-        content: "I apologize, but I'm having trouble connecting right now. Please call us at (720) 224-2908 or email j.quiroz90@gmail.com for assistance." 
+        content: "I apologize, but I'm having trouble connecting right now. Please call us at (720) 224-2908 or email josue@denvercabinets.net for assistance." 
       }]);
     } finally {
       setIsLoading(false);

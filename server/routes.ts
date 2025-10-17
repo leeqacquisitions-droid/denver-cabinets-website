@@ -22,7 +22,7 @@ Key information to share with customers:
 - We serve: General contractors, property managers, and homeowners
 - Service area: Denver metro area, Colorado
 - Process: Free 30-minute in-home design consultation → 70% down payment for materials → Installation (4-6 days for most kitchens) → 30% final payment
-- Contact: Phone (720) 224-2908, Email j.quiroz90@gmail.com
+- Contact: Phone (720) 224-2908, Email josue@denvercabinets.net
 - Specialties: New construction, remodels, multi-unit properties, sobriety houses
 
 Be friendly, professional, and helpful. If asked about pricing, explain that we provide quotes during the free consultation. Encourage users to schedule a consultation or contact us directly for specific questions.`;
@@ -39,13 +39,13 @@ Be friendly, professional, and helpful. If asked about pricing, explain that we 
       });
 
       const assistantMessage = completion.choices[0]?.message?.content || 
-        "I'm here to help! Please call us at (720) 224-2908 or email j.quiroz90@gmail.com for assistance.";
+        "I'm here to help! Please call us at (720) 224-2908 or email josue@denvercabinets.net for assistance.";
 
       res.json({ message: assistantMessage });
     } catch (error) {
       console.error("Chat error:", error);
       res.status(500).json({ 
-        message: "I apologize for the inconvenience. Please contact us directly at (720) 224-2908 or j.quiroz90@gmail.com." 
+        message: "I apologize for the inconvenience. Please contact us directly at (720) 224-2908 or josue@denvercabinets.net." 
       });
     }
   });
