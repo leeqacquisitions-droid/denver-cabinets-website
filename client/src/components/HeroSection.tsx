@@ -20,10 +20,10 @@ export function HeroSection() {
       <div className="relative h-full max-w-7xl mx-auto px-6 flex items-center justify-center">
         <div className="text-center text-white max-w-4xl">
           <h1 className="font-heading text-4xl md:text-5xl lg:text-7xl font-bold mb-6">
-            Transform Your Space with Custom Cabinetry
+            Professional Cabinet Installation Services
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl mb-8 text-white/90 leading-relaxed">
-            Serving general contractors, property managers, and homeowners across the Denver metro area
+            Expert assembly and installation of pre-manufactured cabinets for contractors, property managers, and homeowners in Denver
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -32,7 +32,7 @@ export function HeroSection() {
               data-testid="button-hero-consultation"
               className="text-lg"
             >
-              Request Consultation
+              Free Consultation
             </Button>
             <Button
               size="lg"

@@ -5,50 +5,84 @@ import { Badge } from "@/components/ui/badge";
 import { X } from "lucide-react";
 
 // Import all portfolio images
-import img1 from "@assets/best quality work in the metro area _1760665661487.jpg";
-import img2 from "@assets/black and white crown molding mix_1760665666821.jpg";
-import img3 from "@assets/black kitchen white counter tops_1760665672520.jpg";
-import img4 from "@assets/black kitchen with grey top_1760665677958.jpg";
-import img5 from "@assets/black pantries_1760665684123.jpg";
-import img6 from "@assets/blue kiotchen white counter top_1760665691434.jpg";
-import img7 from "@assets/brown kicthen white counter top_1760665705715.jpg";
-import img8 from "@assets/Brown kitchen with white top_1760665709979.jpg";
-import img9 from "@assets/clean grey cabinets_1760665718488.jpg";
-import img10 from "@assets/clean sleek affordable_1760665724960.jpg";
-import img11 from "@assets/custom dog cabinet with bowl_1760665736157.jpg";
-import img12 from "@assets/custom window cabinets_1760665751120.jpg";
-import img13 from "@assets/denver 2025 selling property_1760665756666.webp";
-import img14 from "@assets/exclelent black shaker combo with black marble counter tops_1760666667882.webp";
-import img16 from "@assets/grey remodel kicthen_1760666782648.jpg";
-import img17 from "@assets/grey remodel with island in middle_1760666799098.jpg";
-import img18 from "@assets/high end bathroom sink_1760666806401.jpg";
-import img21 from "@assets/kitchens that last_1760666876778.jpg";
-import img23 from "@assets/need counter tops for these new cabinets here we are _1760666920187.jpg";
-import img24 from "@assets/need remodeling assitance he we are_1760666930898.jpg";
-import img25 from "@assets/NEED TO SELL YOUR HOME LOOK AT THIS_1760666956139.webp";
+import img1 from "@assets/black shaker 10_1760717059430.jpg";
+import img2 from "@assets/black shaker 11_1760717063232.jpg";
+import img3 from "@assets/black shaker 21_1760717067317.jpg";
+import img4 from "@assets/black shaker 30_1760717071196.jpg";
+import img5 from "@assets/black shaker 37_1760717075950.jpg";
+import img6 from "@assets/black sherk 44_1760717081772.jpg";
+import img7 from "@assets/black_shaker_1760717088967.webp";
+import img8 from "@assets/black_shaker1_1760717094685.webp";
+import img9 from "@assets/black_shaker4_1760717101818.webp";
+import img10 from "@assets/blue kitchen 2_1760717109551.jpg";
+import img11 from "@assets/blue kitchen_1760717117533.jpg";
+import img12 from "@assets/brown shaker 31_1760717130103.jpg";
+import img13 from "@assets/brown shaker 38_1760717138399.jpg";
+import img14 from "@assets/bathrom shaker 41_1760717039753.jpg";
+import img15 from "@assets/bathroom_white_shaker_2_1760717045213.webp";
+import img16 from "@assets/bathroom_white_shaker_3_1760717051961.webp";
+import img17 from "@assets/closet white shaker_1760717144739.jpg";
+import img18 from "@assets/best quality work in the metro area _1760665661487.jpg";
+import img19 from "@assets/black and white crown molding mix_1760665666821.jpg";
+import img20 from "@assets/black kitchen white counter tops_1760665672520.jpg";
+import img21 from "@assets/black kitchen with grey top_1760665677958.jpg";
+import img22 from "@assets/black pantries_1760665684123.jpg";
+import img23 from "@assets/blue kiotchen white counter top_1760665691434.jpg";
+import img24 from "@assets/brown kicthen white counter top_1760665705715.jpg";
+import img25 from "@assets/Brown kitchen with white top_1760665709979.jpg";
+import img26 from "@assets/clean grey cabinets_1760665718488.jpg";
+import img27 from "@assets/clean sleek affordable_1760665724960.jpg";
+import img28 from "@assets/custom dog cabinet with bowl_1760665736157.jpg";
+import img29 from "@assets/custom window cabinets_1760665751120.jpg";
+import img30 from "@assets/denver 2025 selling property_1760665756666.webp";
+import img31 from "@assets/exclelent black shaker combo with black marble counter tops_1760666667882.webp";
+import img32 from "@assets/grey remodel kicthen_1760666782648.jpg";
+import img33 from "@assets/grey remodel with island in middle_1760666799098.jpg";
+import img34 from "@assets/high end bathroom sink_1760666806401.jpg";
+import img35 from "@assets/kitchens that last_1760666876778.jpg";
+import img36 from "@assets/need counter tops for these new cabinets here we are _1760666920187.jpg";
+import img37 from "@assets/need remodeling assitance he we are_1760666930898.jpg";
+import img38 from "@assets/NEED TO SELL YOUR HOME LOOK AT THIS_1760666956139.webp";
 
 const portfolioItems = [
-  { id: 1, image: img1, category: "Kitchens", title: "Modern Black Kitchen" },
-  { id: 2, image: img2, category: "Custom Features", title: "Crown Molding Detail" },
-  { id: 3, image: img3, category: "Kitchens", title: "Black & White Kitchen" },
-  { id: 4, image: img4, category: "Kitchens", title: "Two-Tone Kitchen" },
-  { id: 5, image: img5, category: "Pantries", title: "Black Pantry System" },
-  { id: 6, image: img6, category: "Kitchens", title: "Blue Kitchen Design" },
-  { id: 7, image: img7, category: "Kitchens", title: "Warm Wood Kitchen" },
-  { id: 8, image: img8, category: "Kitchens", title: "Elegant White & Wood" },
-  { id: 9, image: img9, category: "Kitchens", title: "Grey Island Kitchen" },
-  { id: 10, image: img10, category: "Kitchens", title: "Contemporary Grey" },
-  { id: 11, image: img11, category: "Custom Features", title: "Custom Pet Station" },
-  { id: 12, image: img12, category: "Custom Features", title: "Window Seat Cabinet" },
-  { id: 13, image: img13, category: "Bathrooms", title: "Modern Bathroom Vanity" },
-  { id: 14, image: img14, category: "Kitchens", title: "Black Shaker with Marble" },
-  { id: 16, image: img16, category: "Kitchens", title: "Grey Remodel Kitchen" },
-  { id: 17, image: img17, category: "Kitchens", title: "Grey Kitchen with Island" },
-  { id: 18, image: img18, category: "Bathrooms", title: "High-End Bathroom Vanity" },
-  { id: 21, image: img21, category: "Kitchens", title: "Durable Kitchen Design" },
-  { id: 23, image: img23, category: "Kitchens", title: "Custom Countertop Install" },
-  { id: 24, image: img24, category: "Kitchens", title: "Remodel Kitchen Project" },
-  { id: 25, image: img25, category: "Kitchens", title: "Property Value Kitchen" },
+  { id: 1, image: img1, category: "Kitchens", title: "Two-Tone Modern Kitchen" },
+  { id: 2, image: img2, category: "Kitchens", title: "Black & Wood Kitchen Install" },
+  { id: 3, image: img3, category: "Kitchens", title: "Black Shaker Island Kitchen" },
+  { id: 4, image: img4, category: "Kitchens", title: "White & Black Cabinet Install" },
+  { id: 5, image: img5, category: "Kitchens", title: "Kitchen Island Installation" },
+  { id: 6, image: img6, category: "Kitchens", title: "Two-Tone Shaker Kitchen" },
+  { id: 7, image: img7, category: "Custom Features", title: "Modern Bar Installation" },
+  { id: 8, image: img8, category: "Kitchens", title: "Luxury Black Kitchen" },
+  { id: 9, image: img9, category: "Kitchens", title: "Contemporary Kitchen Design" },
+  { id: 10, image: img10, category: "Kitchens", title: "White Shaker with Blue Accent" },
+  { id: 11, image: img11, category: "Kitchens", title: "Blue Kitchen Remodel" },
+  { id: 12, image: img12, category: "Kitchens", title: "Brown Shaker Installation" },
+  { id: 13, image: img13, category: "Kitchens", title: "Warm Wood Kitchen Install" },
+  { id: 14, image: img14, category: "Bathrooms", title: "Wood Shaker Bathroom" },
+  { id: 15, image: img15, category: "Bathrooms", title: "White Shaker Bath Vanity" },
+  { id: 16, image: img16, category: "Bathrooms", title: "Modern Bathroom Install" },
+  { id: 17, image: img17, category: "Custom Features", title: "White Closet System" },
+  { id: 18, image: img18, category: "Kitchens", title: "Quality Black Kitchen" },
+  { id: 19, image: img19, category: "Custom Features", title: "Crown Molding Detail" },
+  { id: 20, image: img20, category: "Kitchens", title: "Black & White Kitchen" },
+  { id: 21, image: img21, category: "Kitchens", title: "Black with Grey Counter" },
+  { id: 22, image: img22, category: "Pantries", title: "Black Pantry System" },
+  { id: 23, image: img23, category: "Kitchens", title: "Blue Kitchen Design" },
+  { id: 24, image: img24, category: "Kitchens", title: "Warm Brown Kitchen" },
+  { id: 25, image: img25, category: "Kitchens", title: "Elegant Brown & White" },
+  { id: 26, image: img26, category: "Kitchens", title: "Grey Island Kitchen" },
+  { id: 27, image: img27, category: "Kitchens", title: "Contemporary Grey" },
+  { id: 28, image: img28, category: "Custom Features", title: "Custom Pet Station" },
+  { id: 29, image: img29, category: "Custom Features", title: "Window Seat Cabinet" },
+  { id: 30, image: img30, category: "Bathrooms", title: "Modern Bathroom Vanity" },
+  { id: 31, image: img31, category: "Kitchens", title: "Black Shaker with Marble" },
+  { id: 32, image: img32, category: "Kitchens", title: "Grey Remodel Kitchen" },
+  { id: 33, image: img33, category: "Kitchens", title: "Grey Kitchen with Island" },
+  { id: 34, image: img34, category: "Bathrooms", title: "High-End Bathroom Vanity" },
+  { id: 35, image: img35, category: "Kitchens", title: "Durable Kitchen Design" },
+  { id: 36, image: img36, category: "Kitchens", title: "Custom Countertop Install" },
+  { id: 37, image: img37, category: "Kitchens", title: "Remodel Kitchen Project" },
+  { id: 38, image: img38, category: "Kitchens", title: "Property Value Kitchen" },
 ];
 
 const categories = ["All", "Kitchens", "Bathrooms", "Pantries", "Custom Features"];

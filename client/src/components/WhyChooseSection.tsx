@@ -1,0 +1,68 @@
+import { Card } from "@/components/ui/card";
+import { Award, Clock, Users } from "lucide-react";
+import render1 from "@assets/3d render 1_1760717031089.png";
+import render4 from "@assets/3d render 4_1760717035470.png";
+import brownShaker from "@assets/brown shaker 31_1760717130103.jpg";
+
+const features = [
+  {
+    icon: Award,
+    title: "Quality Craftsmanship",
+    description: "Expert installation of pre-manufactured cabinets with attention to every detail. We ensure perfect alignment and professional finishing.",
+    image: render1
+  },
+  {
+    icon: Clock,
+    title: "Fast & Reliable",
+    description: "Most kitchens completed in 4-6 days. We respect your timeline and deliver consistent, on-schedule results contractors trust.",
+    image: brownShaker
+  },
+  {
+    icon: Users,
+    title: "Contractor Preferred",
+    description: "Trusted subcontracting partner for general contractors and property managers. We handle new construction, remodels, and multi-unit properties.",
+    image: render4
+  }
+];
+
+export function WhyChooseSection() {
+  return (
+    <section id="why-choose" className="py-16 lg:py-24">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <h2 className="font-heading text-3xl lg:text-5xl font-bold mb-4">
+            Why Choose Estate Solutions
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Professional cabinet installation services you can depend on
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <Card
+              key={index}
+              className="overflow-hidden hover-elevate active-elevate-2"
+              data-testid={`feature-${index}`}
+            >
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={feature.image}
+                  alt={feature.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-4">
+                  <feature.icon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="font-semibold text-xl mb-2">{feature.title}</h3>
+                <p className="text-muted-foreground">{feature.description}</p>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

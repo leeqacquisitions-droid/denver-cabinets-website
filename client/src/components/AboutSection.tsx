@@ -14,7 +14,7 @@ export function AboutSection() {
   const clientTypes = [
     { icon: Building2, title: "General Contractors", description: "Reliable subcontracting partner for new construction and remodels" },
     { icon: Building2, title: "Property Managers", description: "Multi-unit installations for residential and commercial properties" },
-    { icon: Users, title: "Homeowners", description: "Custom solutions for kitchen, bathroom, and pantry renovations" },
+    { icon: Users, title: "Homeowners", description: "Professional installation for kitchen, bathroom, and pantry renovations" },
   ];
 
   return (
@@ -36,13 +36,13 @@ export function AboutSection() {
 
           <div className="space-y-6">
             <h3 className="font-heading text-2xl lg:text-3xl font-bold">
-              Your Trusted Partner in Custom Cabinetry
+              Your Trusted Partner in Cabinet Installation
             </h3>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              Estate Solutions specializes in professional cabinetry installation for general contractors, 
-              property managers, and homeowners. Whether you're working on new construction, remodeling 
-              existing properties, or upgrading sobriety houses and multi-unit buildings, we deliver 
-              exceptional quality on every project.
+              Estate Solutions specializes in professional assembly and installation of pre-manufactured 
+              cabinets for general contractors, property managers, and homeowners. Whether you're working 
+              on new construction, remodeling existing properties, or upgrading sobriety houses and 
+              multi-unit buildings, we deliver exceptional quality on every project.
             </p>
             <p className="text-lg leading-relaxed text-muted-foreground">
               Our experienced team understands the demands of contractors and the expectations of 
