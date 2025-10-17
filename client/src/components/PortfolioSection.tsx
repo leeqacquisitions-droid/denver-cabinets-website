@@ -141,11 +141,6 @@ export function PortfolioSection() {
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform">
-                  <Badge className="mb-2">{item.category}</Badge>
-                  <h3 className="text-white font-semibold">{item.title}</h3>
-                </div>
               </div>
             </Card>
           ))}
