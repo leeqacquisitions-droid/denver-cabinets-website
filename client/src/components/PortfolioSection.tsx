@@ -48,6 +48,15 @@ import img38 from "@assets/NEED TO SELL YOUR HOME LOOK AT THIS_1760666956139.web
 import img39 from "@assets/blue kiotchen white counter top_1760665698336.jpg";
 import img40 from "@assets/design 2 installed_1760665770904.jpg";
 
+// New portfolio images
+import img41 from "@assets/image000001_1760742017149.jpg";
+import img42 from "@assets/image000002_1760742028889.jpg";
+import img43 from "@assets/image000003_1760742050621.jpg";
+import img44 from "@assets/image000004_1760742069723.jpg";
+import img45 from "@assets/image000005_1760742080817.jpg";
+import img46 from "@assets/image000009_1760742150114.jpg";
+import img47 from "@assets/image000010_1760742173784.jpg";
+
 const portfolioItems = [
   { id: 1, image: img4, category: "Kitchens", title: "White & Onyx Shaker Combo" },
   { id: 2, image: img6, category: "Kitchens", title: "Two-Tone Onyx Shaker" },
@@ -74,6 +83,13 @@ const portfolioItems = [
   { id: 23, image: img38, category: "Kitchens", title: "White Shaker Property Value" },
   { id: 24, image: img39, category: "Kitchens", title: "Signature Blue Shaker Kitchen" },
   { id: 25, image: img40, category: "Kitchens", title: "Grey Shaker Installation" },
+  { id: 26, image: img41, category: "Kitchens", title: "Navy Shaker Gold Hardware" },
+  { id: 27, image: img42, category: "Kitchens", title: "White & Navy Shaker Island" },
+  { id: 28, image: img43, category: "Pantries", title: "White Shaker Pantry System" },
+  { id: 29, image: img44, category: "Kitchens", title: "White Shaker Gold Pulls" },
+  { id: 30, image: img45, category: "Kitchens", title: "Large White Shaker Kitchen" },
+  { id: 31, image: img46, category: "Kitchens", title: "Whitewashed Shaker Kitchen" },
+  { id: 32, image: img47, category: "Kitchens", title: "Whitewashed Island Kitchen" },
 ];
 
 const categories = ["All", "Kitchens", "Bathrooms", "Pantries"];
