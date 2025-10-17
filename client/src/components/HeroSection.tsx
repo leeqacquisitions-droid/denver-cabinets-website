@@ -23,7 +23,7 @@ export function HeroSection() {
             Transform Your Space with Custom Cabinetry
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl mb-8 text-white/90 leading-relaxed">
-            Professional cabinetry installation for kitchens, bathrooms, and pantries in the Denver metro area
+            Serving general contractors, property managers, and homeowners across the Denver metro area
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

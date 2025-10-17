@@ -1,30 +1,30 @@
 import { Card } from "@/components/ui/card";
-import img1 from "@assets/black and white crown molding mix_1760665666821.jpg";
-import img2 from "@assets/black kitchen white counter tops_1760665672520.jpg";
-import img3 from "@assets/brown kicthen white counter top_1760665705715.jpg";
+import img1 from "@assets/glossy material for cabinets_1760666768295.jpg";
+import img2 from "@assets/material cabinet doors_1760666899185.jpg";
+import img3 from "@assets/black and white crown molding mix_1760665666821.jpg";
 import img4 from "@assets/clean grey cabinets_1760665718488.jpg";
 
 const materials = [
   {
     id: 1,
-    name: "Black Matte Finish",
+    name: "Glossy Finishes",
     category: "Cabinet Finishes",
     image: img1,
-    description: "Sleek contemporary black cabinetry"
+    description: "Modern high-gloss cabinet options in various colors"
   },
   {
     id: 2,
-    name: "White Quartz",
-    category: "Countertops",
+    name: "Shaker Style Doors",
+    category: "Cabinet Doors",
     image: img2,
-    description: "Durable marble-look countertops"
+    description: "Classic and contemporary door styles"
   },
   {
     id: 3,
-    name: "Natural Wood Grain",
+    name: "Black Matte Finish",
     category: "Cabinet Finishes",
     image: img3,
-    description: "Warm wood tone cabinetry"
+    description: "Sleek contemporary black cabinetry"
   },
   {
     id: 4,

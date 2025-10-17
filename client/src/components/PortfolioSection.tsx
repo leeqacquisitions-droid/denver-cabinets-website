@@ -18,6 +18,14 @@ import img10 from "@assets/clean sleek affordable_1760665724960.jpg";
 import img11 from "@assets/custom dog cabinet with bowl_1760665736157.jpg";
 import img12 from "@assets/custom window cabinets_1760665751120.jpg";
 import img13 from "@assets/denver 2025 selling property_1760665756666.webp";
+import img14 from "@assets/exclelent black shaker combo with black marble counter tops_1760666667882.webp";
+import img16 from "@assets/grey remodel kicthen_1760666782648.jpg";
+import img17 from "@assets/grey remodel with island in middle_1760666799098.jpg";
+import img18 from "@assets/high end bathroom sink_1760666806401.jpg";
+import img21 from "@assets/kitchens that last_1760666876778.jpg";
+import img23 from "@assets/need counter tops for these new cabinets here we are _1760666920187.jpg";
+import img24 from "@assets/need remodeling assitance he we are_1760666930898.jpg";
+import img25 from "@assets/NEED TO SELL YOUR HOME LOOK AT THIS_1760666956139.webp";
 
 const portfolioItems = [
   { id: 1, image: img1, category: "Kitchens", title: "Modern Black Kitchen" },
@@ -33,6 +41,14 @@ const portfolioItems = [
   { id: 11, image: img11, category: "Custom Features", title: "Custom Pet Station" },
   { id: 12, image: img12, category: "Custom Features", title: "Window Seat Cabinet" },
   { id: 13, image: img13, category: "Bathrooms", title: "Modern Bathroom Vanity" },
+  { id: 14, image: img14, category: "Kitchens", title: "Black Shaker with Marble" },
+  { id: 16, image: img16, category: "Kitchens", title: "Grey Remodel Kitchen" },
+  { id: 17, image: img17, category: "Kitchens", title: "Grey Kitchen with Island" },
+  { id: 18, image: img18, category: "Bathrooms", title: "High-End Bathroom Vanity" },
+  { id: 21, image: img21, category: "Kitchens", title: "Durable Kitchen Design" },
+  { id: 23, image: img23, category: "Kitchens", title: "Custom Countertop Install" },
+  { id: 24, image: img24, category: "Kitchens", title: "Remodel Kitchen Project" },
+  { id: 25, image: img25, category: "Kitchens", title: "Property Value Kitchen" },
 ];
 
 const categories = ["All", "Kitchens", "Bathrooms", "Pantries", "Custom Features"];
@@ -51,7 +67,7 @@ export function PortfolioSection() {
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl lg:text-5xl font-bold mb-4">Our Portfolio</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explore our collection of custom cabinetry installations
+            Quality installations for new builds, remodels, and property renovations
           </p>
         </div>
 

@@ -12,6 +12,7 @@ export function ContactSection() {
     name: "",
     email: "",
     phone: "",
+    clientType: "",
     projectType: "",
     message: "",
   });
@@ -19,7 +20,6 @@ export function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // TODO: Implement actual form submission
     alert("Thank you for your inquiry! We'll be in touch soon.");
   };
 
@@ -29,7 +29,7 @@ export function ContactSection() {
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl lg:text-5xl font-bold mb-4">Get In Touch</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ready to transform your space? Contact us for a free consultation
+            Contractors, property managers, and homeowners - contact us for a free consultation
           </p>
         </div>
 
@@ -38,12 +38,12 @@ export function ContactSection() {
           <Card className="p-6 lg:p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <Label htmlFor="name">Name</Label>
+                <Label htmlFor="name">Name / Company Name</Label>
                 <Input
                   id="name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="Your name"
+                  placeholder="Your name or company"
                   required
                   data-testid="input-name"
                 />
@@ -75,6 +75,24 @@ export function ContactSection() {
               </div>
 
               <div>
+                <Label htmlFor="clientType">I am a...</Label>
+                <Select
+                  value={formData.clientType}
+                  onValueChange={(value) => setFormData({ ...formData, clientType: value })}
+                >
+                  <SelectTrigger id="clientType" data-testid="select-client-type">
+                    <SelectValue placeholder="Select client type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="contractor">General Contractor</SelectItem>
+                    <SelectItem value="property-manager">Property Manager</SelectItem>
+                    <SelectItem value="homeowner">Homeowner</SelectItem>
+                    <SelectItem value="other">Other</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div>
                 <Label htmlFor="projectType">Project Type</Label>
                 <Select
                   value={formData.projectType}
@@ -84,17 +102,19 @@ export function ContactSection() {
                     <SelectValue placeholder="Select project type" />
                   </SelectTrigger>
                   <SelectContent>
+                    <SelectItem value="new-construction">New Construction</SelectItem>
+                    <SelectItem value="remodel">Remodel/Renovation</SelectItem>
+                    <SelectItem value="multi-unit">Multi-Unit Property</SelectItem>
                     <SelectItem value="kitchen">Kitchen</SelectItem>
                     <SelectItem value="bathroom">Bathroom</SelectItem>
                     <SelectItem value="pantry">Pantry</SelectItem>
                     <SelectItem value="custom">Custom Project</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               <div>
-                <Label htmlFor="message">Message</Label>
+                <Label htmlFor="message">Project Details</Label>
                 <Textarea
                   id="message"
                   value={formData.message}
@@ -159,9 +179,9 @@ export function ContactSection() {
             </Card>
 
             <Card className="p-6 bg-primary text-primary-foreground">
-              <h3 className="font-semibold text-lg mb-2">Trusted by 500+ Denver Metro Homeowners</h3>
+              <h3 className="font-semibold text-lg mb-2">Trusted by Contractors & Homeowners</h3>
               <p className="text-primary-foreground/90">
-                Licensed, insured, and committed to your satisfaction
+                Serving new construction, remodels, multi-unit properties, and residential renovations throughout the Denver metro area
               </p>
             </Card>
           </div>

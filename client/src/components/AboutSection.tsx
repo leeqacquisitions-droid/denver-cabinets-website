@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Award, Users } from "lucide-react";
+import { CheckCircle, Award, Users, Building2 } from "lucide-react";
 import ceoImg from "@assets/ceo of estate solutions_1760665714169.jpg";
 import truckImg from "@assets/estate truck 2_1760665776405.jpg";
 
@@ -9,6 +9,12 @@ export function AboutSection() {
     { icon: CheckCircle, value: "500+", label: "Projects Completed" },
     { icon: Award, value: "15+", label: "Years Experience" },
     { icon: Users, value: "450+", label: "Happy Clients" },
+  ];
+
+  const clientTypes = [
+    { icon: Building2, title: "General Contractors", description: "Reliable subcontracting partner for new construction and remodels" },
+    { icon: Building2, title: "Property Managers", description: "Multi-unit installations for residential and commercial properties" },
+    { icon: Users, title: "Homeowners", description: "Custom solutions for kitchen, bathroom, and pantry renovations" },
   ];
 
   return (
@@ -33,19 +39,21 @@ export function AboutSection() {
               Your Trusted Partner in Custom Cabinetry
             </h3>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              At Estate Solutions, we specialize in transforming spaces with premium custom cabinetry. 
-              Our team of experienced craftsmen takes pride in delivering exceptional quality and 
-              personalized service to every client.
+              Estate Solutions specializes in professional cabinetry installation for general contractors, 
+              property managers, and homeowners. Whether you're working on new construction, remodeling 
+              existing properties, or upgrading sobriety houses and multi-unit buildings, we deliver 
+              exceptional quality on every project.
             </p>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              From initial consultation to final installation, we work closely with you to bring 
-              your vision to life. Our commitment to excellence and attention to detail has made us 
-              a trusted name in the Denver metro area.
+              Our experienced team understands the demands of contractors and the expectations of 
+              property owners. We provide reliable, timely installations that meet your specifications 
+              and budget, making us the preferred subcontracting partner in the Denver metro area.
             </p>
             <div className="flex flex-wrap gap-2 pt-4">
               <Badge variant="secondary">Licensed & Insured</Badge>
+              <Badge variant="secondary">Contractor Preferred</Badge>
               <Badge variant="secondary">Quality Guaranteed</Badge>
-              <Badge variant="secondary">Free Consultations</Badge>
+              <Badge variant="secondary">On-Time Delivery</Badge>
             </div>
           </div>
         </div>
@@ -58,6 +66,19 @@ export function AboutSection() {
               <div className="text-muted-foreground">{stat.label}</div>
             </Card>
           ))}
+        </div>
+
+        <div className="mb-12">
+          <h3 className="font-heading text-2xl lg:text-3xl font-bold text-center mb-8">Who We Serve</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {clientTypes.map((client, index) => (
+              <Card key={index} className="p-6 text-center">
+                <client.icon className="h-10 w-10 mx-auto mb-4 text-primary" />
+                <h4 className="font-semibold text-lg mb-2">{client.title}</h4>
+                <p className="text-muted-foreground text-sm">{client.description}</p>
+              </Card>
+            ))}
+          </div>
         </div>
 
         <Card className="overflow-hidden p-0">

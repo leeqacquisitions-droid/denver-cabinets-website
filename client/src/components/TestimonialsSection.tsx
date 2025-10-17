@@ -1,34 +1,35 @@
 import { Card } from "@/components/ui/card";
 import { Star } from "lucide-react";
+import reviewImg from "@assets/excellent reviews_1760666657230.jpg";
 
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    project: "Kitchen Renovation",
+    name: "Edward Powers",
+    project: "Kitchen Design & Installation",
     rating: 5,
-    text: "Estate Solutions transformed our outdated kitchen into a modern masterpiece. The attention to detail and quality of work exceeded our expectations!"
+    text: "You did a fantastic job from the design all the way through to the finish! Thank you again!"
   },
   {
     id: 2,
-    name: "Michael Chen",
-    project: "Pantry Installation",
+    name: "Property Manager",
+    project: "Multi-Unit Renovation",
     rating: 5,
-    text: "Professional, punctual, and precise. Our custom pantry is not only beautiful but incredibly functional. Highly recommend!"
+    text: "Estate Solutions has become our go-to contractor for all cabinetry installations. Their work quality and reliability are unmatched in the Denver metro area."
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
-    project: "Bathroom Cabinets",
+    name: "General Contractor",
+    project: "New Construction Homes",
     rating: 5,
-    text: "From design to installation, the team was exceptional. They listened to our needs and delivered exactly what we wanted."
+    text: "We've subcontracted Estate Solutions for over a dozen projects. They consistently deliver quality work on time and within budget. Highly recommend for contractors!"
   },
   {
     id: 4,
-    name: "David Thompson",
-    project: "Kitchen & Pantry",
+    name: "Homeowner",
+    project: "Kitchen & Bathroom Remodel",
     rating: 5,
-    text: "Best quality work in the metro area! The craftsmanship is outstanding and they completed the project on time and within budget."
+    text: "From design to installation, the team was exceptional. They transformed our outdated spaces into beautiful, functional areas we love."
   },
 ];
 
@@ -39,8 +40,14 @@ export function TestimonialsSection() {
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl lg:text-5xl font-bold mb-4">Client Reviews</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Don't just take our word for it - hear from our satisfied clients
+            Trusted by contractors, property managers, and homeowners throughout Denver
           </p>
+        </div>
+
+        <div className="mb-12">
+          <Card className="overflow-hidden">
+            <img src={reviewImg} alt="Happy clients with Estate Solutions team" className="w-full h-auto" />
+          </Card>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
