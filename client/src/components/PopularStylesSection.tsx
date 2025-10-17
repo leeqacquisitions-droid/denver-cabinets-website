@@ -86,6 +86,9 @@ export function PopularStylesSection() {
     styles[(currentIndex + 2) % styles.length]
   ];
 
+  // Single style for mobile
+  const mobileStyle = styles[currentIndex];
+
   return (
     <section className="py-16 lg:py-24 bg-background" id="styles">
       <div className="max-w-7xl mx-auto px-6">
@@ -101,7 +104,41 @@ export function PopularStylesSection() {
 
         {/* Carousel */}
         <div className="relative">
-          <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+          {/* Mobile: Single item */}
+          <div className="md:hidden">
+            <div className="text-center max-w-sm mx-auto">
+              <div className="aspect-[3/4] bg-card rounded-lg overflow-hidden mb-6 flex items-center justify-center p-8">
+                <img
+                  src={mobileStyle.image}
+                  alt={mobileStyle.name}
+                  className="h-full w-auto object-contain drop-shadow-xl"
+                  data-testid={`img-style-${mobileStyle.id}`}
+                />
+              </div>
+              <h3 className="text-xl font-bold mb-2 tracking-wide">
+                {mobileStyle.name}
+              </h3>
+              <p className="text-muted-foreground text-sm mb-1">
+                {mobileStyle.category}
+              </p>
+              <p className="text-muted-foreground text-sm mb-4">
+                {mobileStyle.description}
+              </p>
+              <Button
+                variant="default"
+                onClick={() => {
+                  const element = document.getElementById('materials');
+                  element?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                data-testid={`button-view-${mobileStyle.id}`}
+              >
+                VIEW DETAILS
+              </Button>
+            </div>
+          </div>
+
+          {/* Desktop: Three items */}
+          <div className="hidden md:grid md:grid-cols-3 gap-8 md:gap-12">
             {visibleStyles.map((style, idx) => (
               <div key={`${style.id}-${idx}`} className="text-center">
                 <div className="aspect-[3/4] bg-card rounded-lg overflow-hidden mb-6 flex items-center justify-center p-8">
@@ -139,7 +176,7 @@ export function PopularStylesSection() {
           <Button
             variant="ghost"
             size="icon"
-            className="absolute left-0 top-1/3 -translate-y-1/2 -translate-x-4 md:-translate-x-12 bg-background/80 backdrop-blur-sm hover:bg-background"
+            className="absolute left-2 md:left-0 top-1/4 md:top-1/3 -translate-y-1/2 md:-translate-x-12 bg-background/90 backdrop-blur-sm hover:bg-background shadow-lg"
             onClick={prev}
             data-testid="button-carousel-prev"
           >
@@ -148,7 +185,7 @@ export function PopularStylesSection() {
           <Button
             variant="ghost"
             size="icon"
-            className="absolute right-0 top-1/3 -translate-y-1/2 translate-x-4 md:translate-x-12 bg-background/80 backdrop-blur-sm hover:bg-background"
+            className="absolute right-2 md:right-0 top-1/4 md:top-1/3 -translate-y-1/2 md:translate-x-12 bg-background/90 backdrop-blur-sm hover:bg-background shadow-lg"
             onClick={next}
             data-testid="button-carousel-next"
           >
