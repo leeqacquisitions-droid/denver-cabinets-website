@@ -1,6 +1,7 @@
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import logoImage from "@assets/estate solutions logo _1760720586570.jpg";
 
 export function Footer() {
   const scrollToSection = (id: string) => {
@@ -16,9 +17,9 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <h3 className="font-heading text-xl font-bold mb-4">Estate Solutions</h3>
+            <img src={logoImage} alt="Estate Solutions" className="h-16 w-auto mb-4 brightness-0 invert" />
             <p className="text-primary-foreground/80 mb-4">
-              Professional custom cabinetry installation serving the Denver metro area.
+              Professional supplier, designer & installer of pre-manufactured cabinets serving the Denver metro area.
             </p>
             <div className="flex gap-2">
               <Button
