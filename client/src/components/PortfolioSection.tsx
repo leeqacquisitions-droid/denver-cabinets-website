@@ -56,6 +56,8 @@ import img44 from "@assets/image000004_1760742069723.jpg";
 import img45 from "@assets/image000005_1760742080817.jpg";
 import img46 from "@assets/image000009_1760742150114.jpg";
 import img47 from "@assets/image000010_1760742173784.jpg";
+import img48 from "@assets/sage_green_1760721577808.webp";
+import img49 from "@assets/grey shaker 24_1760721776173.jpg";
 
 const portfolioItems = [
   { id: 1, image: img4, category: "Kitchens", title: "White & Onyx Shaker Combo" },
@@ -90,6 +92,8 @@ const portfolioItems = [
   { id: 30, image: img45, category: "Kitchens", title: "Large White Shaker Kitchen" },
   { id: 31, image: img46, category: "Kitchens", title: "Whitewashed Shaker Kitchen" },
   { id: 32, image: img47, category: "Kitchens", title: "Whitewashed Island Kitchen" },
+  { id: 33, image: img48, category: "Kitchens", title: "Sage Green Shaker Kitchen" },
+  { id: 34, image: img49, category: "Kitchens", title: "Grey Shaker Installation" },
 ];
 
 const categories = ["All", "Kitchens", "Bathrooms", "Pantries"];

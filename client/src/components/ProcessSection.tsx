@@ -1,8 +1,5 @@
 import { Card } from "@/components/ui/card";
 import { Phone, Home, Wrench, CheckCircle, ArrowRight } from "lucide-react";
-import processImg1 from "@assets/sage_green_1760721577808.webp";
-import processImg2 from "@assets/grey shaker 24_1760721776173.jpg";
-import processImg3 from "@assets/estate solution back face_1760721713621.jpg";
 
 import schematicImg from "@assets/1000000849_1760743497193.png";
 import renderImg from "@assets/image000006_1760743565538.jpg";
@@ -35,7 +32,7 @@ const steps = [
   }
 ];
 
-const projectOfTheWeek = [
+const projectPhases = [
   {
     title: "Schematic",
     image: schematicImg,
@@ -66,7 +63,7 @@ export function ProcessSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16 lg:mb-24">
           <div className="grid md:grid-cols-2 gap-6">
             {steps.map((step, index) => (
               <Card
@@ -89,14 +86,6 @@ export function ProcessSection() {
           </div>
 
           <div className="space-y-6">
-            <div className="grid grid-cols-1 gap-4">
-              <Card className="overflow-hidden p-0">
-                <img src={processImg1} alt="Sage green kitchen installation" className="w-full h-auto" />
-              </Card>
-              <Card className="overflow-hidden p-0">
-                <img src={processImg2} alt="Grey shaker cabinet installation in progress" className="w-full h-auto" />
-              </Card>
-            </div>
             <Card className="p-6 bg-primary text-primary-foreground">
               <h3 className="font-semibold text-xl mb-2">Payment Structure</h3>
               <p className="text-primary-foreground/90 mb-4">
@@ -110,53 +99,42 @@ export function ProcessSection() {
           </div>
         </div>
 
-        <div className="mt-16 lg:mt-24">
-          <div className="text-center mb-10">
-            <h3 className="font-heading text-2xl lg:text-4xl font-bold mb-3">
-              Project of the Week
-            </h3>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              See how we transform spaces from concept to completion every week
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+          {projectPhases.map((phase, index) => (
+            <div key={index} className="relative" data-testid={`project-phase-${index}`}>
+              <Card className="overflow-hidden p-0 h-full">
+                <div className="aspect-[4/3] overflow-hidden bg-muted">
+                  <img 
+                    src={phase.image} 
+                    alt={phase.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-5 text-center">
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary font-bold mb-3">
+                    {index + 1}
+                  </div>
+                  <h4 className="font-semibold text-lg mb-1">{phase.title}</h4>
+                  <p className="text-sm text-muted-foreground">{phase.description}</p>
+                </div>
+              </Card>
+              {index < 2 && (
+                <div className="hidden md:flex absolute top-1/2 -right-4 lg:-right-6 transform -translate-y-1/2 z-10">
+                  <div className="bg-background rounded-full p-2 shadow-md">
+                    <ArrowRight className="h-5 w-5 text-primary" />
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-8 text-center">
+          <Card className="inline-block p-4 bg-primary/5 border-primary/20">
+            <p className="text-sm font-medium">
+              Projects like this are completed on a weekly basis
             </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {projectOfTheWeek.map((phase, index) => (
-              <div key={index} className="relative" data-testid={`project-week-phase-${index}`}>
-                <Card className="overflow-hidden p-0 h-full">
-                  <div className="aspect-[4/3] overflow-hidden bg-muted">
-                    <img 
-                      src={phase.image} 
-                      alt={phase.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-5 text-center">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary font-bold mb-3">
-                      {index + 1}
-                    </div>
-                    <h4 className="font-semibold text-lg mb-1">{phase.title}</h4>
-                    <p className="text-sm text-muted-foreground">{phase.description}</p>
-                  </div>
-                </Card>
-                {index < 2 && (
-                  <div className="hidden md:flex absolute top-1/2 -right-4 lg:-right-6 transform -translate-y-1/2 z-10">
-                    <div className="bg-background rounded-full p-2 shadow-md">
-                      <ArrowRight className="h-5 w-5 text-primary" />
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 text-center">
-            <Card className="inline-block p-4 bg-primary/5 border-primary/20">
-              <p className="text-sm font-medium">
-                Projects like this are completed on a weekly basis
-              </p>
-            </Card>
-          </div>
+          </Card>
         </div>
       </div>
     </section>
