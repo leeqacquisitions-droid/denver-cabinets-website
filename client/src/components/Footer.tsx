@@ -1,7 +1,7 @@
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import logoImage from "@assets/estate solutions logo _1760720586570.jpg";
+import logoImage from "@assets/estate solution back face_1760721713621.jpg";
 
 export function Footer() {
   const scrollToSection = (id: string) => {
@@ -21,7 +21,6 @@ export function Footer() {
               src={logoImage} 
               alt="Estate Solutions" 
               className="h-16 w-auto mb-4" 
-              style={{ filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%)' }}
             />
             <p className="text-primary-foreground/80 mb-4">
               Professional supplier, designer & installer of pre-manufactured cabinets serving the Denver metro area.
