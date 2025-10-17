@@ -20,7 +20,7 @@ export function Footer() {
             <img 
               src={logoImage} 
               alt="Estate Solutions" 
-              className="h-24 w-auto mb-4" 
+              className="h-32 w-auto mb-4" 
             />
             <p className="text-primary-foreground/80 mb-4">
               Professional supplier, designer & installer of pre-manufactured cabinets serving the Denver metro area.
