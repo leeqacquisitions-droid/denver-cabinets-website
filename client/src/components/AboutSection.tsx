@@ -39,10 +39,11 @@ export function AboutSection() {
               Your Trusted Partner in Cabinet Installation
             </h3>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              Estate Solutions specializes in professional assembly and installation of pre-manufactured 
-              cabinets for general contractors, property managers, and homeowners. Whether you're working 
-              on new construction, remodeling existing properties, or upgrading sobriety houses and 
-              multi-unit buildings, we deliver exceptional quality on every project.
+              Estate Solutions specializes in fast, reliable shaker and flat panel cabinets. We provide 
+              professional assembly and installation of pre-manufactured cabinets for general contractors, 
+              property managers, and homeowners. Whether you're working on new construction, remodeling 
+              existing properties, or upgrading sobriety houses and multi-unit buildings, we deliver 
+              exceptional quality on every project.
             </p>
             <p className="text-lg leading-relaxed text-muted-foreground">
               Our experienced team understands the demands of contractors and the expectations of 

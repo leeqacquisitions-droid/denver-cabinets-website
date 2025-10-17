@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
+import logoImage from "@assets/estate solutions logo _1760720586570.jpg";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,10 +44,10 @@ export function Header() {
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection("home")}
-            className="font-heading text-2xl font-bold text-primary hover-elevate active-elevate-2 px-2 py-1 rounded-md"
+            className="hover-elevate active-elevate-2 px-2 py-1 rounded-md"
             data-testid="link-home"
           >
-            Estate Solutions
+            <img src={logoImage} alt="Estate Solutions" className="h-12 md:h-14 w-auto" />
           </button>
 
           {/* Desktop Navigation */}

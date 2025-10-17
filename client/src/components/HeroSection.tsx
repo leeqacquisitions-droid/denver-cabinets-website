@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@assets/best quality work in the metro area _1760665661487.jpg";
+import heroImage from "@assets/NEED TO SELL YOUR HOME LOOK AT THIS_1760666956139.webp";
 
 export function HeroSection() {
   const scrollToSection = (id: string) => {
@@ -20,10 +20,10 @@ export function HeroSection() {
       <div className="relative h-full max-w-7xl mx-auto px-6 flex items-center justify-center">
         <div className="text-center text-white max-w-4xl">
           <h1 className="font-heading text-4xl md:text-5xl lg:text-7xl font-bold mb-6">
-            Professional Cabinet Installation Services
+            Professional Supplier, Designer & Installer of Pre-Manufactured Cabinets
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl mb-8 text-white/90 leading-relaxed">
-            Expert assembly and installation of pre-manufactured cabinets for contractors, property managers, and homeowners in Denver
+            Expert cabinetry solutions for contractors, property managers, and homeowners in the Denver metro area
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
