@@ -1,8 +1,7 @@
 import { Card } from "@/components/ui/card";
 import img1 from "@assets/glossy material for cabinets_1760666768295.jpg";
 import img2 from "@assets/material cabinet doors_1760666899185.jpg";
-import img3 from "@assets/black and white crown molding mix_1760665666821.jpg";
-import img4 from "@assets/clean grey cabinets_1760665718488.jpg";
+import cabinetFeatures from "@assets/shaker-cabinet-features.png";
 
 const materials = [
   {
@@ -21,17 +20,10 @@ const materials = [
   },
   {
     id: 3,
-    name: "Black Matte Finish",
-    category: "Cabinet Finishes",
-    image: img3,
-    description: "Sleek contemporary black cabinetry"
-  },
-  {
-    id: 4,
-    name: "Grey Shaker",
-    category: "Cabinet Finishes",
-    image: img4,
-    description: "Classic grey shaker style"
+    name: "Shaker Cabinet Features",
+    category: "Construction Details",
+    image: cabinetFeatures,
+    description: "Premium construction with dovetail drawers, soft-close glides, and solid wood"
   },
 ];
 
@@ -46,7 +38,7 @@ export function MaterialsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {materials.map((material) => (
             <Card
               key={material.id}
