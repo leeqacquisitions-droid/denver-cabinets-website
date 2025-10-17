@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import img1 from "@assets/glossy material for cabinets_1760666768295.jpg";
 import img2 from "@assets/material cabinet doors_1760666899185.jpg";
-import cabinetFeatures from "@assets/shaker-cabinet-features.png";
+import cabinetFeatures from "@assets/shaker-features-large.png";
 
 const materials = [
   {
