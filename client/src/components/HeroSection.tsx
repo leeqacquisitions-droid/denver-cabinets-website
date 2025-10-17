@@ -20,7 +20,7 @@ export function HeroSection() {
       <div className="relative h-full max-w-7xl mx-auto px-6 flex items-center justify-center">
         <div className="text-center text-white max-w-4xl">
           <h1 className="font-heading text-4xl md:text-5xl lg:text-7xl font-bold mb-6">
-            Professional Supplier, Designer & Installer of Pre-Manufactured Cabinets
+            Estate Solutions offers quality cabinets, design renderings and professional installations.
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl mb-8 text-white/90 leading-relaxed">
             Expert cabinetry solutions for contractors, property managers, and homeowners in the Denver metro area
