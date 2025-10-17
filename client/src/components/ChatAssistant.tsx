@@ -60,7 +60,7 @@ export function ChatAssistant() {
       {!isOpen && (
         <Button
           size="icon"
-          className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg z-50"
+          className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg z-[100]"
           onClick={() => setIsOpen(true)}
           data-testid="button-open-chat"
         >
@@ -70,7 +70,7 @@ export function ChatAssistant() {
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="fixed bottom-6 right-6 w-96 h-[500px] shadow-2xl z-50 flex flex-col">
+        <Card className="fixed bottom-6 right-6 w-96 h-[500px] shadow-2xl z-[100] flex flex-col">
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b bg-primary text-primary-foreground rounded-t-md">
             <div className="flex items-center gap-2">

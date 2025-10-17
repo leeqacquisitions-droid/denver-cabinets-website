@@ -17,7 +17,7 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <img src={logoImage} alt="Estate Solutions" className="h-16 w-auto mb-4 brightness-0 invert" />
+            <img src={logoImage} alt="Estate Solutions" className="h-16 w-auto mb-4" style={{ filter: 'brightness(0) invert(1)' }} />
             <p className="text-primary-foreground/80 mb-4">
               Professional supplier, designer & installer of pre-manufactured cabinets serving the Denver metro area.
             </p>
@@ -71,10 +71,12 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-primary-foreground/80">
-              <li>Kitchen Cabinets</li>
-              <li>Bathroom Vanities</li>
-              <li>Pantry Systems</li>
-              <li>Custom Features</li>
+              <li>Cabinet Supplier</li>
+              <li>Cabinet Installer</li>
+              <li>Cabinet Refacing</li>
+              <li>Closet Systems</li>
+              <li>Interior Doors and Trim</li>
+              <li>Counter Tops</li>
             </ul>
           </div>
 
