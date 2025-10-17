@@ -44,17 +44,9 @@ import img36 from "@assets/need counter tops for these new cabinets here we are 
 import img37 from "@assets/need remodeling assitance he we are_1760666930898.jpg";
 import img38 from "@assets/NEED TO SELL YOUR HOME LOOK AT THIS_1760666956139.webp";
 
-// Additional images - 3D renders and more projects
-import img39 from "@assets/3d render 1_1760717031089.png";
-import img40 from "@assets/3d render 4_1760717035470.png";
-import img41 from "@assets/blue kiotchen white counter top_1760665698336.jpg";
-import img42 from "@assets/custom design layouts_1760665730035.png";
-import img43 from "@assets/custom measurements_1760665744538.jpg";
-import img44 from "@assets/custom spec 1_1760717165052.png";
-import img45 from "@assets/design 2 installed_1760665770904.jpg";
-import img46 from "@assets/design 2_1760665765805.jpg";
-import img47 from "@assets/glossy material for cabinets_1760666768295.jpg";
-import img48 from "@assets/material cabinet doors_1760666899185.jpg";
+// Additional completed projects
+import img39 from "@assets/blue kiotchen white counter top_1760665698336.jpg";
+import img40 from "@assets/design 2 installed_1760665770904.jpg";
 
 const portfolioItems = [
   { id: 1, image: img1, category: "Kitchens", title: "Two-Tone Modern Kitchen" },
@@ -95,21 +87,11 @@ const portfolioItems = [
   { id: 36, image: img36, category: "Kitchens", title: "Custom Countertop Install" },
   { id: 37, image: img37, category: "Kitchens", title: "Remodel Kitchen Project" },
   { id: 38, image: img38, category: "Kitchens", title: "Property Value Kitchen" },
-  
-  // 3D Renders & Design Specs
-  { id: 39, image: img39, category: "Design Renders", title: "3D Kitchen Render 1" },
-  { id: 40, image: img40, category: "Design Renders", title: "3D Kitchen Render 2" },
-  { id: 41, image: img41, category: "Kitchens", title: "Blue Kitchen with White Tops" },
-  { id: 42, image: img42, category: "Design Renders", title: "Custom Design Layout" },
-  { id: 43, image: img43, category: "Custom Features", title: "Precision Measurements" },
-  { id: 44, image: img44, category: "Design Renders", title: "Custom Spec Design" },
-  { id: 45, image: img45, category: "Kitchens", title: "Design Installation Complete" },
-  { id: 46, image: img46, category: "Design Renders", title: "Kitchen Design Plan" },
-  { id: 47, image: img47, category: "Materials", title: "Glossy Cabinet Finish" },
-  { id: 48, image: img48, category: "Materials", title: "Cabinet Door Materials" },
+  { id: 39, image: img39, category: "Kitchens", title: "Blue Kitchen with White Tops" },
+  { id: 40, image: img40, category: "Kitchens", title: "Design Installation Complete" },
 ];
 
-const categories = ["All", "Kitchens", "Bathrooms", "Pantries", "Custom Features", "Design Renders", "Materials"];
+const categories = ["All", "Kitchens", "Bathrooms", "Pantries", "Custom Features"];
 
 export function PortfolioSection() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -125,7 +107,7 @@ export function PortfolioSection() {
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl lg:text-5xl font-bold mb-4">Our Portfolio</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Quality installations, 3D renders, and material samples for new builds, remodels, and property renovations
+            Completed cabinet installations for new builds, remodels, and property renovations
           </p>
         </div>
 

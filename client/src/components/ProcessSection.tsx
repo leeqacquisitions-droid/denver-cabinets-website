@@ -1,6 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Phone, Home, Wrench, CheckCircle } from "lucide-react";
-import spec from "@assets/custom spec 1_1760717165052.png";
+import processImg1 from "@assets/sage_green_1760721577808.webp";
+import processImg2 from "@assets/grey shaker 24_1760721776173.jpg";
+import processImg3 from "@assets/estate solution back face_1760721713621.jpg";
 
 const steps = [
   {
@@ -65,9 +67,14 @@ export function ProcessSection() {
           </div>
 
           <div className="space-y-6">
-            <Card className="overflow-hidden p-0">
-              <img src={spec} alt="Cabinet specifications and layout" className="w-full h-auto" />
-            </Card>
+            <div className="grid grid-cols-1 gap-4">
+              <Card className="overflow-hidden p-0">
+                <img src={processImg1} alt="Sage green kitchen installation" className="w-full h-auto" />
+              </Card>
+              <Card className="overflow-hidden p-0">
+                <img src={processImg2} alt="Grey shaker cabinet installation in progress" className="w-full h-auto" />
+              </Card>
+            </div>
             <Card className="p-6 bg-primary text-primary-foreground">
               <h3 className="font-semibold text-xl mb-2">Payment Structure</h3>
               <p className="text-primary-foreground/90 mb-4">
