@@ -1,28 +1,35 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import whiteShaker from "@assets/bathroom_white_shaker_2_1760717045213.webp";
-import blackShaker from "@assets/black_shaker_1760717088967.webp";
-import brownShaker from "@assets/brown shaker 38_1760717138399.jpg";
+import shakerStyles from "@assets/shaker-styles-1.png";
+import shakerStyles2 from "@assets/shaker-styles-2.png";
+import euroDeluxe from "@assets/euro-deluxe.png";
+import euroClassic from "@assets/euro-classic.png";
 
 const styles = [
   {
     id: 1,
-    name: "WHITE SHAKER",
-    image: whiteShaker,
-    description: "Timeless elegance for any space"
+    name: "SHAKER STYLES",
+    image: shakerStyles,
+    description: "Mountain Timber, Espresso, Modern Slate, White & Grey"
   },
   {
     id: 2,
-    name: "BLACK SHAKER",
-    image: blackShaker,
-    description: "Bold and sophisticated"
+    name: "PREMIUM SHAKERS",
+    image: shakerStyles2,
+    description: "Signature Blue, Onyx, Dove White & Saige Green Slim"
   },
   {
     id: 3,
-    name: "BROWN SHAKER",
-    image: brownShaker,
-    description: "Warm and inviting"
+    name: "EURO FRAMELESS - DELUXE",
+    image: euroDeluxe,
+    description: "Gloss White & Matte White modern finishes"
+  },
+  {
+    id: 4,
+    name: "EURO FRAMELESS - CLASSIC",
+    image: euroClassic,
+    description: "Natural Oak & Walnut timeless finishes"
   }
 ];
 
@@ -61,12 +68,12 @@ export function PopularStylesSection() {
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">
             {visibleStyles.map((style, idx) => (
               <div key={`${style.id}-${idx}`} className="text-center">
-                <div className="aspect-[3/4] bg-card rounded-lg overflow-hidden mb-6 flex items-center justify-center p-8">
+                <div className="aspect-[4/3] bg-card rounded-lg overflow-hidden mb-6 flex items-center justify-center p-4">
                   <img
                     src={style.image}
                     alt={style.name}
-                    className="h-full w-auto object-contain rounded-md"
-                    data-testid={`img-style-${style.name.toLowerCase().replace(' ', '-')}`}
+                    className="w-full h-full object-contain"
+                    data-testid={`img-style-${style.id}`}
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-2 tracking-wide">
@@ -82,7 +89,7 @@ export function PopularStylesSection() {
                     const element = document.getElementById('materials');
                     element?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  data-testid={`button-view-${style.name.toLowerCase().replace(' ', '-')}`}
+                  data-testid={`button-view-${style.id}`}
                 >
                   VIEW DETAILS
                 </Button>
