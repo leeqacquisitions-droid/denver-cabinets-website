@@ -1,0 +1,114 @@
+import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
+export function Footer() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <footer className="bg-primary text-primary-foreground py-12 lg:py-16">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          {/* Company Info */}
+          <div>
+            <h3 className="font-heading text-xl font-bold mb-4">Estate Solutions</h3>
+            <p className="text-primary-foreground/80 mb-4">
+              Professional custom cabinetry installation serving the Denver metro area.
+            </p>
+            <div className="flex gap-2">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="hover:bg-primary-foreground/10 text-primary-foreground"
+                data-testid="link-facebook"
+              >
+                <Facebook className="h-5 w-5" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="hover:bg-primary-foreground/10 text-primary-foreground"
+                data-testid="link-instagram"
+              >
+                <Instagram className="h-5 w-5" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="hover:bg-primary-foreground/10 text-primary-foreground"
+                data-testid="link-linkedin"
+              >
+                <Linkedin className="h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              {["Portfolio", "Materials", "Process", "Reviews"].map((item) => (
+                <li key={item}>
+                  <button
+                    onClick={() => scrollToSection(item.toLowerCase())}
+                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                    data-testid={`footer-link-${item.toLowerCase()}`}
+                  >
+                    {item}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="font-semibold mb-4">Services</h3>
+            <ul className="space-y-2 text-primary-foreground/80">
+              <li>Kitchen Cabinets</li>
+              <li>Bathroom Vanities</li>
+              <li>Pantry Systems</li>
+              <li>Custom Features</li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h3 className="font-semibold mb-4">Newsletter</h3>
+            <p className="text-primary-foreground/80 mb-4 text-sm">
+              Get design inspiration & tips
+            </p>
+            <div className="flex gap-2">
+              <Input
+                placeholder="Your email"
+                className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50"
+                data-testid="input-newsletter"
+              />
+              <Button
+                variant="secondary"
+                data-testid="button-subscribe"
+              >
+                Subscribe
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-primary-foreground/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-primary-foreground/80 text-sm">
+            © {new Date().getFullYear()} Estate Solutions. All rights reserved.
+          </p>
+          <div className="flex gap-6 text-sm text-primary-foreground/80">
+            <button className="hover:text-primary-foreground transition-colors">Privacy Policy</button>
+            <button className="hover:text-primary-foreground transition-colors">Terms of Service</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
