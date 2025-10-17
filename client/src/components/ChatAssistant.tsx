@@ -58,85 +58,89 @@ export function ChatAssistant() {
     <>
       {/* Chat Button */}
       {!isOpen && (
-        <Button
-          size="icon"
-          className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg z-[100]"
-          onClick={() => setIsOpen(true)}
-          data-testid="button-open-chat"
-        >
-          <MessageCircle className="h-6 w-6" />
-        </Button>
+        <div className="fixed bottom-6 right-6 z-[9999]">
+          <Button
+            size="icon"
+            className="h-14 w-14 rounded-full shadow-lg"
+            onClick={() => setIsOpen(true)}
+            data-testid="button-open-chat"
+          >
+            <MessageCircle className="h-6 w-6" />
+          </Button>
+        </div>
       )}
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="fixed bottom-6 right-6 w-96 h-[500px] shadow-2xl z-[100] flex flex-col">
-          {/* Header */}
-          <div className="flex items-center justify-between p-4 border-b bg-primary text-primary-foreground rounded-t-md">
-            <div className="flex items-center gap-2">
-              <MessageCircle className="h-5 w-5" />
-              <h3 className="font-semibold">Chat with Us</h3>
-            </div>
-            <Button
-              size="icon"
-              variant="ghost"
-              className="h-8 w-8 text-primary-foreground hover:bg-primary-foreground/20"
-              onClick={() => setIsOpen(false)}
-              data-testid="button-close-chat"
-            >
-              <X className="h-5 w-5" />
-            </Button>
-          </div>
-
-          {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
-            {messages.map((message, index) => (
-              <div
-                key={index}
-                className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
-              >
-                <div
-                  className={`max-w-[80%] rounded-lg p-3 ${
-                    message.role === "user"
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-muted"
-                  }`}
-                >
-                  <p className="text-sm">{message.content}</p>
-                </div>
+        <div className="fixed bottom-6 right-6 z-[9999]">
+          <Card className="w-96 h-[500px] shadow-2xl flex flex-col">
+            {/* Header */}
+            <div className="flex items-center justify-between p-4 border-b bg-primary text-primary-foreground rounded-t-md">
+              <div className="flex items-center gap-2">
+                <MessageCircle className="h-5 w-5" />
+                <h3 className="font-semibold">Chat with Us</h3>
               </div>
-            ))}
-            {isLoading && (
-              <div className="flex justify-start">
-                <div className="bg-muted rounded-lg p-3">
-                  <p className="text-sm">Typing...</p>
-                </div>
-              </div>
-            )}
-            <div ref={messagesEndRef} />
-          </div>
-
-          {/* Input */}
-          <form onSubmit={handleSubmit} className="p-4 border-t">
-            <div className="flex gap-2">
-              <Input
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Type your message..."
-                disabled={isLoading}
-                data-testid="input-chat-message"
-              />
               <Button
-                type="submit"
                 size="icon"
-                disabled={isLoading || !input.trim()}
-                data-testid="button-send-message"
+                variant="ghost"
+                className="h-8 w-8 text-primary-foreground hover:bg-primary-foreground/20"
+                onClick={() => setIsOpen(false)}
+                data-testid="button-close-chat"
               >
-                <Send className="h-4 w-4" />
+                <X className="h-5 w-5" />
               </Button>
             </div>
-          </form>
-        </Card>
+
+            {/* Messages */}
+            <div className="flex-1 overflow-y-auto p-4 space-y-4">
+              {messages.map((message, index) => (
+                <div
+                  key={index}
+                  className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
+                >
+                  <div
+                    className={`max-w-[80%] rounded-lg p-3 ${
+                      message.role === "user"
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-muted"
+                    }`}
+                  >
+                    <p className="text-sm">{message.content}</p>
+                  </div>
+                </div>
+              ))}
+              {isLoading && (
+                <div className="flex justify-start">
+                  <div className="bg-muted rounded-lg p-3">
+                    <p className="text-sm">Typing...</p>
+                  </div>
+                </div>
+              )}
+              <div ref={messagesEndRef} />
+            </div>
+
+            {/* Input */}
+            <form onSubmit={handleSubmit} className="p-4 border-t">
+              <div className="flex gap-2">
+                <Input
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  placeholder="Type your message..."
+                  disabled={isLoading}
+                  data-testid="input-chat-message"
+                />
+                <Button
+                  type="submit"
+                  size="icon"
+                  disabled={isLoading || !input.trim()}
+                  data-testid="button-send-message"
+                >
+                  <Send className="h-4 w-4" />
+                </Button>
+              </div>
+            </form>
+          </Card>
+        </div>
       )}
     </>
   );
