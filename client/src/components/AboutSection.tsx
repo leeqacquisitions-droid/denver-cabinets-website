@@ -82,8 +82,13 @@ export function AboutSection() {
           </div>
         </div>
 
-        <Card className="overflow-hidden p-0">
+        <Card className="overflow-hidden p-0 relative">
           <img src={truckImg} alt="Estate Solutions service vehicle" className="w-full h-auto" />
+          {/* License plate blur overlay */}
+          <div 
+            className="absolute bottom-[8%] left-1/2 -translate-x-1/2 w-[12%] h-[6%] backdrop-blur-xl bg-background/20"
+            aria-hidden="true"
+          />
         </Card>
       </div>
     </section>
