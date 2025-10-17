@@ -123,7 +123,6 @@ export function PopularStylesSection() {
                 </p>
                 <Button
                   variant="default"
-                  className="bg-foreground text-background hover:bg-foreground/90"
                   onClick={() => {
                     const element = document.getElementById('materials');
                     element?.scrollIntoView({ behavior: 'smooth' });
