@@ -157,8 +157,9 @@ export function PortfolioSection() {
               <img
                 src={lightboxImage.image}
                 alt={lightboxImage.title}
-                className="w-full h-auto max-h-[80vh] object-contain rounded-md"
+                className="w-full h-auto max-h-[80vh] object-contain rounded-md touch-auto select-none"
                 onClick={(e) => e.stopPropagation()}
+                style={{ touchAction: 'auto' }}
               />
               <div className="mt-4 text-center">
                 <Badge className="mb-2">{lightboxImage.category}</Badge>
