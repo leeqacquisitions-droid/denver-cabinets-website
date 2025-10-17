@@ -8,7 +8,6 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { AboutSection } from "@/components/AboutSection";
 import { FAQSection } from "@/components/FAQSection";
 import { ContactSection } from "@/components/ContactSection";
-import { ChatAssistant } from "@/components/ChatAssistant";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -27,7 +26,6 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
-      <ChatAssistant />
     </div>
   );
 }

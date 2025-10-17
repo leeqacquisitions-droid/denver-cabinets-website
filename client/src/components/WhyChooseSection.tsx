@@ -1,27 +1,27 @@
 import { Card } from "@/components/ui/card";
 import { Award, Clock, Users } from "lucide-react";
-import render1 from "@assets/3d render 1_1760717031089.png";
-import render4 from "@assets/3d render 4_1760717035470.png";
-import brownShaker from "@assets/brown shaker 31_1760717130103.jpg";
+import qualityCraftsmanship from "@assets/white and brown shaker 22_1760722991073.jpg";
+import fastReliable from "@assets/white shaker 8_1760723013546.jpg";
+import contractorPreferred from "@assets/white shaker 32_1760723026350.jpg";
 
 const features = [
   {
     icon: Award,
     title: "Quality Craftsmanship",
     description: "Expert installation of pre-manufactured cabinets with attention to every detail. We ensure perfect alignment and professional finishing.",
-    image: render1
+    image: qualityCraftsmanship
   },
   {
     icon: Clock,
     title: "Fast & Reliable",
     description: "Most kitchens completed in 4-6 days. We respect your timeline and deliver consistent, on-schedule results contractors trust.",
-    image: brownShaker
+    image: fastReliable
   },
   {
     icon: Users,
     title: "Contractor Preferred",
     description: "Trusted subcontracting partner for general contractors and property managers. We handle new construction, remodels, and multi-unit properties.",
-    image: render4
+    image: contractorPreferred
   }
 ];
 
