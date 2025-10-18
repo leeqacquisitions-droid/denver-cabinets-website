@@ -34,7 +34,7 @@ export function WhyChooseSection() {
             Why Choose Estate Solutions
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Professional cabinet installation services you can depend on
+            Professional cabinet supplier, and installation services you can depend on
           </p>
         </div>
 
