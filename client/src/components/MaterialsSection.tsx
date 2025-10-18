@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { ZoomIn } from "lucide-react";
 import img1 from "@assets/glossy material for cabinets_1760666768295.jpg";
 import img2 from "@assets/material cabinet doors_1760666899185.jpg";
-import cabinetFeatures from "@assets/shaker-features-large.png";
+import cabinetFeatures from "@assets/image000000 6_1760745669766.jpg";
 
 const materials = [
   {
