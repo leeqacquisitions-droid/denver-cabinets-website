@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Award, Users, Building2 } from "lucide-react";
 import ceoImg from "@assets/ceo of estate solutions_1760665714169.jpg";
-import truckImg from "@assets/estate truck 2_1760665776405.jpg";
+import truckImg from "@assets/image000000 5_1760745097178.jpg";
 
 export function AboutSection() {
   const stats = [
@@ -82,13 +82,8 @@ export function AboutSection() {
           </div>
         </div>
 
-        <Card className="overflow-hidden p-0 relative">
+        <Card className="overflow-hidden p-0">
           <img src={truckImg} alt="Estate Solutions service vehicle" className="w-full h-auto" />
-          {/* License plate blur overlay */}
-          <div 
-            className="absolute bottom-[8%] left-1/2 -translate-x-1/2 w-[12%] h-[6%] backdrop-blur-xl bg-background/20"
-            aria-hidden="true"
-          />
         </Card>
       </div>
     </section>
