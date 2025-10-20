@@ -22,80 +22,80 @@ const styles = [
   },
   {
     id: 2,
-    name: "ESPRESSO SHAKER",
-    image: espressoShaker,
-    description: "Rich dark tones for sophisticated spaces",
-    category: "Shaker"
-  },
-  {
-    id: 3,
-    name: "MODERN SLATE SHAKER",
-    image: modernSlateShaker,
-    description: "Contemporary charcoal for modern aesthetics",
-    category: "Shaker"
-  },
-  {
-    id: 4,
     name: "WHITE SHAKER",
     image: whiteShaker,
     description: "Timeless classic for any design style",
     category: "Shaker"
   },
   {
-    id: 5,
+    id: 3,
     name: "GREY SHAKER",
     image: greyShaker,
     description: "Versatile neutral for contemporary homes",
     category: "Shaker"
   },
   {
-    id: 6,
-    name: "NATURAL OAK",
-    image: naturalOak,
-    description: "Light wood finish for seamless sophistication",
-    category: "Euro Frameless"
+    id: 4,
+    name: "MODERN SLATE SHAKER",
+    image: modernSlateShaker,
+    description: "Contemporary charcoal for modern aesthetics",
+    category: "Shaker"
   },
   {
-    id: 7,
-    name: "WALNUT",
-    image: walnut,
-    description: "Rich wood grain for enduring charm",
-    category: "Euro Frameless"
-  },
-  {
-    id: 8,
-    name: "GLOSS WHITE",
-    image: glossWhite,
-    description: "Modern seamless profile for elevated design",
-    category: "Euro Frameless"
-  },
-  {
-    id: 9,
+    id: 5,
     name: "SIGNATURE BLUE SHAKER",
     image: signatureBlue,
     description: "Bold blue finish for distinctive style",
     category: "Shaker"
   },
   {
-    id: 10,
+    id: 6,
     name: "ONYX SHAKER",
     image: onyxShaker,
     description: "Deep black for dramatic modern spaces",
     category: "Shaker"
   },
   {
-    id: 11,
+    id: 7,
+    name: "ESPRESSO SHAKER",
+    image: espressoShaker,
+    description: "Rich dark tones for sophisticated spaces",
+    category: "Shaker"
+  },
+  {
+    id: 8,
     name: "DOVE WHITE SLIM SHAKER",
     image: doveWhite,
     description: "Soft white with sleek profile",
     category: "Slim Shaker"
   },
   {
-    id: 12,
+    id: 9,
     name: "SAIGE GREEN SLIM SHAKER",
     image: saigeGreen,
     description: "Earthy green for natural elegance",
     category: "Slim Shaker"
+  },
+  {
+    id: 10,
+    name: "NATURAL OAK",
+    image: naturalOak,
+    description: "Light wood finish for seamless sophistication",
+    category: "Euro Frameless"
+  },
+  {
+    id: 11,
+    name: "WALNUT",
+    image: walnut,
+    description: "Rich wood grain for enduring charm",
+    category: "Euro Frameless"
+  },
+  {
+    id: 12,
+    name: "GLOSS WHITE",
+    image: glossWhite,
+    description: "Modern seamless profile for elevated design",
+    category: "Euro Frameless"
   }
 ];
 
@@ -124,11 +124,11 @@ export function PopularStylesSection() {
               className="overflow-hidden hover-elevate active-elevate-2 cursor-pointer group"
               data-testid={`card-style-${style.id}`}
             >
-              <div className="aspect-[3/4] bg-muted/30 flex items-center justify-center p-4">
+              <div className="aspect-[3/4] bg-muted/30 overflow-hidden">
                 <img
                   src={style.image}
                   alt={style.name}
-                  className="h-full w-auto object-contain drop-shadow-lg transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover drop-shadow-lg transition-transform duration-300 group-hover:scale-105"
                   data-testid={`img-style-${style.id}`}
                 />
               </div>
