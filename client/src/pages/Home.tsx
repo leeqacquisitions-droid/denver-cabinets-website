@@ -18,12 +18,12 @@ export default function Home() {
       <main>
         <HeroSection />
         <PopularStylesSection />
-        <PortfolioSection />
         <WhyChooseSection />
         <MaterialsSection />
         <ProcessSection />
         <TestimonialsSection />
         <AboutSection />
+        <PortfolioSection />
         <FAQSection />
         <ContactSection />
       </main>
