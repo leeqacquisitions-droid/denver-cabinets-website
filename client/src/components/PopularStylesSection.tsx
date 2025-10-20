@@ -7,10 +7,10 @@ import greyShaker from "@assets/grey-shaker-door.png";
 import naturalOak from "@assets/natural-oak.png";
 import walnut from "@assets/walnut.png";
 import glossWhite from "@assets/gloss-white.png";
-import signatureBlue from "@assets/signature-blue-shaker.png";
+import signatureBlue from "@assets/signature-blue-shaker-door.png";
 import onyxShaker from "@assets/onyx-shaker-door.png";
-import doveWhite from "@assets/dove-white-slim-shaker.png";
-import saigeGreen from "@assets/saige-green-slim-shaker.png";
+import doveWhite from "@assets/dove-white-slim-shaker-door.png";
+import saigeGreen from "@assets/saige-green-slim-shaker-door.png";
 
 const styles = [
   {
