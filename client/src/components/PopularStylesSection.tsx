@@ -1,14 +1,14 @@
 import { Card } from "@/components/ui/card";
-import mountainTimber from "@assets/mountain-timber.png";
-import espressoShaker from "@assets/espresso-shaker.png";
-import modernSlateShaker from "@assets/modern-slate-shaker.png";
-import whiteShaker from "@assets/white-shaker.png";
-import greyShaker from "@assets/grey-shaker.png";
+import mountainTimber from "@assets/mountain-timber-door.png";
+import espressoShaker from "@assets/espresso-shaker-door.png";
+import modernSlateShaker from "@assets/modern-slate-shaker-door.png";
+import whiteShaker from "@assets/white-shaker-door.png";
+import greyShaker from "@assets/grey-shaker-door.png";
 import naturalOak from "@assets/natural-oak.png";
 import walnut from "@assets/walnut.png";
 import glossWhite from "@assets/gloss-white.png";
 import signatureBlue from "@assets/signature-blue-shaker.png";
-import onyxShaker from "@assets/onyx-shaker.png";
+import onyxShaker from "@assets/onyx-shaker-door.png";
 import doveWhite from "@assets/dove-white-slim-shaker.png";
 import saigeGreen from "@assets/saige-green-slim-shaker.png";
 
