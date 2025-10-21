@@ -41,17 +41,17 @@ export function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between md:grid md:grid-cols-3 md:gap-4">
           <button
             onClick={() => scrollToSection("home")}
-            className="hover-elevate active-elevate-2 px-2 py-1 rounded-md"
+            className="hover-elevate active-elevate-2 px-2 py-1 rounded-md md:justify-self-start"
             data-testid="link-home"
           >
             <img src={logoImage} alt="Estate Solutions" className="h-24 md:h-28 w-auto" />
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center gap-1 justify-self-center">
             {navItems.slice(1).map((item) => (
               <Button
                 key={item.id}
@@ -65,7 +65,7 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 md:justify-self-end">
             <ThemeToggle />
             <Button
               onClick={() => scrollToSection("contact")}
