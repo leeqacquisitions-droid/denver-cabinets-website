@@ -28,16 +28,19 @@ Preferred communication style: Simple, everyday language.
 
 **Design System:**
 - Color palette defined in CSS variables supporting light/dark modes
-- Deep Navy Blue and Warm Charcoal as primary colors
-- Copper/Bronze accent colors to complement wood tones
-- Typography: Montserrat (headings), Open Sans (body), Playfair Display (accents)
+- Royal Blue (HSL 233, 48%, 45%) as primary brand color
+- Typography: Playfair Display (headings - elegant serif conveying craftsmanship), Inter (body text - clean modern sans-serif)
+- Consistent section spacing: py-20 lg:py-28 across all major sections for visual hierarchy
 - Custom border radius and spacing tokens
+- Favicon: Custom Estate Solutions logo in client/public/favicon.png
 
 **Component Architecture:**
 - Single-page application with smooth scroll navigation between sections
 - Modular section components (HeroSection, PortfolioSection, AboutSection, etc.)
 - Reusable UI primitives from shadcn/ui library
-- Floating chat assistant component for customer support
+- Responsive navigation with thumb-friendly touch targets (min-h-12 / 48px buttons)
+- Mobile-optimized hero section with responsive min-heights (500px mobile, 600px tablet, 700px desktop)
+- Portfolio filtering system (All, Kitchens, Bathrooms, Pantries) with 33 total projects
 
 ### Backend Architecture
 
@@ -80,10 +83,11 @@ Preferred communication style: Simple, everyday language.
 
 **Asset Management:**
 - Static images stored in `attached_assets` directory
-- Portfolio images (38+ cabinet installation photos)
+- Portfolio images: 33 unique projects (Kitchens: 28, Bathrooms: 3, Pantries: 2)
+- Best Sellers gallery: 12 popular cabinet style images
 - Material showcase images
-- Company/team photos
-- 3D renders and design specifications
+- Favicon: Estate Solutions logo (512x512px) in client/public/favicon.png
+- Consistent image aspect ratios (aspect-[4/3]) for portfolio display
 
 **Third-Party UI Libraries:**
 - Radix UI primitives for accessible components (accordion, dialog, dropdown, etc.)
@@ -100,7 +104,7 @@ Preferred communication style: Simple, everyday language.
 - Dev banner for development mode indication
 
 **Font Services:**
-- Google Fonts CDN for typography (Montserrat, Open Sans, Playfair Display)
+- Google Fonts CDN for typography (Playfair Display for headings, Inter for body text)
 
 **Form Handling:**
 - React Hook Form for form state management

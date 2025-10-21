@@ -58,7 +58,7 @@ export function Header() {
                 variant="ghost"
                 onClick={() => scrollToSection(item.id)}
                 data-testid={`link-${item.id}`}
-                className="hover-elevate active-elevate-2"
+                className="hover-elevate active-elevate-2 min-h-12"
               >
                 {item.label}
               </Button>
@@ -79,7 +79,7 @@ export function Header() {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden hover-elevate active-elevate-2"
+              className="md:hidden hover-elevate active-elevate-2 min-h-12 min-w-12"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               data-testid="button-mobile-menu"
             >

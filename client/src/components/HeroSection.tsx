@@ -10,14 +10,14 @@ export function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-[500px] h-[85vh] sm:h-[600px] lg:h-[700px] w-full overflow-hidden">
+    <section id="home" className="relative w-full overflow-hidden min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] flex items-center justify-center">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
       
-      <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-center py-8">
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
         <div className="text-center text-white max-w-4xl">
           <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
             Estate Solutions offers quality cabinets, design renderings and professional installations.
