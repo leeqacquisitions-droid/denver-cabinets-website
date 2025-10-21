@@ -41,7 +41,7 @@ export function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between md:relative">
+        <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection("home")}
             className="hover-elevate active-elevate-2 px-2 py-1 rounded-md"
@@ -50,8 +50,8 @@ export function Header() {
             <img src={logoImage} alt="Estate Solutions" className="h-24 md:h-28 w-auto" />
           </button>
 
-          {/* Desktop Navigation - Centered */}
-          <nav className="hidden md:flex items-center gap-1 md:absolute md:left-1/2 md:-translate-x-1/2">
+          {/* Desktop Navigation - Centered with auto margins */}
+          <nav className="hidden md:flex items-center gap-1 mx-auto">
             {navItems.slice(1).map((item) => (
               <Button
                 key={item.id}
