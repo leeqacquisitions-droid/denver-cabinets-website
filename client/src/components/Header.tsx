@@ -91,14 +91,14 @@ export function Header() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t pt-4">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-3">
               {navItems.slice(1).map((item) => (
                 <Button
                   key={item.id}
                   variant="ghost"
                   onClick={() => scrollToSection(item.id)}
                   data-testid={`link-mobile-${item.id}`}
-                  className="justify-start hover-elevate active-elevate-2"
+                  className="justify-start hover-elevate active-elevate-2 min-h-12 text-base"
                 >
                   {item.label}
                 </Button>
@@ -106,7 +106,7 @@ export function Header() {
               <Button
                 onClick={() => scrollToSection("contact")}
                 data-testid="button-mobile-quote"
-                className="mt-2"
+                className="mt-2 min-h-12 text-base"
               >
                 Get Quote
               </Button>

@@ -83,10 +83,10 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Open Sans", "system-ui", "sans-serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
         serif: ["Playfair Display", "Georgia", "serif"],
         mono: ["var(--font-mono)"],
-        heading: ["Montserrat", "system-ui", "sans-serif"],
+        heading: ["Playfair Display", "Georgia", "serif"],
       },
       keyframes: {
         "accordion-down": {
