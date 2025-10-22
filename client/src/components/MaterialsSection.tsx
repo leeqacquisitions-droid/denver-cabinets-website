@@ -43,7 +43,7 @@ export function MaterialsSection() {
   };
 
   return (
-    <section id="materials" className="py-20 lg:py-28 bg-card">
+    <section id="materials" className="py-16 bg-card">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl lg:text-5xl font-bold mb-4">Premium Materials</h2>
@@ -56,7 +56,7 @@ export function MaterialsSection() {
           {materials.map((material) => (
             <Card
               key={material.id}
-              className="overflow-hidden hover-elevate active-elevate-2 cursor-pointer group"
+              className="overflow-hidden rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer group"
               data-testid={`material-${material.id}`}
               onClick={() => handleImageClick(material)}
             >

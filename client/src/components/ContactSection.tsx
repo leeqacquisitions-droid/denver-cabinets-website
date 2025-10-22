@@ -24,7 +24,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-card">
+    <section id="contact" className="py-16 bg-card">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl lg:text-5xl font-bold mb-4">Get In Touch</h2>

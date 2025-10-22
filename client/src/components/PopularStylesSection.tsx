@@ -101,7 +101,7 @@ const styles = [
 
 export function PopularStylesSection() {
   return (
-    <section className="py-20 lg:py-28 bg-background" id="styles">
+    <section className="py-16 bg-background" id="styles">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-12">
@@ -121,7 +121,7 @@ export function PopularStylesSection() {
           {styles.map((style) => (
             <Card
               key={style.id}
-              className="overflow-hidden hover-elevate active-elevate-2 cursor-pointer group"
+              className="overflow-hidden rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer group"
               data-testid={`card-style-${style.id}`}
             >
               <div className="aspect-[3/4] bg-muted/30 overflow-hidden">

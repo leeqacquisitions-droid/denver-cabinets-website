@@ -52,7 +52,7 @@ const projectPhases = [
 
 export function ProcessSection() {
   return (
-    <section id="process" className="py-20 lg:py-28 bg-card">
+    <section id="process" className="py-16 bg-card">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl lg:text-5xl font-bold mb-4">
@@ -68,7 +68,7 @@ export function ProcessSection() {
             {steps.map((step, index) => (
               <Card
                 key={index}
-                className="p-6 relative"
+                className="p-6 relative rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300"
                 data-testid={`process-step-${index}`}
               >
                 <div className="absolute top-4 right-4 text-4xl font-bold text-muted-foreground/10">
@@ -102,7 +102,7 @@ export function ProcessSection() {
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {projectPhases.map((phase, index) => (
             <div key={index} className="relative" data-testid={`project-phase-${index}`}>
-              <Card className="overflow-hidden p-0 h-full">
+              <Card className="overflow-hidden p-0 h-full rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
                 <div className="aspect-[4/3] overflow-hidden bg-muted">
                   <img 
                     src={phase.image} 

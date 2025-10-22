@@ -27,7 +27,7 @@ const features = [
 
 export function WhyChooseSection() {
   return (
-    <section id="why-choose" className="py-20 lg:py-28">
+    <section id="why-choose" className="py-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl lg:text-5xl font-bold mb-4">
@@ -42,7 +42,7 @@ export function WhyChooseSection() {
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="overflow-hidden hover-elevate active-elevate-2"
+              className="overflow-hidden rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover-elevate"
               data-testid={`feature-${index}`}
             >
               <div className="aspect-[4/3] overflow-hidden">

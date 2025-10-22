@@ -18,7 +18,7 @@ export function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-20 lg:py-28">
+    <section id="about" className="py-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl lg:text-5xl font-bold mb-4">About Estate Solutions</h2>
