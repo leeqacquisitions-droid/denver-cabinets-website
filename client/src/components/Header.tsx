@@ -41,7 +41,7 @@ export function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center">
+        <div className="flex items-center justify-between gap-4">
           {/* Logo - Fixed left */}
           <button
             onClick={() => scrollToSection("home")}
@@ -51,8 +51,8 @@ export function Header() {
             <img src={logoImage} alt="Estate Solutions" className="h-24 md:h-28 w-auto" />
           </button>
 
-          {/* Desktop Navigation - Centered using flex-grow */}
-          <nav className="hidden md:flex items-center justify-center gap-1 flex-grow">
+          {/* Desktop Navigation - Centered */}
+          <nav className="hidden md:flex items-center justify-center gap-1 flex-1">
             {navItems.slice(1).map((item) => (
               <Button
                 key={item.id}
