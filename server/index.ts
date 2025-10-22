@@ -63,11 +63,17 @@ const isDevelopment = process.env.NODE_ENV !== "production" && process.env.REPLI
     // Development: Use Vite dev server with HMR
     await setupVite(app, server);
   } else {
-    // Production: Serve static files from dist/public
-    app.use(express.static(path.join(process.cwd(), "dist", "public")));
+    // Production: Serve static files from dist/public with 1-hour cache
+    app.use(express.static(path.join(process.cwd(), "dist", "public"), { 
+      maxAge: "1h",
+      etag: true,
+      lastModified: true
+    }));
     
     // Catch-all route to serve index.html for client-side routing
     app.get("*", (_req, res) => {
+      // Set no-cache for HTML to ensure users get latest version
+      res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
       res.sendFile(path.join(process.cwd(), "dist", "public", "index.html"));
     });
   }
