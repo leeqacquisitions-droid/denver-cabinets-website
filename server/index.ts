@@ -1,73 +1,80 @@
 import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import path from "path";
+import { createServer } from "http";
+import OpenAI from "openai";
+import { setupVite } from "./vite";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use((req, res, next) => {
-  const start = Date.now();
-  const path = req.path;
-  let capturedJsonResponse: Record<string, any> | undefined = undefined;
-
-  const originalResJson = res.json;
-  res.json = function (bodyJson, ...args) {
-    capturedJsonResponse = bodyJson;
-    return originalResJson.apply(res, [bodyJson, ...args]);
-  };
-
-  res.on("finish", () => {
-    const duration = Date.now() - start;
-    if (path.startsWith("/api")) {
-      let logLine = `${req.method} ${path} ${res.statusCode} in ${duration}ms`;
-      if (capturedJsonResponse) {
-        logLine += ` :: ${JSON.stringify(capturedJsonResponse)}`;
-      }
-
-      if (logLine.length > 80) {
-        logLine = logLine.slice(0, 79) + "…";
-      }
-
-      log(logLine);
-    }
-  });
-
-  next();
+// OpenAI chat endpoint for the AI assistant
+const openai = new OpenAI({
+  baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
+  apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY
 });
 
+app.post("/api/chat", async (req, res) => {
+  try {
+    const { message, messages = [] } = req.body;
+
+    const systemPrompt = `You are a helpful assistant for Estate Solutions, a cabinet installation company in Denver, Colorado. 
+
+Key information to share with customers:
+- Services: Professional installation of pre-manufactured cabinets for kitchens, bathrooms, and pantries
+- We do NOT build custom cabinets - we assemble and install pre-manufactured cabinets (semi-custom in field when needed)
+- We serve: General contractors, property managers, and homeowners
+- Service area: Denver metro area, Colorado
+- Process: Free 30-minute in-home design consultation → 70% down payment for materials → Installation (4-6 days for most kitchens) → 30% final payment
+- Contact: Phone (720) 224-2908, Email josue@denvercabinets.net
+- Specialties: New construction, remodels, multi-unit properties, sobriety houses
+
+Be friendly, professional, and helpful. If asked about pricing, explain that we provide quotes during the free consultation. Encourage users to schedule a consultation or contact us directly for specific questions.`;
+
+    const completion = await openai.chat.completions.create({
+      model: "gpt-5-mini",
+      messages: [
+        { role: "system", content: systemPrompt },
+        ...messages.slice(-5).map((msg: any) => ({ role: msg.role, content: msg.content })),
+        { role: "user", content: message }
+      ],
+      max_completion_tokens: 500
+    });
+
+    const assistantMessage = completion.choices[0]?.message?.content || 
+      "I'm here to help! Please call us at (720) 224-2908 or email josue@denvercabinets.net for assistance.";
+
+    res.json({ message: assistantMessage });
+  } catch (error) {
+    console.error("Chat error:", error);
+    res.status(500).json({ 
+      message: "I apologize for the inconvenience. Please contact us directly at (720) 224-2908 or josue@denvercabinets.net." 
+    });
+  }
+});
+
+const server = createServer(app);
+
+// Development vs Production
+const isDevelopment = process.env.NODE_ENV !== "production" && process.env.REPLIT_DEPLOYMENT !== "1";
+
 (async () => {
-  const server = await registerRoutes(app);
-
-  app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
-    const status = err.status || err.statusCode || 500;
-    const message = err.message || "Internal Server Error";
-
-    res.status(status).json({ message });
-    throw err;
-  });
-
-  // importantly only setup vite in development and after
-  // setting up all the other routes so the catch-all route
-  // doesn't interfere with the other routes
-  const isProduction = process.env.NODE_ENV === "production" || process.env.REPLIT_DEPLOYMENT === "1";
-  
-  if (!isProduction) {
+  if (isDevelopment) {
+    // Development: Use Vite dev server with HMR
     await setupVite(app, server);
   } else {
-    serveStatic(app);
+    // Production: Serve static files from dist/public
+    app.use(express.static(path.join(process.cwd(), "dist", "public")));
+    
+    // Catch-all route to serve index.html for client-side routing
+    app.get("*", (_req, res) => {
+      res.sendFile(path.join(process.cwd(), "dist", "public", "index.html"));
+    });
   }
 
-  // ALWAYS serve the app on the port specified in the environment variable PORT
-  // Other ports are firewalled. Default to 5000 if not specified.
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
-  const port = parseInt(process.env.PORT || '5000', 10);
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
+  // Start server
+  const port = process.env.PORT ? Number(process.env.PORT) : 5000;
+  server.listen(port, "0.0.0.0", () => {
+    console.log(`Server running on port ${port}`);
   });
 })();
