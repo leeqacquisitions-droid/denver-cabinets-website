@@ -36,8 +36,8 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all ${
-        isScrolled ? "bg-white/80 dark:bg-background/80 backdrop-blur-md border-b" : "bg-white/70 dark:bg-background/70 backdrop-blur-sm"
+      className={`fixed top-0 z-50 w-full transition-all ${
+        isScrolled ? "bg-white/80 dark:bg-background/80 backdrop-blur-md border-b border-black/10" : "bg-white/70 dark:bg-background/70 backdrop-blur-sm border-b border-black/10"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 py-4">

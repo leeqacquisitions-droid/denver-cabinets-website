@@ -106,7 +106,7 @@ export function PortfolioSection() {
     : portfolioItems.filter(item => item.category === selectedCategory);
 
   return (
-    <section id="portfolio" className="py-20 lg:py-28">
+    <section id="portfolio" className="py-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl lg:text-5xl font-bold mb-4">Our Portfolio</h2>
@@ -135,7 +135,7 @@ export function PortfolioSection() {
           {filteredItems.map((item) => (
             <Card
               key={item.id}
-              className="overflow-hidden cursor-pointer group hover-elevate active-elevate-2"
+              className="overflow-hidden cursor-pointer group hover-elevate rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
               onClick={() => setLightboxImage(item)}
               data-testid={`portfolio-item-${item.id}`}
             >

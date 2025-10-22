@@ -71,16 +71,21 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Contact & Service Areas */}
           <div>
-            <h3 className="font-semibold mb-4">Services</h3>
+            <h3 className="font-semibold mb-4">Contact</h3>
             <ul className="space-y-2 text-primary-foreground/80">
-              <li>Cabinet Supplier</li>
-              <li>Cabinet Installer</li>
-              <li>Cabinet Refacing</li>
-              <li>Closet Systems</li>
-              <li>Interior Doors and Trim</li>
-              <li>Counter Tops</li>
+              <li>
+                <a href="tel:+17202242908" className="hover:text-primary-foreground transition-colors">
+                  (720) 224-2908
+                </a>
+              </li>
+              <li className="pt-2 font-semibold text-primary-foreground">Service Areas:</li>
+              <li>Denver</li>
+              <li>Southlands</li>
+              <li>Fort Collins</li>
+              <li>Broomfield</li>
+              <li className="text-sm">All Denver metro (30-60 min radius)</li>
             </ul>
           </div>
 

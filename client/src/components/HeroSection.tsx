@@ -15,7 +15,7 @@ export function HeroSection() {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+      <div className="absolute inset-0 bg-black/40" />
       
       <div className="relative min-h-[70vh] flex flex-col items-center justify-center text-center px-4 py-12">
         <div className="text-white max-w-4xl mx-auto">

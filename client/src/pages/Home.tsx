@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
+import { ServicesSection } from "@/components/ServicesSection";
 import { PopularStylesSection } from "@/components/PopularStylesSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { WhyChooseSection } from "@/components/WhyChooseSection";
@@ -8,23 +9,26 @@ import { ProcessSection } from "@/components/ProcessSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { AboutSection } from "@/components/AboutSection";
 import { FAQSection } from "@/components/FAQSection";
+import { CallNowSection } from "@/components/CallNowSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-[120px]">
       <Header />
       <main>
         <HeroSection />
+        <ServicesSection />
         <PopularStylesSection />
         <WhyChooseSection />
+        <PortfolioSection />
         <MaterialsSection />
         <ProcessSection />
         <TestimonialsSection />
         <AboutSection />
-        <PortfolioSection />
         <FAQSection />
+        <CallNowSection />
         <ContactSection />
       </main>
       <Footer />
