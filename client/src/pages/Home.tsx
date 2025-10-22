@@ -25,11 +25,11 @@ export default function Home() {
         <WhyChooseSection />
         <MaterialsSection />
         <ProcessSection />
-        <TestimonialsSection />
         <AboutSection />
         <PortfolioSection />
         <FAQSection />
         <CallNowSection />
+        <TestimonialsSection />
         <ContactSection />
       </main>
       <Footer />
