@@ -2,9 +2,11 @@
 
 ## Overview
 
-Estate Solutions is a professional cabinetry installation business serving the Denver metro area. This is a marketing and lead generation website built to showcase the company's portfolio, communicate services, and facilitate customer contact. The application features a single-page website with multiple sections (hero, portfolio gallery, materials showcase, process explanation, testimonials, FAQ, and contact form) along with an AI-powered chat assistant to answer customer questions.
+Estate Solutions is a professional cabinetry installation business serving the Denver metro area. This is a marketing and lead generation website built to showcase the company's portfolio, communicate services, and facilitate customer contact. The application features a single-page website with multiple sections (hero, portfolio gallery, materials showcase, process explanation, testimonials with gold star reviews, FAQ, and contact form with email notifications).
 
 The business specializes in professional assembly and installation of pre-manufactured cabinets (not custom cabinet building) for three main customer segments: general contractors, property managers, and homeowners.
+
+**Important Note:** The AI-powered chatbot has been removed per user request.
 
 ## User Preferences
 
@@ -50,7 +52,11 @@ Preferred communication style: Simple, everyday language.
 - ESM (ES Modules) for modern JavaScript module system
 
 **API Design:**
-- RESTful API endpoint for chat functionality (`POST /api/chat`)
+- RESTful API endpoints:
+  - `POST /api/chat` - AI chat assistant (available but not currently used on site)
+  - `POST /api/contact` - Contact form submission with email notifications
+- Email integration using Resend API
+- Emails sent to: josue@denvercabinets.net
 - AI integration using OpenAI-compatible API (via Replit's AI Integrations service)
 - GPT-5-mini model for cost-effective customer support
 
@@ -80,6 +86,13 @@ Preferred communication style: Simple, everyday language.
 - No separate OpenAI API key required (handled by Replit infrastructure)
 - GPT-5-mini model for chat assistant functionality
 - System prompts customized for Estate Solutions business context
+
+**Email Services:**
+- Resend API for transactional emails
+- API key stored securely in RESEND_API_KEY environment variable
+- Contact form submissions automatically sent to josue@denvercabinets.net
+- From address: "Estate Solutions Contact Form <onboarding@resend.dev>"
+- Email includes: customer name, email, phone, client type, project type, and message
 
 **Asset Management:**
 - Static images stored in `attached_assets` directory

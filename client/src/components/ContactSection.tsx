@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -16,11 +17,55 @@ export function ContactSection() {
     projectType: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thank you for your inquiry! We'll be in touch soon.");
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for contacting us. We'll be in touch soon!",
+        });
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          clientType: "",
+          projectType: "",
+          message: "",
+        });
+      } else {
+        toast({
+          variant: "destructive",
+          title: "Error",
+          description: data.error || "Failed to send message. Please try again or call us at (720) 224-2908.",
+        });
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Failed to send message. Please call us at (720) 224-2908 or email josue@denvercabinets.net.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -126,8 +171,8 @@ export function ContactSection() {
                 />
               </div>
 
-              <Button type="submit" className="w-full" data-testid="button-submit-contact">
-                Send Message
+              <Button type="submit" className="w-full" disabled={isSubmitting} data-testid="button-submit-contact">
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </Card>

@@ -2,6 +2,7 @@ import express, { type Request, Response, NextFunction } from "express";
 import path from "path";
 import { createServer } from "http";
 import OpenAI from "openai";
+import { Resend } from "resend";
 import { setupVite } from "./vite";
 
 const app = express();
@@ -13,6 +14,9 @@ const openai = new OpenAI({
   baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
   apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY
 });
+
+// Resend for email
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.post("/api/chat", async (req, res) => {
   try {
@@ -49,6 +53,70 @@ Be friendly, professional, and helpful. If asked about pricing, explain that we 
     console.error("Chat error:", error);
     res.status(500).json({ 
       message: "I apologize for the inconvenience. Please contact us directly at (720) 224-2908 or josue@denvercabinets.net." 
+    });
+  }
+});
+
+// Contact form endpoint
+app.post("/api/contact", async (req, res) => {
+  try {
+    const { name, email, phone, clientType, projectType, message } = req.body;
+
+    // Validate required fields
+    if (!name || !email || !message) {
+      return res.status(400).json({ 
+        error: "Missing required fields: name, email, and message are required." 
+      });
+    }
+
+    // Format client type and project type for display
+    const clientTypeLabels: Record<string, string> = {
+      "contractor": "General Contractor",
+      "property-manager": "Property Manager",
+      "homeowner": "Homeowner",
+      "other": "Other"
+    };
+
+    const projectTypeLabels: Record<string, string> = {
+      "new-construction": "New Construction",
+      "remodel": "Remodel/Renovation",
+      "multi-unit": "Multi-Unit Property",
+      "kitchen": "Kitchen",
+      "bathroom": "Bathroom",
+      "pantry": "Pantry",
+      "custom": "Custom Project"
+    };
+
+    // Send email using Resend
+    console.log("Attempting to send email to josue@denvercabinets.net");
+    const { data, error } = await resend.emails.send({
+      from: "Estate Solutions Contact Form <onboarding@resend.dev>",
+      to: ["josue@denvercabinets.net"],
+      replyTo: email,
+      subject: `New Contact Form Submission from ${name}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ""}
+        ${clientType ? `<p><strong>Client Type:</strong> ${clientTypeLabels[clientType] || clientType}</p>` : ""}
+        ${projectType ? `<p><strong>Project Type:</strong> ${projectTypeLabels[projectType] || projectType}</p>` : ""}
+        <p><strong>Message:</strong></p>
+        <p>${message.replace(/\n/g, '<br>')}</p>
+      `,
+    });
+
+    if (error) {
+      console.error("Resend error details:", JSON.stringify(error, null, 2));
+      return res.status(500).json({ error: "Failed to send email. Please try again or call us at (720) 224-2908." });
+    }
+
+    console.log("Email sent successfully:", data);
+    res.json({ success: true, message: "Email sent successfully!" });
+  } catch (error) {
+    console.error("Contact form error:", error);
+    res.status(500).json({ 
+      error: "Failed to send message. Please call us at (720) 224-2908 or email josue@denvercabinets.net directly." 
     });
   }
 });
