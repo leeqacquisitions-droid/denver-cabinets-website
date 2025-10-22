@@ -41,17 +41,18 @@ export function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center">
+          {/* Logo - Fixed left */}
           <button
             onClick={() => scrollToSection("home")}
-            className="hover-elevate active-elevate-2 px-2 py-1 rounded-md"
+            className="hover-elevate active-elevate-2 px-2 py-1 rounded-md flex-shrink-0"
             data-testid="link-home"
           >
             <img src={logoImage} alt="Estate Solutions" className="h-24 md:h-28 w-auto" />
           </button>
 
-          {/* Desktop Navigation - Centered with auto margins */}
-          <nav className="hidden md:flex items-center gap-1 mx-auto">
+          {/* Desktop Navigation - Centered using flex-grow */}
+          <nav className="hidden md:flex items-center justify-center gap-1 flex-grow">
             {navItems.slice(1).map((item) => (
               <Button
                 key={item.id}
@@ -65,7 +66,8 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2">
+          {/* Right side buttons - Fixed right */}
+          <div className="flex items-center gap-2 flex-shrink-0">
             <ThemeToggle />
             <Button
               onClick={() => scrollToSection("contact")}
