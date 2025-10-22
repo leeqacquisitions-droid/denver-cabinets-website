@@ -56,7 +56,7 @@ export function TestimonialsSection() {
             <Card key={testimonial.id} className="p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300" data-testid={`testimonial-${testimonial.id}`}>
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                  <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" />
                 ))}
               </div>
               <p className="text-lg mb-4 leading-relaxed">"{testimonial.text}"</p>
