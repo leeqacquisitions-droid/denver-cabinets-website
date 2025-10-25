@@ -22,11 +22,11 @@ export default function Home() {
         <HeroSection />
         <ServicesSection />
         <PopularStylesSection />
+        <PortfolioSection />
         <WhyChooseSection />
         <MaterialsSection />
         <ProcessSection />
         <AboutSection />
-        <PortfolioSection />
         <FAQSection />
         <CallNowSection />
         <TestimonialsSection />
