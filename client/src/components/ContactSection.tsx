@@ -202,7 +202,7 @@ export function ContactSection() {
             <img
               src={contactImg}
               alt="Estate Solutions Team"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-left"
             />
           </div>
         </div>
