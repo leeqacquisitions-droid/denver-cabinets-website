@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
@@ -113,18 +114,24 @@ export function ContactSection() {
   const isLastStep = step === questions.length - 1;
 
   return (
-    <section id="contact" className="py-0 bg-black text-white min-h-screen flex items-center">
-      <div className="w-full max-w-3xl mx-auto px-6">
-        <div className="min-h-screen flex items-center justify-center">
-          {/* Conversational Form */}
-          <div className="w-full py-16">
-            <div className="max-w-2xl mx-auto">
+    <section id="contact" className="py-16 bg-background">
+      <div className="w-full max-w-7xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <h2 className="font-heading text-3xl lg:text-5xl font-bold mb-4">Get a Quote</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Ready to transform your space? Let's discuss your cabinet project
+          </p>
+        </div>
+        
+        <div className="max-w-2xl mx-auto">
+          <Card className="bg-black text-white border-white/10 p-8 lg:p-12">
+            <div className="max-w-xl mx-auto">
               {currentQuestion.greeting && (
-                <p className="text-xl mb-2 text-white/80">{currentQuestion.greeting}</p>
+                <p className="text-lg mb-2 text-white/80">{currentQuestion.greeting}</p>
               )}
-              <h2 className="font-heading text-2xl lg:text-4xl font-bold mb-8">
+              <h3 className="font-heading text-2xl lg:text-3xl font-bold mb-6">
                 {currentQuestion.question}
-              </h2>
+              </h3>
 
               <div className="space-y-4">
                 {currentQuestion.type === "textarea" ? (
@@ -134,7 +141,7 @@ export function ContactSection() {
                       setFormData({ ...formData, [currentQuestion.field]: e.target.value })
                     }
                     placeholder={currentQuestion.placeholder}
-                    className="bg-transparent border-0 border-b border-white/30 rounded-none text-white placeholder:text-white/50 text-lg focus-visible:ring-0 focus-visible:border-cyan-500 resize-none"
+                    className="bg-transparent border-0 border-b border-white/30 rounded-none text-white placeholder:text-white/50 text-base focus-visible:ring-0 focus-visible:border-cyan-500 resize-none"
                     rows={3}
                     data-testid={`input-${currentQuestion.field}`}
                   />
@@ -146,7 +153,7 @@ export function ContactSection() {
                       setFormData({ ...formData, [currentQuestion.field]: e.target.value })
                     }
                     placeholder={currentQuestion.placeholder}
-                    className="bg-transparent border-0 border-b border-white/30 rounded-none text-white placeholder:text-white/50 text-lg focus-visible:ring-0 focus-visible:border-cyan-500 h-12"
+                    className="bg-transparent border-0 border-b border-white/30 rounded-none text-white placeholder:text-white/50 text-base focus-visible:ring-0 focus-visible:border-cyan-500 h-12"
                     data-testid={`input-${currentQuestion.field}`}
                   />
                 )}
@@ -155,7 +162,7 @@ export function ContactSection() {
                   <Button
                     onClick={handleSubmit}
                     disabled={isSubmitting || !formData[currentQuestion.field]}
-                    className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-6 text-lg font-semibold rounded-md"
+                    className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-5 text-base font-semibold rounded-md"
                     data-testid="button-submit-contact"
                   >
                     {isSubmitting ? "Sending..." : "Submit"}
@@ -164,7 +171,7 @@ export function ContactSection() {
                   <Button
                     onClick={handleNext}
                     disabled={!formData[currentQuestion.field]}
-                    className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-6 text-lg font-semibold rounded-md"
+                    className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-5 text-base font-semibold rounded-md"
                     data-testid="button-next"
                   >
                     OK
@@ -174,7 +181,7 @@ export function ContactSection() {
                 {step > 0 && (
                   <button
                     onClick={() => setStep(step - 1)}
-                    className="text-white/60 hover:text-white ml-4"
+                    className="text-white/60 hover:text-white ml-4 text-sm"
                     data-testid="button-back"
                   >
                     ← Back
@@ -183,7 +190,7 @@ export function ContactSection() {
               </div>
 
               {/* Progress indicator */}
-              <div className="flex gap-2 mt-8">
+              <div className="flex gap-2 mt-6">
                 {questions.map((_, index) => (
                   <div
                     key={index}
@@ -194,7 +201,7 @@ export function ContactSection() {
                 ))}
               </div>
             </div>
-          </div>
+          </Card>
         </div>
       </div>
     </section>
