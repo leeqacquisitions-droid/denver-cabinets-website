@@ -88,10 +88,14 @@ export function AboutSection() {
         <Card className="overflow-hidden p-0">
           <div className="relative aspect-[4/3] overflow-hidden">
             <img src={truckImg} alt="Estate Solutions service vehicle" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-              <img src={logoImg} alt="Estate Solutions" className="h-20 sm:h-24 md:h-32 w-auto mb-4 opacity-80 drop-shadow-2xl" />
-              <div className="bg-black/60 backdrop-blur-sm px-6 py-3 rounded-lg">
-                <p className="font-heading text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">
+            {/* Watermark logo covering entire image */}
+            <div className="absolute inset-0 flex items-center justify-center p-8">
+              <img src={logoImg} alt="Estate Solutions" className="w-full h-full object-contain opacity-10" />
+            </div>
+            {/* Slogan at bottom */}
+            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+              <div className="bg-black/70 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-lg mx-auto max-w-4xl">
+                <p className="font-heading text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white text-center">
                   We do custom cabinets but not custom
                 </p>
               </div>
