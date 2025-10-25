@@ -45,7 +45,7 @@ export function TestimonialsSection() {
           </p>
         </div>
 
-        <div className="mb-12">
+        <div className="mb-12 max-w-3xl mx-auto">
           <Card className="overflow-hidden p-0">
             <div className="relative aspect-[4/3] overflow-hidden">
               <img src={reviewImg} alt="Happy clients with Estate Solutions team" className="w-full h-full object-cover" />
