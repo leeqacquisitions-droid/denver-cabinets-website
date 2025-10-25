@@ -88,9 +88,9 @@ export function AboutSection() {
         <Card className="overflow-hidden p-0">
           <div className="relative aspect-[4/3] overflow-hidden">
             <img src={truckImg} alt="Estate Solutions service vehicle" className="w-full h-full object-cover" />
-            {/* Watermark logo covering entire image */}
-            <div className="absolute inset-0 flex items-center justify-center p-8">
-              <img src={logoImg} alt="Estate Solutions" className="w-full h-full object-contain opacity-10" />
+            {/* Corner watermark logo */}
+            <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+              <img src={logoImg} alt="Estate Solutions" className="h-16 sm:h-20 md:h-24 w-auto opacity-70 drop-shadow-lg" />
             </div>
             {/* Slogan at bottom */}
             <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
