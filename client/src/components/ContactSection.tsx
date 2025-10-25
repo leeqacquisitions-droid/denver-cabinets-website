@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import contactImg from "@assets/estate solution back face_1760721713621.jpg";
 
 export function ContactSection() {
   const [step, setStep] = useState(0);
@@ -115,11 +114,11 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="py-0 bg-black text-white min-h-screen flex items-center">
-      <div className="w-full max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 min-h-screen">
-          {/* Left side - Conversational Form */}
-          <div className="flex flex-col justify-center p-8 lg:p-16">
-            <div className="max-w-xl">
+      <div className="w-full max-w-3xl mx-auto px-6">
+        <div className="min-h-screen flex items-center justify-center">
+          {/* Conversational Form */}
+          <div className="w-full py-16">
+            <div className="max-w-2xl mx-auto">
               {currentQuestion.greeting && (
                 <p className="text-xl mb-2 text-white/80">{currentQuestion.greeting}</p>
               )}
@@ -195,15 +194,6 @@ export function ContactSection() {
                 ))}
               </div>
             </div>
-          </div>
-
-          {/* Right side - Image */}
-          <div className="hidden lg:block relative">
-            <img
-              src={contactImg}
-              alt="Estate Solutions Team"
-              className="w-full h-full object-cover object-left"
-            />
           </div>
         </div>
       </div>
