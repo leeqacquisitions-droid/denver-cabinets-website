@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import contactImg from "@assets/IMG_2996_1761417416042.png";
+import contactImg from "@assets/estate solution back face_1760721713621.jpg";
 
 export function ContactSection() {
   const [step, setStep] = useState(0);
