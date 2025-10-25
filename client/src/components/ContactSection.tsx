@@ -1,14 +1,12 @@
 import { useState } from "react";
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import contactImg from "@assets/IMG_2996_1761417416042.png";
 
 export function ContactSection() {
+  const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,8 +18,11 @@ export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleNext = () => {
+    setStep(step + 1);
+  };
+
+  const handleSubmit = async () => {
     setIsSubmitting(true);
 
     try {
@@ -38,7 +39,7 @@ export function ContactSection() {
       if (response.ok) {
         toast({
           title: "Message Sent!",
-          description: "Thank you for contacting us. We'll be in touch soon!",
+          description: "Thank you! We'll be in touch soon.",
         });
         // Reset form
         setFormData({
@@ -49,11 +50,12 @@ export function ContactSection() {
           projectType: "",
           message: "",
         });
+        setStep(0);
       } else {
         toast({
           variant: "destructive",
           title: "Error",
-          description: data.error || "Failed to send message. Please try again or call us at (720) 224-2908.",
+          description: data.error || "Failed to send. Please call us at (720) 224-2908.",
         });
       }
     } catch (error) {
@@ -61,172 +63,147 @@ export function ContactSection() {
       toast({
         variant: "destructive",
         title: "Error",
-        description: "Failed to send message. Please call us at (720) 224-2908 or email josue@denvercabinets.net.",
+        description: "Failed to send. Please call (720) 224-2908.",
       });
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  const questions = [
+    {
+      greeting: "👋 Hi! We're Estate Solutions,",
+      question: "What's Your Name?",
+      placeholder: "Type your answer here...",
+      field: "name" as keyof typeof formData,
+      type: "text",
+    },
+    {
+      question: "Great! What's your email?",
+      placeholder: "your.email@example.com",
+      field: "email" as keyof typeof formData,
+      type: "email",
+    },
+    {
+      question: "And your phone number?",
+      placeholder: "(720) 555-1234",
+      field: "phone" as keyof typeof formData,
+      type: "tel",
+    },
+    {
+      question: "Are you a contractor, property manager, or homeowner?",
+      placeholder: "e.g., General Contractor, Homeowner, etc.",
+      field: "clientType" as keyof typeof formData,
+      type: "text",
+    },
+    {
+      question: "What type of project are you working on?",
+      placeholder: "e.g., Kitchen remodel, New construction, etc.",
+      field: "projectType" as keyof typeof formData,
+      type: "text",
+    },
+    {
+      question: "Tell us a bit about your project",
+      placeholder: "Type your project details here...",
+      field: "message" as keyof typeof formData,
+      type: "textarea",
+    },
+  ];
+
+  const currentQuestion = questions[step];
+  const isLastStep = step === questions.length - 1;
+
   return (
-    <section id="contact" className="py-16 bg-card">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl lg:text-5xl font-bold mb-4">Get In Touch</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Contractors, property managers, and homeowners - contact us for a free consultation
-          </p>
-        </div>
+    <section id="contact" className="py-0 bg-black text-white min-h-screen flex items-center">
+      <div className="w-full max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 min-h-screen">
+          {/* Left side - Conversational Form */}
+          <div className="flex flex-col justify-center p-8 lg:p-16">
+            <div className="max-w-xl">
+              {currentQuestion.greeting && (
+                <p className="text-xl mb-2 text-white/80">{currentQuestion.greeting}</p>
+              )}
+              <h2 className="font-heading text-2xl lg:text-4xl font-bold mb-8">
+                {currentQuestion.question}
+              </h2>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <Card className="p-6 lg:p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <Label htmlFor="name">Name / Company Name</Label>
-                <Input
-                  id="name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="Your name or company"
-                  required
-                  data-testid="input-name"
-                />
+              <div className="space-y-4">
+                {currentQuestion.type === "textarea" ? (
+                  <Textarea
+                    value={formData[currentQuestion.field]}
+                    onChange={(e) =>
+                      setFormData({ ...formData, [currentQuestion.field]: e.target.value })
+                    }
+                    placeholder={currentQuestion.placeholder}
+                    className="bg-transparent border-0 border-b border-white/30 rounded-none text-white placeholder:text-white/50 text-lg focus-visible:ring-0 focus-visible:border-cyan-500 resize-none"
+                    rows={3}
+                    data-testid={`input-${currentQuestion.field}`}
+                  />
+                ) : (
+                  <Input
+                    type={currentQuestion.type}
+                    value={formData[currentQuestion.field]}
+                    onChange={(e) =>
+                      setFormData({ ...formData, [currentQuestion.field]: e.target.value })
+                    }
+                    placeholder={currentQuestion.placeholder}
+                    className="bg-transparent border-0 border-b border-white/30 rounded-none text-white placeholder:text-white/50 text-lg focus-visible:ring-0 focus-visible:border-cyan-500 h-12"
+                    data-testid={`input-${currentQuestion.field}`}
+                  />
+                )}
+
+                {isLastStep ? (
+                  <Button
+                    onClick={handleSubmit}
+                    disabled={isSubmitting || !formData[currentQuestion.field]}
+                    className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-6 text-lg font-semibold rounded-md"
+                    data-testid="button-submit-contact"
+                  >
+                    {isSubmitting ? "Sending..." : "Submit"}
+                  </Button>
+                ) : (
+                  <Button
+                    onClick={handleNext}
+                    disabled={!formData[currentQuestion.field]}
+                    className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-6 text-lg font-semibold rounded-md"
+                    data-testid="button-next"
+                  >
+                    OK
+                  </Button>
+                )}
+
+                {step > 0 && (
+                  <button
+                    onClick={() => setStep(step - 1)}
+                    className="text-white/60 hover:text-white ml-4"
+                    data-testid="button-back"
+                  >
+                    ← Back
+                  </button>
+                )}
               </div>
 
-              <div>
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="your.email@example.com"
-                  required
-                  data-testid="input-email"
-                />
+              {/* Progress indicator */}
+              <div className="flex gap-2 mt-8">
+                {questions.map((_, index) => (
+                  <div
+                    key={index}
+                    className={`h-1 flex-1 rounded ${
+                      index <= step ? "bg-cyan-500" : "bg-white/20"
+                    }`}
+                  />
+                ))}
               </div>
+            </div>
+          </div>
 
-              <div>
-                <Label htmlFor="phone">Phone</Label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  placeholder="(555) 123-4567"
-                  data-testid="input-phone"
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="clientType">I am a...</Label>
-                <Select
-                  value={formData.clientType}
-                  onValueChange={(value) => setFormData({ ...formData, clientType: value })}
-                >
-                  <SelectTrigger id="clientType" data-testid="select-client-type">
-                    <SelectValue placeholder="Select client type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="contractor">General Contractor</SelectItem>
-                    <SelectItem value="property-manager">Property Manager</SelectItem>
-                    <SelectItem value="homeowner">Homeowner</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div>
-                <Label htmlFor="projectType">Project Type</Label>
-                <Select
-                  value={formData.projectType}
-                  onValueChange={(value) => setFormData({ ...formData, projectType: value })}
-                >
-                  <SelectTrigger id="projectType" data-testid="select-project-type">
-                    <SelectValue placeholder="Select project type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="new-construction">New Construction</SelectItem>
-                    <SelectItem value="remodel">Remodel/Renovation</SelectItem>
-                    <SelectItem value="multi-unit">Multi-Unit Property</SelectItem>
-                    <SelectItem value="kitchen">Kitchen</SelectItem>
-                    <SelectItem value="bathroom">Bathroom</SelectItem>
-                    <SelectItem value="pantry">Pantry</SelectItem>
-                    <SelectItem value="custom">Custom Project</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div>
-                <Label htmlFor="message">Project Details</Label>
-                <Textarea
-                  id="message"
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Tell us about your project..."
-                  rows={5}
-                  required
-                  data-testid="input-message"
-                />
-              </div>
-
-              <Button type="submit" className="w-full" disabled={isSubmitting} data-testid="button-submit-contact">
-                {isSubmitting ? "Sending..." : "Send Message"}
-              </Button>
-            </form>
-          </Card>
-
-          {/* Contact Information */}
-          <div className="space-y-6">
-            <Card className="p-6">
-              <div className="flex items-start gap-4">
-                <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-semibold mb-2">Service Area</h3>
-                  <p className="text-muted-foreground">Denver Metro Area, Colorado</p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6">
-              <div className="flex items-start gap-4">
-                <Phone className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-semibold mb-2">Phone</h3>
-                  <p className="text-muted-foreground">(720) 224-2908</p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6">
-              <div className="flex items-start gap-4">
-                <Mail className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-semibold mb-2">Email</h3>
-                  <p className="text-muted-foreground">josue@denvercabinets.net</p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6">
-              <div className="flex items-start gap-4">
-                <Clock className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-semibold mb-2">Business Hours</h3>
-                  <p className="text-muted-foreground">
-                    Monday - Friday: 8:00 AM - 5:00 PM
-                  </p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6 bg-primary text-primary-foreground">
-              <h3 className="font-semibold text-lg mb-2">Trusted by Contractors & Homeowners</h3>
-              <p className="text-primary-foreground/90">
-                Serving new construction, remodels, multi-unit properties, and residential renovations throughout the Denver metro area
-              </p>
-            </Card>
+          {/* Right side - Image */}
+          <div className="hidden lg:block relative">
+            <img
+              src={contactImg}
+              alt="Estate Solutions Team"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>
