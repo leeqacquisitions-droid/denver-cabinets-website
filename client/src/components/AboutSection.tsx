@@ -85,23 +85,25 @@ export function AboutSection() {
           </div>
         </div>
 
-        <Card className="overflow-hidden p-0">
-          <div className="relative aspect-[4/3] overflow-hidden">
-            <img src={truckImg} alt="Estate Solutions service vehicle" className="w-full h-full object-cover" />
-            {/* Corner watermark logo */}
-            <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-              <img src={logoImg} alt="Estate Solutions" className="h-16 sm:h-20 md:h-24 w-auto opacity-70 drop-shadow-lg rounded-lg" />
-            </div>
-            {/* Slogan at bottom */}
-            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
-              <div className="bg-black/70 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-lg mx-auto max-w-4xl">
-                <p className="font-heading text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white text-center">
-                  We do custom cabinets but not custom
-                </p>
+        <div className="max-w-3xl mx-auto">
+          <Card className="overflow-hidden p-0">
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <img src={truckImg} alt="Estate Solutions service vehicle" className="w-full h-full object-cover" />
+              {/* Corner watermark logo */}
+              <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                <img src={logoImg} alt="Estate Solutions" className="h-16 sm:h-20 md:h-24 w-auto opacity-70 drop-shadow-lg rounded-lg" />
+              </div>
+              {/* Slogan at bottom */}
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                <div className="bg-black/70 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-lg mx-auto max-w-4xl">
+                  <p className="font-heading text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white text-center">
+                    We do custom cabinets but not custom
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        </Card>
+          </Card>
+        </div>
       </div>
     </section>
   );
