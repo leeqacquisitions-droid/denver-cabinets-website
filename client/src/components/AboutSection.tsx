@@ -88,11 +88,13 @@ export function AboutSection() {
         <Card className="overflow-hidden p-0">
           <div className="relative aspect-[4/3] overflow-hidden">
             <img src={truckImg} alt="Estate Solutions service vehicle" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center p-8 text-center">
-              <img src={logoImg} alt="Estate Solutions" className="h-24 sm:h-32 md:h-40 w-auto mb-6 drop-shadow-2xl" />
-              <p className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg max-w-3xl">
-                We do custom cabinets but not custom
-              </p>
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+              <img src={logoImg} alt="Estate Solutions" className="h-20 sm:h-24 md:h-32 w-auto mb-4 opacity-80 drop-shadow-2xl" />
+              <div className="bg-black/60 backdrop-blur-sm px-6 py-3 rounded-lg">
+                <p className="font-heading text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">
+                  We do custom cabinets but not custom
+                </p>
+              </div>
             </div>
           </div>
         </Card>
