@@ -30,7 +30,9 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <Card className="overflow-hidden p-0">
-              <img src={ceoImg} alt="Estate Solutions team" className="w-full h-auto" />
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img src={ceoImg} alt="Estate Solutions team" className="w-full h-full object-cover" />
+              </div>
             </Card>
           </div>
 
@@ -83,7 +85,9 @@ export function AboutSection() {
         </div>
 
         <Card className="overflow-hidden p-0">
-          <img src={truckImg} alt="Estate Solutions service vehicle" className="w-full h-auto" />
+          <div className="relative aspect-[4/3] overflow-hidden">
+            <img src={truckImg} alt="Estate Solutions service vehicle" className="w-full h-full object-cover" />
+          </div>
         </Card>
       </div>
     </section>
