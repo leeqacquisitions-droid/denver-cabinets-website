@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 import { X } from "lucide-react";
 
 // Import all portfolio images
@@ -101,6 +104,17 @@ export function PortfolioSection() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [lightboxImage, setLightboxImage] = useState<typeof portfolioItems[0] | null>(null);
   const [showAll, setShowAll] = useState(false);
+  
+  // Compact contact form state
+  const [step, setStep] = useState(0);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const filteredItems = selectedCategory === "All" 
     ? portfolioItems 
@@ -108,6 +122,90 @@ export function PortfolioSection() {
 
   const displayedItems = showAll ? filteredItems : filteredItems.slice(0, 9);
   const hasMoreItems = filteredItems.length > 9;
+  
+  const handleNext = () => {
+    setStep(step + 1);
+  };
+
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          clientType: "Portfolio Form",
+          projectType: "Quick Contact"
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you! We'll be in touch soon.",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+        setStep(0);
+      } else {
+        toast({
+          variant: "destructive",
+          title: "Error",
+          description: data.error || "Failed to send. Please call us at (720) 224-2908.",
+        });
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Failed to send. Please call (720) 224-2908.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const questions = [
+    {
+      greeting: "👋 Inspired by our work?",
+      question: "What's Your Name?",
+      placeholder: "Type your answer here...",
+      field: "name" as keyof typeof formData,
+      type: "text",
+    },
+    {
+      question: "Great! What's your email?",
+      placeholder: "your.email@example.com",
+      field: "email" as keyof typeof formData,
+      type: "email",
+    },
+    {
+      question: "And your phone number?",
+      placeholder: "(720) 555-1234",
+      field: "phone" as keyof typeof formData,
+      type: "tel",
+    },
+    {
+      question: "Tell us about your project",
+      placeholder: "Type your project details here...",
+      field: "message" as keyof typeof formData,
+      type: "textarea",
+    },
+  ];
+
+  const currentQuestion = questions[step];
+  const isLastStep = step === questions.length - 1;
 
   return (
     <section id="portfolio" className="py-16">
@@ -206,6 +304,88 @@ export function PortfolioSection() {
             </div>
           </div>
         )}
+
+        {/* Compact Contact Form */}
+        <div className="mt-16 max-w-2xl mx-auto">
+          <Card className="bg-black text-white border-white/10 p-8 lg:p-12">
+            <div className="max-w-xl mx-auto">
+              {currentQuestion.greeting && (
+                <p className="text-lg mb-2 text-white/80">{currentQuestion.greeting}</p>
+              )}
+              <h3 className="font-heading text-2xl lg:text-3xl font-bold mb-6">
+                {currentQuestion.question}
+              </h3>
+
+              <div className="space-y-4">
+                {currentQuestion.type === "textarea" ? (
+                  <Textarea
+                    value={formData[currentQuestion.field]}
+                    onChange={(e) =>
+                      setFormData({ ...formData, [currentQuestion.field]: e.target.value })
+                    }
+                    placeholder={currentQuestion.placeholder}
+                    className="bg-transparent border-0 border-b border-white/30 rounded-none text-white placeholder:text-white/50 text-base focus-visible:ring-0 focus-visible:border-cyan-500 resize-none"
+                    rows={3}
+                    data-testid={`input-portfolio-${currentQuestion.field}`}
+                  />
+                ) : (
+                  <Input
+                    type={currentQuestion.type}
+                    value={formData[currentQuestion.field]}
+                    onChange={(e) =>
+                      setFormData({ ...formData, [currentQuestion.field]: e.target.value })
+                    }
+                    placeholder={currentQuestion.placeholder}
+                    className="bg-transparent border-0 border-b border-white/30 rounded-none text-white placeholder:text-white/50 text-base focus-visible:ring-0 focus-visible:border-cyan-500 h-12"
+                    data-testid={`input-portfolio-${currentQuestion.field}`}
+                  />
+                )}
+
+                {isLastStep ? (
+                  <Button
+                    onClick={handleSubmit}
+                    disabled={isSubmitting || !formData[currentQuestion.field]}
+                    className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-5 text-base font-semibold rounded-md"
+                    data-testid="button-submit-portfolio-contact"
+                  >
+                    {isSubmitting ? "Sending..." : "Submit"}
+                  </Button>
+                ) : (
+                  <Button
+                    onClick={handleNext}
+                    disabled={!formData[currentQuestion.field]}
+                    className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-5 text-base font-semibold rounded-md"
+                    data-testid="button-portfolio-next"
+                  >
+                    OK
+                  </Button>
+                )}
+
+                {step > 0 && (
+                  <button
+                    onClick={() => setStep(step - 1)}
+                    className="text-white/60 hover:text-white ml-4 text-sm"
+                    data-testid="button-portfolio-back"
+                  >
+                    ← Back
+                  </button>
+                )}
+              </div>
+
+              {/* Progress indicator */}
+              <div className="flex gap-2 mt-6">
+                {questions.map((_, index) => (
+                  <div
+                    key={index}
+                    className={`h-1 flex-1 rounded ${
+                      index <= step ? "bg-cyan-500" : "bg-white/20"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          </Card>
+        </div>
       </div>
     </section>
   );
