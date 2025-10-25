@@ -45,10 +45,11 @@ export function Header() {
           {/* Logo - Fixed left */}
           <button
             onClick={() => scrollToSection("home")}
-            className="hover-elevate active-elevate-2 px-2 py-1 rounded-md flex-shrink-0"
+            className="hover-elevate active-elevate-2 px-2 py-1 rounded-md flex-shrink-0 flex items-center gap-3"
             data-testid="link-home"
           >
             <img src={logoImage} alt="Estate Solutions" className="h-24 md:h-28 w-auto rounded-lg" />
+            <span className="font-heading text-xl md:text-2xl font-bold">Estate Solutions</span>
           </button>
 
           {/* Desktop Navigation - Centered */}
