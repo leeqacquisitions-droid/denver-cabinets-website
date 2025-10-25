@@ -90,7 +90,7 @@ export function AboutSection() {
             <img src={truckImg} alt="Estate Solutions service vehicle" className="w-full h-full object-cover" />
             {/* Corner watermark logo */}
             <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-              <img src={logoImg} alt="Estate Solutions" className="h-16 sm:h-20 md:h-24 w-auto opacity-70 drop-shadow-lg" />
+              <img src={logoImg} alt="Estate Solutions" className="h-16 sm:h-20 md:h-24 w-auto opacity-70 drop-shadow-lg rounded-lg" />
             </div>
             {/* Slogan at bottom */}
             <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">

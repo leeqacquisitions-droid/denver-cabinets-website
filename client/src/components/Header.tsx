@@ -48,7 +48,7 @@ export function Header() {
             className="hover-elevate active-elevate-2 px-2 py-1 rounded-md flex-shrink-0"
             data-testid="link-home"
           >
-            <img src={logoImage} alt="Estate Solutions" className="h-24 md:h-28 w-auto" />
+            <img src={logoImage} alt="Estate Solutions" className="h-24 md:h-28 w-auto rounded-lg" />
           </button>
 
           {/* Desktop Navigation - Centered */}
