@@ -100,10 +100,14 @@ const categories = ["All", "Kitchens", "Bathrooms", "Pantries"];
 export function PortfolioSection() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [lightboxImage, setLightboxImage] = useState<typeof portfolioItems[0] | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
   const filteredItems = selectedCategory === "All" 
     ? portfolioItems 
     : portfolioItems.filter(item => item.category === selectedCategory);
+
+  const displayedItems = showAll ? filteredItems : filteredItems.slice(0, 9);
+  const hasMoreItems = filteredItems.length > 9;
 
   return (
     <section id="portfolio" className="py-16">
@@ -121,7 +125,10 @@ export function PortfolioSection() {
             <Button
               key={category}
               variant={selectedCategory === category ? "default" : "outline"}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => {
+                setSelectedCategory(category);
+                setShowAll(false);
+              }}
               data-testid={`filter-${category.toLowerCase().replace(/\s+/g, '-')}`}
               className="hover-elevate active-elevate-2"
             >
@@ -132,7 +139,7 @@ export function PortfolioSection() {
 
         {/* Portfolio Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredItems.map((item) => (
+          {displayedItems.map((item) => (
             <Card
               key={item.id}
               className="overflow-hidden cursor-pointer group hover-elevate rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
@@ -152,6 +159,21 @@ export function PortfolioSection() {
             </Card>
           ))}
         </div>
+
+        {/* Show More/Less Button */}
+        {hasMoreItems && (
+          <div className="text-center mt-8">
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => setShowAll(!showAll)}
+              data-testid="button-show-more"
+              className="hover-elevate active-elevate-2 min-h-12"
+            >
+              {showAll ? "Show Less" : `Show More (${filteredItems.length - 9} more)`}
+            </Button>
+          </div>
+        )}
 
         {/* Lightbox */}
         {lightboxImage && (
