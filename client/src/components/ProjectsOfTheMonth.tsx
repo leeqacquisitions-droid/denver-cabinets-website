@@ -16,24 +16,32 @@ const projects = [
     description: "Custom cabinets flanking fireplace with integrated lighting",
     before: before1,
     after: after1,
+    beforeAlt: "Before custom living room cabinets installation Denver metro area",
+    afterAlt: "After professional entertainment center cabinet installation with integrated lighting Denver",
   },
   {
     title: "Mudroom Organization System",
     description: "Built-in storage solution for entryway organization",
     before: null,
     after: after2,
+    beforeAlt: "",
+    afterAlt: "Professional mudroom cabinet organization system installation Denver Colorado",
   },
   {
     title: "Water Damage Kitchen Restoration",
     description: "Complete cabinet restoration after water damage",
     before: before3,
     after: after3,
+    beforeAlt: "Before water damaged kitchen cabinets Aurora Colorado repair",
+    afterAlt: "After water damage kitchen cabinet restoration and installation Denver metro",
   },
   {
     title: "Happy Cones Ice Cream Shop",
     description: "Custom cabinet installation for retail refrigeration",
     before: before4,
     after: after4,
+    beforeAlt: "Before commercial cabinet installation ice cream shop Denver",
+    afterAlt: "After commercial refrigeration cabinet installation Happy Cones Denver Colorado",
   }
 ];
 
@@ -131,13 +139,13 @@ export function ProjectsOfTheMonth() {
                     <>
                       <img
                         src={project.before!}
-                        alt=""
+                        alt={project.beforeAlt}
                         className="hidden"
                         loading="eager"
                       />
                       <img
                         src={project.after}
-                        alt=""
+                        alt={project.afterAlt}
                         className="hidden"
                         loading="eager"
                       />
@@ -146,7 +154,7 @@ export function ProjectsOfTheMonth() {
                   
                   <img
                     src={hasBefore && currentlyShowingBefore ? project.before : project.after}
-                    alt={`${project.title}${hasBefore && currentlyShowingBefore ? " - Before" : " - After"}`}
+                    alt={hasBefore && currentlyShowingBefore ? project.beforeAlt : project.afterAlt}
                     className="w-full h-full object-cover transition-opacity duration-200 group-hover:scale-105 transition-transform cursor-pointer"
                     data-testid={`img-project-${index}`}
                     onClick={() => openLightbox(
