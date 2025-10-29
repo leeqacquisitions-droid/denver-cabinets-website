@@ -9,6 +9,8 @@ import before3 from "@assets/IMG_3049_1761701315198.jpg";
 import after3 from "@assets/IMG_3052_1761701348687.jpg";
 import before4 from "@assets/IMG_2974_1761702593125.jpg";
 import after4 from "@assets/IMG_2985_1761702608837.jpg";
+import before5 from "@assets/IMG_3065_1761766571579.jpeg";
+import after5 from "@assets/IMG_3067_1761766690867.jpeg";
 
 const projects = [
   {
@@ -42,6 +44,14 @@ const projects = [
     after: after4,
     beforeAlt: "Before commercial cabinet installation ice cream shop Denver",
     afterAlt: "After commercial refrigeration cabinet installation Happy Cones Denver Colorado",
+  },
+  {
+    title: "Kitchen Cabinet Installation",
+    description: "Complete kitchen transformation with modern cabinets",
+    before: before5,
+    after: after5,
+    beforeAlt: "Before kitchen cabinet installation Denver metro area",
+    afterAlt: "After professional kitchen cabinet installation Denver Colorado",
   }
 ];
 
@@ -50,7 +60,8 @@ export function ProjectsOfTheMonth() {
     0: false,
     1: false,
     2: false,
-    3: false
+    3: false,
+    4: false
   });
   const [lightboxImage, setLightboxImage] = useState<{ src: string; title: string; type: string } | null>(null);
 
@@ -102,7 +113,7 @@ export function ProjectsOfTheMonth() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 mb-12">
           {projects.map((project, index) => {
             const hasBefore = project.before !== null;
             const currentlyShowingBefore = showBefore[index];
