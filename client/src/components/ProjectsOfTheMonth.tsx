@@ -176,25 +176,31 @@ export function ProjectsOfTheMonth() {
       {/* Lightbox Modal */}
       {lightboxImage && (
         <div 
-          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 cursor-pointer"
           onClick={() => setLightboxImage(null)}
           data-testid="lightbox-overlay"
         >
+          {/* Large Close Button */}
           <Button
-            variant="ghost"
-            size="icon"
-            className="absolute top-4 right-4 text-white hover:bg-white/20"
+            variant="default"
+            size="lg"
+            className="absolute top-6 right-6 shadow-2xl text-lg h-14 w-14 rounded-full"
             onClick={() => setLightboxImage(null)}
             data-testid="button-close-lightbox"
           >
-            <X className="h-6 w-6" />
+            <X className="h-8 w-8" />
           </Button>
-          <div className="max-w-7xl max-h-[90vh] flex flex-col items-center">
+          
+          {/* Tap to Close Hint */}
+          <div className="absolute top-6 left-6 text-white/80 text-sm bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm">
+            Tap anywhere to close
+          </div>
+
+          <div className="max-w-7xl max-h-[90vh] flex flex-col items-center pointer-events-none">
             <img
               src={lightboxImage.src}
               alt={`${lightboxImage.title} - ${lightboxImage.type}`}
               className="max-w-full max-h-[80vh] object-contain"
-              onClick={(e) => e.stopPropagation()}
               data-testid="lightbox-image"
             />
             <div className="mt-4 text-center">
