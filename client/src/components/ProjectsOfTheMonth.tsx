@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { X } from "lucide-react";
 import before1 from "@assets/IMG_2951 2_1761700443565.jpg";
 import after1 from "@assets/IMG_3037_1761700500526.jpg";
 import after2 from "@assets/IMG_3038_1761700532373.jpg";
@@ -51,9 +52,14 @@ export function ProjectsOfTheMonth() {
     3: false,
     4: false
   });
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; title: string; type: string } | null>(null);
 
   const toggleBeforeAfter = (index: number) => {
     setShowBefore(prev => ({ ...prev, [index]: !prev[index] }));
+  };
+
+  const openLightbox = (src: string, title: string, type: string) => {
+    setLightboxImage({ src, title, type });
   };
 
   return (
@@ -126,8 +132,13 @@ export function ProjectsOfTheMonth() {
                   <img
                     src={hasBefore && currentlyShowingBefore ? project.before : project.after}
                     alt={`${project.title}${hasBefore && currentlyShowingBefore ? " - Before" : " - After"}`}
-                    className="w-full h-full object-cover transition-opacity duration-200 group-hover:scale-105 transition-transform"
+                    className="w-full h-full object-cover transition-opacity duration-200 group-hover:scale-105 transition-transform cursor-pointer"
                     data-testid={`img-project-${index}`}
+                    onClick={() => openLightbox(
+                      hasBefore && currentlyShowingBefore ? project.before! : project.after,
+                      project.title,
+                      hasBefore && currentlyShowingBefore ? "Before" : "After"
+                    )}
                   />
                 </div>
 
@@ -161,6 +172,40 @@ export function ProjectsOfTheMonth() {
           </div>
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {lightboxImage && (
+        <div 
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+          onClick={() => setLightboxImage(null)}
+          data-testid="lightbox-overlay"
+        >
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute top-4 right-4 text-white hover:bg-white/20"
+            onClick={() => setLightboxImage(null)}
+            data-testid="button-close-lightbox"
+          >
+            <X className="h-6 w-6" />
+          </Button>
+          <div className="max-w-7xl max-h-[90vh] flex flex-col items-center">
+            <img
+              src={lightboxImage.src}
+              alt={`${lightboxImage.title} - ${lightboxImage.type}`}
+              className="max-w-full max-h-[80vh] object-contain"
+              onClick={(e) => e.stopPropagation()}
+              data-testid="lightbox-image"
+            />
+            <div className="mt-4 text-center">
+              <h3 className="text-white text-2xl font-heading font-bold mb-1">
+                {lightboxImage.title}
+              </h3>
+              <p className="text-white/70 text-lg">{lightboxImage.type}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
