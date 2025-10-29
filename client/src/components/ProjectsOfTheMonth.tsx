@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
@@ -53,6 +53,29 @@ export function ProjectsOfTheMonth() {
   const openLightbox = (src: string, title: string, type: string) => {
     setLightboxImage({ src, title, type });
   };
+
+  const closeLightbox = () => {
+    setLightboxImage(null);
+  };
+
+  // Prevent body scroll when lightbox is open
+  useEffect(() => {
+    if (lightboxImage) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+    }
+    
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+    };
+  }, [lightboxImage]);
 
   return (
     <section className="py-16 lg:py-24 bg-gradient-to-b from-background to-muted/30 overflow-x-hidden">
@@ -169,7 +192,7 @@ export function ProjectsOfTheMonth() {
       {lightboxImage && (
         <div 
           className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 cursor-pointer"
-          onClick={() => setLightboxImage(null)}
+          onClick={closeLightbox}
           data-testid="lightbox-overlay"
         >
           {/* Close Button */}
@@ -177,7 +200,7 @@ export function ProjectsOfTheMonth() {
             variant="default"
             size="icon"
             className="absolute top-4 right-4 md:top-6 md:right-6 shadow-2xl h-10 w-10 md:h-14 md:w-14 rounded-full"
-            onClick={() => setLightboxImage(null)}
+            onClick={closeLightbox}
             data-testid="button-close-lightbox"
           >
             <X className="h-5 w-5 md:h-8 md:w-8" />
