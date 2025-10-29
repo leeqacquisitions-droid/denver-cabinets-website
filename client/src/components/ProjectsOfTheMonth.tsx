@@ -5,6 +5,8 @@ import before1 from "@assets/IMG_2951 2_1761700443565.jpg";
 import after1 from "@assets/IMG_3037_1761700500526.jpg";
 import after2 from "@assets/IMG_3038_1761700532373.jpg";
 import after3 from "@assets/IMG_3035_1761700547671.jpg";
+import before4 from "@assets/IMG_3049_1761701315198.jpg";
+import after4 from "@assets/IMG_3052_1761701348687.jpg";
 
 const projects = [
   {
@@ -24,6 +26,12 @@ const projects = [
     description: "Premium finish with integrated task lighting",
     before: null,
     after: after3,
+  },
+  {
+    title: "Water Damage Kitchen Restoration",
+    description: "Complete cabinet restoration after water damage",
+    before: before4,
+    after: after4,
   }
 ];
 
@@ -31,7 +39,8 @@ export function ProjectsOfTheMonth() {
   const [showBefore, setShowBefore] = useState<{[key: number]: boolean}>({
     0: false,
     1: false,
-    2: false
+    2: false,
+    3: false
   });
 
   const toggleBeforeAfter = (index: number) => {
@@ -55,7 +64,7 @@ export function ProjectsOfTheMonth() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {projects.map((project, index) => {
             const hasBefore = project.before !== null;
             const currentlyShowingBefore = showBefore[index];
