@@ -7,6 +7,8 @@ import after2 from "@assets/IMG_3038_1761700532373.jpg";
 import after3 from "@assets/IMG_3035_1761700547671.jpg";
 import before4 from "@assets/IMG_3049_1761701315198.jpg";
 import after4 from "@assets/IMG_3052_1761701348687.jpg";
+import before5 from "@assets/IMG_2974_1761702593125.jpg";
+import after5 from "@assets/IMG_2985_1761702608837.jpg";
 
 const projects = [
   {
@@ -32,6 +34,12 @@ const projects = [
     description: "Complete cabinet restoration after water damage",
     before: before4,
     after: after4,
+  },
+  {
+    title: "Commercial Ice Cream Shop Cabinets",
+    description: "Custom cabinet installation for retail refrigeration",
+    before: before5,
+    after: after5,
   }
 ];
 
@@ -40,7 +48,8 @@ export function ProjectsOfTheMonth() {
     0: false,
     1: false,
     2: false,
-    3: false
+    3: false,
+    4: false
   });
 
   const toggleBeforeAfter = (index: number) => {
@@ -64,7 +73,7 @@ export function ProjectsOfTheMonth() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mb-12">
           {projects.map((project, index) => {
             const hasBefore = project.before !== null;
             const currentlyShowingBefore = showBefore[index];
