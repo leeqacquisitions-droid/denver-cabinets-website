@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
+import { ProjectsOfTheMonth } from "@/components/ProjectsOfTheMonth";
 import { ServicesSection } from "@/components/ServicesSection";
 import { PopularStylesSection } from "@/components/PopularStylesSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
@@ -20,6 +21,7 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
+        <ProjectsOfTheMonth />
         <ServicesSection />
         <PopularStylesSection />
         <PortfolioSection />
