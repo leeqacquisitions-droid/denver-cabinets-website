@@ -112,7 +112,7 @@ export function ProjectsOfTheMonth() {
                 {/* Image Container */}
                 <div className="relative aspect-[4/3] overflow-hidden bg-black">
                   {hasBefore && (
-                    <div className="absolute top-4 left-4 z-10 flex gap-2">
+                    <div className="absolute top-4 left-4 z-20 flex gap-2">
                       <Button
                         size="default"
                         variant={!currentlyShowingBefore ? "default" : "secondary"}
