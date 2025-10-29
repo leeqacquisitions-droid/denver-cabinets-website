@@ -76,19 +76,19 @@ export function ProjectsOfTheMonth() {
                   {hasBefore && (
                     <div className="absolute top-4 left-4 z-10 flex gap-2">
                       <Button
-                        size="sm"
-                        variant={!currentlyShowingBefore ? "default" : "outline"}
+                        size="default"
+                        variant={!currentlyShowingBefore ? "default" : "secondary"}
                         onClick={() => toggleBeforeAfter(index)}
-                        className="backdrop-blur-sm bg-background/90 border-border"
+                        className="shadow-lg font-semibold"
                         data-testid={`button-after-${index}`}
                       >
                         After
                       </Button>
                       <Button
-                        size="sm"
-                        variant={currentlyShowingBefore ? "default" : "outline"}
+                        size="default"
+                        variant={currentlyShowingBefore ? "default" : "secondary"}
                         onClick={() => toggleBeforeAfter(index)}
-                        className="backdrop-blur-sm bg-background/90 border-border"
+                        className="shadow-lg font-semibold"
                         data-testid={`button-before-${index}`}
                       >
                         Before
