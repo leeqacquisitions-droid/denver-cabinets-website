@@ -5,11 +5,10 @@ import { X } from "lucide-react";
 import before1 from "@assets/IMG_2951 2_1761700443565.jpg";
 import after1 from "@assets/IMG_3037_1761700500526.jpg";
 import after2 from "@assets/IMG_3038_1761700532373.jpg";
-import after3 from "@assets/IMG_3035_1761700547671.jpg";
-import before4 from "@assets/IMG_3049_1761701315198.jpg";
-import after4 from "@assets/IMG_3052_1761701348687.jpg";
-import before5 from "@assets/IMG_2974_1761702593125.jpg";
-import after5 from "@assets/IMG_2985_1761702608837.jpg";
+import before3 from "@assets/IMG_3049_1761701315198.jpg";
+import after3 from "@assets/IMG_3052_1761701348687.jpg";
+import before4 from "@assets/IMG_2974_1761702593125.jpg";
+import after4 from "@assets/IMG_2985_1761702608837.jpg";
 
 const projects = [
   {
@@ -25,22 +24,16 @@ const projects = [
     after: after2,
   },
   {
-    title: "Custom Cabinet Details",
-    description: "Premium finish with integrated task lighting",
-    before: null,
-    after: after3,
-  },
-  {
     title: "Water Damage Kitchen Restoration",
     description: "Complete cabinet restoration after water damage",
-    before: before4,
-    after: after4,
+    before: before3,
+    after: after3,
   },
   {
     title: "Happy Cones Ice Cream Shop",
     description: "Custom cabinet installation for retail refrigeration",
-    before: before5,
-    after: after5,
+    before: before4,
+    after: after4,
   }
 ];
 
@@ -49,8 +42,7 @@ export function ProjectsOfTheMonth() {
     0: false,
     1: false,
     2: false,
-    3: false,
-    4: false
+    3: false
   });
   const [lightboxImage, setLightboxImage] = useState<{ src: string; title: string; type: string } | null>(null);
 
@@ -79,7 +71,7 @@ export function ProjectsOfTheMonth() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 sm:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-12">
           {projects.map((project, index) => {
             const hasBefore = project.before !== null;
             const currentlyShowingBefore = showBefore[index];
