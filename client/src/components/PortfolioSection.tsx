@@ -62,6 +62,16 @@ import img47 from "@assets/image000010_1760742173784.jpg";
 import img48 from "@assets/sage_green_1760721577808.webp";
 import img49 from "@assets/grey shaker 24_1760721776173.jpg";
 
+// Projects of the Month images
+import img50 from "@assets/IMG_2951 2_1761700443565.jpg";
+import img51 from "@assets/IMG_3037_1761700500526.jpg";
+import img52 from "@assets/IMG_3038_1761700532373.jpg";
+import img53 from "@assets/IMG_3035_1761700547671.jpg";
+import img54 from "@assets/IMG_3049_1761701315198.jpg";
+import img55 from "@assets/IMG_3052_1761701348687.jpg";
+import img56 from "@assets/IMG_2974_1761702593125.jpg";
+import img57 from "@assets/IMG_2985_1761702608837.jpg";
+
 const portfolioItems = [
   { id: 1, image: img4, category: "Kitchens", title: "White & Onyx Shaker Combo" },
   { id: 2, image: img6, category: "Kitchens", title: "Two-Tone Onyx Shaker" },
@@ -96,9 +106,14 @@ const portfolioItems = [
   { id: 31, image: img47, category: "Kitchens", title: "Whitewashed Island Kitchen" },
   { id: 32, image: img48, category: "Kitchens", title: "Sage Green Shaker Kitchen" },
   { id: 33, image: img49, category: "Kitchens", title: "Grey Shaker Installation" },
+  { id: 34, image: img51, category: "Living Rooms", title: "Entertainment Center with Fireplace" },
+  { id: 35, image: img52, category: "Mudrooms", title: "Mudroom Organization System" },
+  { id: 36, image: img53, category: "Kitchens", title: "Premium Cabinet Lighting Detail" },
+  { id: 37, image: img55, category: "Kitchens", title: "Water Damage Restoration" },
+  { id: 38, image: img57, category: "Commercial", title: "Happy Cones Ice Cream Shop" },
 ];
 
-const categories = ["All", "Kitchens", "Bathrooms", "Pantries"];
+const categories = ["All", "Kitchens", "Bathrooms", "Pantries", "Living Rooms", "Mudrooms", "Commercial"];
 
 export function PortfolioSection() {
   const [selectedCategory, setSelectedCategory] = useState("All");
