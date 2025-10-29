@@ -46,12 +46,12 @@ const projects = [
     afterAlt: "After commercial refrigeration cabinet installation Happy Cones Denver Colorado",
   },
   {
-    title: "Kitchen Cabinet Installation",
-    description: "Complete kitchen transformation with modern cabinets",
+    title: "Water Damage Kitchen Restoration",
+    description: "Complete cabinet replacement after water damage",
     before: before5,
     after: after5,
-    beforeAlt: "Before kitchen cabinet installation Denver metro area",
-    afterAlt: "After professional kitchen cabinet installation Denver Colorado",
+    beforeAlt: "Before water damaged kitchen cabinets Denver Colorado repair",
+    afterAlt: "After water damage kitchen cabinet restoration and replacement Denver metro area",
   }
 ];
 
