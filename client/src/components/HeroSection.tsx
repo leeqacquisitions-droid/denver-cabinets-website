@@ -19,6 +19,11 @@ export function HeroSection() {
       
       <div className="relative min-h-[70vh] flex flex-col items-center justify-center text-center px-4 py-12">
         <div className="text-white max-w-4xl mx-auto">
+          <div className="inline-block px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-4 sm:mb-6">
+            <p className="text-sm sm:text-base md:text-lg font-semibold text-white">
+              Denver's Trusted Cabinet Installers • Free Quotes • Licensed & Insured
+            </p>
+          </div>
           <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
             Estate Solutions: Quality Cabinets, Expert Installation
           </h1>
