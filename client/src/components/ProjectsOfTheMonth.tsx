@@ -180,19 +180,19 @@ export function ProjectsOfTheMonth() {
           onClick={() => setLightboxImage(null)}
           data-testid="lightbox-overlay"
         >
-          {/* Large Close Button */}
+          {/* Close Button */}
           <Button
             variant="default"
-            size="lg"
-            className="absolute top-6 right-6 shadow-2xl text-lg h-14 w-14 rounded-full"
+            size="icon"
+            className="absolute top-4 right-4 md:top-6 md:right-6 shadow-2xl h-10 w-10 md:h-14 md:w-14 rounded-full"
             onClick={() => setLightboxImage(null)}
             data-testid="button-close-lightbox"
           >
-            <X className="h-8 w-8" />
+            <X className="h-5 w-5 md:h-8 md:w-8" />
           </Button>
           
           {/* Tap to Close Hint */}
-          <div className="absolute top-6 left-6 text-white/80 text-sm bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm">
+          <div className="absolute top-4 left-4 md:top-6 md:left-6 text-white/80 text-xs md:text-sm bg-black/40 px-3 py-1.5 md:px-4 md:py-2 rounded-full backdrop-blur-sm">
             Tap anywhere to close
           </div>
 
