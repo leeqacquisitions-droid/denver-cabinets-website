@@ -96,10 +96,28 @@ export function ProjectsOfTheMonth() {
                     </div>
                   )}
                   
+                  {/* Preload both images */}
+                  {hasBefore && (
+                    <>
+                      <img
+                        src={project.before!}
+                        alt=""
+                        className="hidden"
+                        loading="eager"
+                      />
+                      <img
+                        src={project.after}
+                        alt=""
+                        className="hidden"
+                        loading="eager"
+                      />
+                    </>
+                  )}
+                  
                   <img
                     src={hasBefore && currentlyShowingBefore ? project.before : project.after}
                     alt={`${project.title}${hasBefore && currentlyShowingBefore ? " - Before" : " - After"}`}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-opacity duration-200 group-hover:scale-105 transition-transform"
                     data-testid={`img-project-${index}`}
                   />
                 </div>
