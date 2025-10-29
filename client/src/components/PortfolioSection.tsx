@@ -73,44 +73,44 @@ import img56 from "@assets/IMG_2974_1761702593125.jpg";
 import img57 from "@assets/IMG_2985_1761702608837.jpg";
 
 const portfolioItems = [
-  { id: 1, image: img4, category: "Kitchens", title: "White & Onyx Shaker Combo" },
-  { id: 2, image: img6, category: "Kitchens", title: "Two-Tone Onyx Shaker" },
-  { id: 3, image: img8, category: "Kitchens", title: "Luxury Onyx Shaker Kitchen" },
-  { id: 4, image: img9, category: "Kitchens", title: "Modern Onyx Shaker Design" },
-  { id: 5, image: img10, category: "Kitchens", title: "White & Signature Blue Shaker" },
-  { id: 6, image: img11, category: "Kitchens", title: "Signature Blue Shaker Kitchen" },
-  { id: 7, image: img12, category: "Kitchens", title: "Espresso Shaker Kitchen" },
-  { id: 8, image: img15, category: "Bathrooms", title: "White Shaker Bath Vanity" },
-  { id: 9, image: img18, category: "Kitchens", title: "Onyx Shaker Kitchen" },
-  { id: 10, image: img21, category: "Kitchens", title: "Onyx Shaker Grey Countertops" },
-  { id: 11, image: img22, category: "Pantries", title: "Onyx Shaker Pantry" },
-  { id: 12, image: img23, category: "Kitchens", title: "Signature Blue Shaker Design" },
-  { id: 13, image: img24, category: "Kitchens", title: "Espresso Shaker Kitchen" },
-  { id: 14, image: img25, category: "Kitchens", title: "Mountain Timber & White" },
-  { id: 15, image: img27, category: "Kitchens", title: "Contemporary Grey Shaker" },
-  { id: 16, image: img30, category: "Bathrooms", title: "White Shaker Vanity" },
-  { id: 17, image: img31, category: "Kitchens", title: "Onyx Shaker Marble Counters" },
-  { id: 18, image: img32, category: "Kitchens", title: "Grey Shaker Remodel" },
-  { id: 19, image: img33, category: "Kitchens", title: "Grey Shaker with Island" },
-  { id: 20, image: img34, category: "Bathrooms", title: "White Shaker High-End Vanity" },
-  { id: 21, image: img35, category: "Kitchens", title: "Durable White Shaker" },
-  { id: 22, image: img37, category: "Kitchens", title: "White Shaker Remodel" },
-  { id: 23, image: img38, category: "Kitchens", title: "White Shaker Property Value" },
-  { id: 24, image: img40, category: "Kitchens", title: "Grey Shaker Installation" },
-  { id: 25, image: img41, category: "Kitchens", title: "Navy Shaker Gold Hardware" },
-  { id: 26, image: img42, category: "Kitchens", title: "White & Navy Shaker Island" },
-  { id: 27, image: img43, category: "Pantries", title: "White Shaker Pantry System" },
-  { id: 28, image: img44, category: "Kitchens", title: "White Shaker Gold Pulls" },
-  { id: 29, image: img45, category: "Kitchens", title: "Large White Shaker Kitchen" },
-  { id: 30, image: img46, category: "Kitchens", title: "Whitewashed Shaker Kitchen" },
-  { id: 31, image: img47, category: "Kitchens", title: "Whitewashed Island Kitchen" },
-  { id: 32, image: img48, category: "Kitchens", title: "Sage Green Shaker Kitchen" },
-  { id: 33, image: img49, category: "Kitchens", title: "Grey Shaker Installation" },
-  { id: 34, image: img51, category: "Living Rooms", title: "Entertainment Center with Fireplace" },
-  { id: 35, image: img52, category: "Mudrooms", title: "Mudroom Organization System" },
-  { id: 36, image: img53, category: "Kitchens", title: "Premium Cabinet Lighting Detail" },
-  { id: 37, image: img55, category: "Kitchens", title: "Water Damage Restoration" },
-  { id: 38, image: img57, category: "Commercial", title: "Happy Cones Ice Cream Shop" },
+  { id: 1, image: img4, category: "Kitchens", title: "White & Onyx Shaker Combo", alt: "Professional white and onyx shaker kitchen cabinet installation Denver metro area" },
+  { id: 2, image: img6, category: "Kitchens", title: "Two-Tone Onyx Shaker", alt: "Two-tone onyx shaker kitchen cabinets Denver Colorado" },
+  { id: 3, image: img8, category: "Kitchens", title: "Luxury Onyx Shaker Kitchen", alt: "Luxury onyx shaker kitchen cabinet installation Denver" },
+  { id: 4, image: img9, category: "Kitchens", title: "Modern Onyx Shaker Design", alt: "Modern black shaker kitchen cabinets Denver metro remodel" },
+  { id: 5, image: img10, category: "Kitchens", title: "White & Signature Blue Shaker", alt: "White and blue shaker kitchen cabinet installation Denver" },
+  { id: 6, image: img11, category: "Kitchens", title: "Signature Blue Shaker Kitchen", alt: "Blue shaker kitchen cabinets Denver Colorado installation" },
+  { id: 7, image: img12, category: "Kitchens", title: "Espresso Shaker Kitchen", alt: "Espresso brown shaker kitchen cabinets Denver" },
+  { id: 8, image: img15, category: "Bathrooms", title: "White Shaker Bath Vanity", alt: "White shaker bathroom vanity cabinet installation Denver" },
+  { id: 9, image: img18, category: "Kitchens", title: "Onyx Shaker Kitchen", alt: "Quality onyx shaker kitchen cabinet installation Denver metro" },
+  { id: 10, image: img21, category: "Kitchens", title: "Onyx Shaker Grey Countertops", alt: "Black shaker kitchen cabinets grey countertops Denver" },
+  { id: 11, image: img22, category: "Pantries", title: "Onyx Shaker Pantry", alt: "Black shaker pantry cabinet installation Denver Colorado" },
+  { id: 12, image: img23, category: "Kitchens", title: "Signature Blue Shaker Design", alt: "Blue shaker kitchen design Denver metro area" },
+  { id: 13, image: img24, category: "Kitchens", title: "Espresso Shaker Kitchen", alt: "Brown espresso shaker kitchen cabinets Denver" },
+  { id: 14, image: img25, category: "Kitchens", title: "Mountain Timber & White", alt: "Mountain timber and white kitchen cabinet installation Denver" },
+  { id: 15, image: img27, category: "Kitchens", title: "Contemporary Grey Shaker", alt: "Contemporary grey shaker kitchen cabinets Denver Colorado" },
+  { id: 16, image: img30, category: "Bathrooms", title: "White Shaker Vanity", alt: "Professional white shaker bathroom vanity Denver" },
+  { id: 17, image: img31, category: "Kitchens", title: "Onyx Shaker Marble Counters", alt: "Black shaker kitchen cabinets marble countertops Denver" },
+  { id: 18, image: img32, category: "Kitchens", title: "Grey Shaker Remodel", alt: "Grey shaker kitchen cabinet remodel Denver metro" },
+  { id: 19, image: img33, category: "Kitchens", title: "Grey Shaker with Island", alt: "Grey shaker kitchen cabinets with island Denver Colorado" },
+  { id: 20, image: img34, category: "Bathrooms", title: "White Shaker High-End Vanity", alt: "High-end white shaker bathroom vanity installation Denver" },
+  { id: 21, image: img35, category: "Kitchens", title: "Durable White Shaker", alt: "Durable white shaker kitchen cabinets Denver" },
+  { id: 22, image: img37, category: "Kitchens", title: "White Shaker Remodel", alt: "White shaker kitchen cabinet remodel Denver metro area" },
+  { id: 23, image: img38, category: "Kitchens", title: "White Shaker Property Value", alt: "White shaker kitchen cabinets increase property value Denver" },
+  { id: 24, image: img40, category: "Kitchens", title: "Grey Shaker Installation", alt: "Professional grey shaker kitchen cabinet installation Denver" },
+  { id: 25, image: img41, category: "Kitchens", title: "Navy Shaker Gold Hardware", alt: "Navy blue shaker kitchen cabinets gold hardware Denver" },
+  { id: 26, image: img42, category: "Kitchens", title: "White & Navy Shaker Island", alt: "White and navy shaker kitchen island cabinets Denver Colorado" },
+  { id: 27, image: img43, category: "Pantries", title: "White Shaker Pantry System", alt: "White shaker pantry cabinet system installation Denver" },
+  { id: 28, image: img44, category: "Kitchens", title: "White Shaker Gold Pulls", alt: "White shaker kitchen cabinets gold pulls Denver metro" },
+  { id: 29, image: img45, category: "Kitchens", title: "Large White Shaker Kitchen", alt: "Large white shaker kitchen cabinet installation Denver" },
+  { id: 30, image: img46, category: "Kitchens", title: "Whitewashed Shaker Kitchen", alt: "Whitewashed shaker kitchen cabinets Denver Colorado" },
+  { id: 31, image: img47, category: "Kitchens", title: "Whitewashed Island Kitchen", alt: "Whitewashed shaker kitchen island cabinets Denver" },
+  { id: 32, image: img48, category: "Kitchens", title: "Sage Green Shaker Kitchen", alt: "Sage green shaker kitchen cabinet installation Denver" },
+  { id: 33, image: img49, category: "Kitchens", title: "Grey Shaker Installation", alt: "Grey shaker kitchen cabinets professional installation Denver" },
+  { id: 34, image: img51, category: "Living Rooms", title: "Entertainment Center with Fireplace", alt: "Custom entertainment center cabinets fireplace Denver" },
+  { id: 35, image: img52, category: "Mudrooms", title: "Mudroom Organization System", alt: "Mudroom cabinet organization system Denver Colorado" },
+  { id: 36, image: img53, category: "Kitchens", title: "Premium Cabinet Lighting Detail", alt: "Premium kitchen cabinet integrated lighting Denver" },
+  { id: 37, image: img55, category: "Kitchens", title: "Water Damage Restoration", alt: "Water damage kitchen cabinet restoration Denver Aurora" },
+  { id: 38, image: img57, category: "Commercial", title: "Happy Cones Ice Cream Shop", alt: "Commercial refrigeration cabinet installation Denver Colorado" },
 ];
 
 const categories = ["All", "Kitchens", "Bathrooms", "Pantries", "Living Rooms", "Mudrooms", "Commercial"];
@@ -262,7 +262,7 @@ export function PortfolioSection() {
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
                   src={item.image}
-                  alt={item.title}
+                  alt={item.alt}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute top-3 left-3 bg-primary text-primary-foreground rounded-full h-8 w-8 flex items-center justify-center font-semibold text-sm shadow-lg">
@@ -307,7 +307,7 @@ export function PortfolioSection() {
             <div className="max-w-6xl w-full">
               <img
                 src={lightboxImage.image}
-                alt={lightboxImage.title}
+                alt={lightboxImage.alt}
                 className="w-full h-auto max-h-[80vh] object-contain rounded-md touch-auto select-none"
                 onClick={(e) => e.stopPropagation()}
                 style={{ touchAction: 'auto' }}
