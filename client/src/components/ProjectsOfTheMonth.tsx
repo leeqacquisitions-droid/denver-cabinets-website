@@ -63,8 +63,8 @@ export function ProjectsOfTheMonth() {
   };
 
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-background to-muted/30">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-background to-muted/30 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center mb-12">
           <div className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
@@ -79,7 +79,7 @@ export function ProjectsOfTheMonth() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 sm:gap-8 mb-12">
           {projects.map((project, index) => {
             const hasBefore = project.before !== null;
             const currentlyShowingBefore = showBefore[index];

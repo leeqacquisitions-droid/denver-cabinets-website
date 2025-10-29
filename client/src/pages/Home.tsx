@@ -17,9 +17,9 @@ import { FloatingCallButton } from "@/components/FloatingCallButton";
 
 export default function Home() {
   return (
-    <div className="min-h-screen pt-[120px]">
+    <div className="min-h-screen pt-[120px] overflow-x-hidden">
       <Header />
-      <main>
+      <main className="overflow-x-hidden">
         <HeroSection />
         <ProjectsOfTheMonth />
         <ServicesSection />
