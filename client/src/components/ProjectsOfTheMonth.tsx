@@ -134,35 +134,39 @@ export function ProjectsOfTheMonth() {
                     </div>
                   )}
                   
-                  {/* Preload both images */}
-                  {hasBefore && (
+                  {/* Both images rendered, switch with opacity for instant transitions */}
+                  {hasBefore ? (
                     <>
                       <img
                         src={project.before!}
                         alt={project.beforeAlt}
-                        className="hidden"
+                        className={`absolute inset-0 w-full h-full object-cover transition-all duration-300 group-hover:scale-105 cursor-pointer ${
+                          currentlyShowingBefore ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                        }`}
                         loading="eager"
+                        data-testid={`img-project-before-${index}`}
+                        onClick={() => openLightbox(project.before!, project.title, "Before")}
                       />
                       <img
                         src={project.after}
                         alt={project.afterAlt}
-                        className="hidden"
+                        className={`absolute inset-0 w-full h-full object-cover transition-all duration-300 group-hover:scale-105 cursor-pointer ${
+                          !currentlyShowingBefore ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                        }`}
                         loading="eager"
+                        data-testid={`img-project-after-${index}`}
+                        onClick={() => openLightbox(project.after, project.title, "After")}
                       />
                     </>
+                  ) : (
+                    <img
+                      src={project.after}
+                      alt={project.afterAlt}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer"
+                      data-testid={`img-project-${index}`}
+                      onClick={() => openLightbox(project.after, project.title, "After")}
+                    />
                   )}
-                  
-                  <img
-                    src={hasBefore && currentlyShowingBefore ? project.before : project.after}
-                    alt={hasBefore && currentlyShowingBefore ? project.beforeAlt : project.afterAlt}
-                    className="w-full h-full object-cover transition-opacity duration-200 group-hover:scale-105 transition-transform cursor-pointer"
-                    data-testid={`img-project-${index}`}
-                    onClick={() => openLightbox(
-                      hasBefore && currentlyShowingBefore ? project.before! : project.after,
-                      project.title,
-                      hasBefore && currentlyShowingBefore ? "Before" : "After"
-                    )}
-                  />
                 </div>
 
                 {/* Project Details */}
