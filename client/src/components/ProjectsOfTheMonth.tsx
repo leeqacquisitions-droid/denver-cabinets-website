@@ -37,7 +37,7 @@ const projects = [
     after: after4,
   },
   {
-    title: "Commercial Ice Cream Shop Cabinets",
+    title: "Happy Cones Ice Cream Shop",
     description: "Custom cabinet installation for retail refrigeration",
     before: before5,
     after: after5,
