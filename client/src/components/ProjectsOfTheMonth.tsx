@@ -64,6 +64,7 @@ export function ProjectsOfTheMonth() {
     4: false
   });
   const [lightboxImage, setLightboxImage] = useState<{ src: string; title: string; type: string } | null>(null);
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
   const toggleBeforeAfter = (index: number) => {
     setShowBefore(prev => ({ ...prev, [index]: !prev[index] }));
@@ -118,8 +119,15 @@ export function ProjectsOfTheMonth() {
             const hasBefore = project.before !== null;
             const currentlyShowingBefore = showBefore[index];
             
+            // On mobile, only show the most recent project (index 4) unless "Show More" is clicked
+            const shouldShowOnMobile = showAllProjects || index === 4;
+            
             return (
-              <Card key={index} className="overflow-hidden group">
+              <Card 
+                key={index} 
+                className={`overflow-hidden group ${!shouldShowOnMobile ? 'hidden md:block' : ''}`}
+                data-testid={`card-project-${index}`}
+              >
                 {/* Image Container */}
                 <div className="relative aspect-[4/3] overflow-hidden bg-black">
                   {hasBefore && (
@@ -193,6 +201,21 @@ export function ProjectsOfTheMonth() {
             );
           })}
         </div>
+
+        {/* Show More Button - Mobile Only */}
+        {!showAllProjects && (
+          <div className="text-center mb-12 md:hidden">
+            <Button
+              size="default"
+              variant="default"
+              onClick={() => setShowAllProjects(true)}
+              className="shadow-lg font-semibold"
+              data-testid="button-show-more-projects"
+            >
+              Show More Projects
+            </Button>
+          </div>
+        )}
 
         {/* Bottom Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto text-center">

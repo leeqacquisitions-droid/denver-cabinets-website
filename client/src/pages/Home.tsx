@@ -21,9 +21,9 @@ export default function Home() {
       <Header />
       <main className="overflow-x-hidden">
         <HeroSection />
-        <ProjectsOfTheMonth />
         <ServicesSection />
         <PopularStylesSection />
+        <ProjectsOfTheMonth />
         <PortfolioSection />
         <WhyChooseSection />
         <MaterialsSection />
