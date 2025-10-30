@@ -72,6 +72,10 @@ import img55 from "@assets/IMG_3052_1761701348687.jpg";
 import img56 from "@assets/IMG_2974_1761702593125.jpg";
 import img57 from "@assets/IMG_2985_1761702608837.jpg";
 
+// Water Damage Restoration images
+import img58 from "@assets/IMG_3065_1761766571579.jpeg";
+import img59 from "@assets/IMG_3067_1761766690867.jpeg";
+
 const portfolioItems = [
   { id: 1, image: img4, category: "Kitchens", title: "White & Onyx Shaker Combo", alt: "Professional white and onyx shaker kitchen cabinet installation Denver metro area" },
   { id: 2, image: img6, category: "Kitchens", title: "Two-Tone Onyx Shaker", alt: "Two-tone onyx shaker kitchen cabinets Denver Colorado" },
@@ -109,11 +113,14 @@ const portfolioItems = [
   { id: 34, image: img51, category: "Living Rooms", title: "Entertainment Center with Fireplace", alt: "Custom entertainment center cabinets fireplace Denver" },
   { id: 35, image: img52, category: "Mudrooms", title: "Mudroom Organization System", alt: "Mudroom cabinet organization system Denver Colorado" },
   { id: 36, image: img53, category: "Kitchens", title: "Premium Cabinet Lighting Detail", alt: "Premium kitchen cabinet integrated lighting Denver" },
-  { id: 37, image: img55, category: "Kitchens", title: "Water Damage Restoration", alt: "Water damage kitchen cabinet restoration Denver Aurora" },
-  { id: 38, image: img57, category: "Commercial", title: "Happy Cones Ice Cream Shop", alt: "Commercial refrigeration cabinet installation Denver Colorado" },
+  { id: 37, image: img54, category: "Water Damage Restoration", title: "Water Damage Kitchen Before", alt: "Before water damaged kitchen cabinets Aurora Colorado repair" },
+  { id: 38, image: img55, category: "Water Damage Restoration", title: "Water Damage Kitchen After", alt: "After water damage kitchen cabinet restoration Denver Aurora" },
+  { id: 39, image: img58, category: "Water Damage Restoration", title: "Water Damage Restoration Before", alt: "Before water damaged kitchen cabinets Denver Colorado" },
+  { id: 40, image: img59, category: "Water Damage Restoration", title: "Water Damage Restoration After", alt: "After water damage kitchen cabinet replacement Denver metro area" },
+  { id: 41, image: img57, category: "Commercial", title: "Happy Cones Ice Cream Shop", alt: "Commercial refrigeration cabinet installation Denver Colorado" },
 ];
 
-const categories = ["All", "Kitchens", "Bathrooms", "Pantries", "Living Rooms", "Mudrooms", "Commercial"];
+const categories = ["All", "Kitchens", "Bathrooms", "Pantries", "Living Rooms", "Mudrooms", "Water Damage Restoration", "Commercial"];
 
 export function PortfolioSection() {
   const [selectedCategory, setSelectedCategory] = useState("All");
