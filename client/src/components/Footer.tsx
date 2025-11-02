@@ -76,8 +76,16 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Contact</h3>
             <ul className="space-y-2 text-primary-foreground/80">
               <li>
-                <a href="tel:+17202242908" className="hover:text-primary-foreground transition-colors">
+                <strong className="text-primary-foreground">Estate Solutions</strong>
+              </li>
+              <li>
+                <a href="tel:+17202242908" className="hover:text-primary-foreground transition-colors" data-testid="footer-phone">
                   (720) 224-2908
+                </a>
+              </li>
+              <li>
+                <a href="mailto:josue@denvercabinets.net" className="hover:text-primary-foreground transition-colors" data-testid="footer-email">
+                  josue@denvercabinets.net
                 </a>
               </li>
               <li className="pt-2 font-semibold text-primary-foreground">Service Areas:</li>
