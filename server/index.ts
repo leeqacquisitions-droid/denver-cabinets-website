@@ -121,6 +121,12 @@ app.post("/api/contact", async (req, res) => {
   }
 });
 
+// Serve static HTML files before SPA routing
+app.use(express.static(path.join(process.cwd(), "public"), {
+  extensions: ["html"],
+  index: false
+}));
+
 const server = createServer(app);
 
 // Development vs Production

@@ -62,10 +62,10 @@ export function PortfolioTeaser() {
 
         <div className="text-center">
           <Link href="/portfolio">
-            <a className="inline-flex items-center gap-2 text-primary font-semibold hover:underline" data-testid="link-full-portfolio">
+            <span className="inline-flex items-center gap-2 text-primary font-semibold hover:underline cursor-pointer" data-testid="link-full-portfolio">
               View full portfolio
               <ArrowRight className="h-4 w-4" />
-            </a>
+            </span>
           </Link>
         </div>
       </div>
