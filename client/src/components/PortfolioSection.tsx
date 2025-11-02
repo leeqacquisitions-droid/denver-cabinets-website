@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -126,6 +126,7 @@ export function PortfolioSection() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [lightboxImage, setLightboxImage] = useState<typeof portfolioItems[0] | null>(null);
   const [showAll, setShowAll] = useState(false);
+  const scrollPositionRef = useRef<number>(0);
   
   // Compact contact form state
   const [step, setStep] = useState(0);
@@ -144,6 +145,26 @@ export function PortfolioSection() {
 
   const displayedItems = showAll ? filteredItems : filteredItems.slice(0, 9);
   const hasMoreItems = filteredItems.length > 9;
+  
+  // Prevent body scroll when lightbox is open and preserve scroll position
+  useEffect(() => {
+    if (lightboxImage) {
+      // Save current scroll position
+      scrollPositionRef.current = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollPositionRef.current}px`;
+      document.body.style.width = '100%';
+      
+      return () => {
+        // Restore scroll position
+        const savedScrollY = scrollPositionRef.current;
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, savedScrollY);
+      };
+    }
+  }, [lightboxImage]);
   
   const handleNext = () => {
     setStep(step + 1);

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
@@ -65,6 +65,7 @@ export function ProjectsOfTheMonth() {
   });
   const [lightboxImage, setLightboxImage] = useState<{ src: string; title: string; type: string } | null>(null);
   const [showAllProjects, setShowAllProjects] = useState(false);
+  const scrollPositionRef = useRef<number>(0);
 
   const toggleBeforeAfter = (index: number) => {
     setShowBefore(prev => ({ ...prev, [index]: !prev[index] }));
@@ -78,23 +79,24 @@ export function ProjectsOfTheMonth() {
     setLightboxImage(null);
   };
 
-  // Prevent body scroll when lightbox is open
+  // Prevent body scroll when lightbox is open and preserve scroll position
   useEffect(() => {
     if (lightboxImage) {
-      document.body.style.overflow = 'hidden';
+      // Save current scroll position
+      scrollPositionRef.current = window.scrollY;
       document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollPositionRef.current}px`;
       document.body.style.width = '100%';
-    } else {
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
+      
+      return () => {
+        // Restore scroll position
+        const savedScrollY = scrollPositionRef.current;
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, savedScrollY);
+      };
     }
-    
-    return () => {
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-    };
   }, [lightboxImage]);
 
   return (
