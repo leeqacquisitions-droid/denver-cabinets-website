@@ -31,7 +31,7 @@ export function Header() {
     { label: "Process", id: "process" },
     { label: "Reviews", id: "reviews" },
     { label: "About", id: "about" },
-    { label: "Contact", id: "contact" },
+    { label: "Contact", id: "quote" },
   ];
 
   return (
@@ -70,7 +70,7 @@ export function Header() {
           <div className="flex items-center gap-2 flex-shrink-0">
             <ThemeToggle />
             <Button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => scrollToSection("quote")}
               data-testid="button-get-quote"
               className="hidden md:inline-flex"
             >
@@ -106,7 +106,7 @@ export function Header() {
                 </Button>
               ))}
               <Button
-                onClick={() => scrollToSection("contact")}
+                onClick={() => scrollToSection("quote")}
                 data-testid="button-mobile-quote"
                 className="mt-2 min-h-12 text-base"
               >
