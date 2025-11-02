@@ -1,24 +1,117 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 
 export function ContactSection() {
+  const [step, setStep] = useState(0);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    clientType: "",
+    projectType: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    
-    const name = formData.get('name') as string;
-    const phone = formData.get('phone') as string;
-    const address = formData.get('address') as string;
-    const project = formData.get('project') as string;
-    
-    const subject = `Cabinet Quote Request from ${name}`;
-    const body = `Name: ${name}\nPhone: ${phone}\nAddress: ${address}\n\nProject Details:\n${project}`;
-    
-    const mailtoLink = `mailto:josue@denvercabinets.net?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
-    
-    e.preventDefault();
+  const handleNext = () => {
+    setStep(step + 1);
   };
+
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you! We'll be in touch soon.",
+        });
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          clientType: "",
+          projectType: "",
+          message: "",
+        });
+        setStep(0);
+      } else {
+        toast({
+          variant: "destructive",
+          title: "Error",
+          description: data.error || "Failed to send. Please call us at (720) 224-2908.",
+        });
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Failed to send. Please call (720) 224-2908.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const questions = [
+    {
+      greeting: "👋 Hi! We're Estate Solutions,",
+      question: "What's Your Name?",
+      placeholder: "Type your answer here...",
+      field: "name" as keyof typeof formData,
+      type: "text",
+    },
+    {
+      question: "Great! What's your email?",
+      placeholder: "your.email@example.com",
+      field: "email" as keyof typeof formData,
+      type: "email",
+    },
+    {
+      question: "And your phone number?",
+      placeholder: "(720) 555-1234",
+      field: "phone" as keyof typeof formData,
+      type: "tel",
+    },
+    {
+      question: "Are you a contractor, property manager, or homeowner?",
+      placeholder: "e.g., General Contractor, Homeowner, etc.",
+      field: "clientType" as keyof typeof formData,
+      type: "text",
+    },
+    {
+      question: "What type of project are you working on?",
+      placeholder: "e.g., Kitchen remodel, New construction, etc.",
+      field: "projectType" as keyof typeof formData,
+      type: "text",
+    },
+    {
+      question: "Tell us a bit about your project",
+      placeholder: "Type your project details here...",
+      field: "message" as keyof typeof formData,
+      type: "textarea",
+    },
+  ];
+
+  const currentQuestion = questions[step];
+  const isLastStep = step === questions.length - 1;
 
   return (
     <section id="quote" className="py-16 bg-background">
