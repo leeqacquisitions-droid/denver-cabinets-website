@@ -14,7 +14,6 @@ import { FAQSection } from "@/components/FAQSection";
 import { CallNowSection } from "@/components/CallNowSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
-import { FloatingCallButton } from "@/components/FloatingCallButton";
 
 export default function Home() {
   return (
@@ -37,7 +36,6 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
-      <FloatingCallButton />
     </div>
   );
 }

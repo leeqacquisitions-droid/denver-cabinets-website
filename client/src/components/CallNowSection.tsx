@@ -11,7 +11,7 @@ export function CallNowSection() {
         <p className="text-lg text-muted-foreground mb-8">
           Call us today for a free consultation and quote
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
           <a 
             href="tel:+17202242908"
             className="text-2xl sm:text-3xl font-semibold text-foreground hover:text-primary transition-colors"
@@ -22,10 +22,10 @@ export function CallNowSection() {
           <Button
             size="lg"
             asChild
-            className="bg-emerald-600 hover:bg-emerald-700 text-white min-h-12 text-lg"
+            className="bg-emerald-600 hover:bg-emerald-700 text-white min-h-12 text-lg w-full sm:w-auto"
             data-testid="button-call-now"
           >
-            <a href="tel:+17202242908">
+            <a href="tel:+17202242908" className="flex items-center justify-center">
               <Phone className="h-5 w-5 mr-2" />
               Call Now
             </a>
