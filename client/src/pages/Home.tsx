@@ -1,8 +1,10 @@
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
+import { TrustBadges } from "@/components/TrustBadges";
 import { ProjectsOfTheMonth } from "@/components/ProjectsOfTheMonth";
 import { ServicesSection } from "@/components/ServicesSection";
 import { PopularStylesSection } from "@/components/PopularStylesSection";
+import { PortfolioTeaser } from "@/components/PortfolioTeaser";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { WhyChooseSection } from "@/components/WhyChooseSection";
 import { MaterialsSection } from "@/components/MaterialsSection";
@@ -21,8 +23,10 @@ export default function Home() {
       <Header />
       <main className="overflow-x-hidden">
         <HeroSection />
+        <TrustBadges />
         <ServicesSection />
         <PopularStylesSection />
+        <PortfolioTeaser />
         <ProjectsOfTheMonth />
         <PortfolioSection />
         <WhyChooseSection />

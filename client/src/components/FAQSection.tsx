@@ -7,20 +7,24 @@ import {
 
 const faqs = [
   {
+    question: "How long does a typical kitchen install take?",
+    answer: "Most kitchens are installed in 4–6 days depending on size, material lead times, and site conditions."
+  },
+  {
+    question: "Do you remove and dispose of old cabinets?",
+    answer: "Yes. We can include demo and haul-away in your quote."
+  },
+  {
+    question: "Are you licensed and insured?",
+    answer: "Yes. We carry up-to-date licensing and general liability insurance. Proof available upon request."
+  },
+  {
     question: "What services do you provide?",
-    answer: "We specialize in professional installation of pre-manufactured cabinets for kitchens, bathrooms, and pantries. We work with general contractors, property managers, and homeowners throughout the Denver metro area."
+    answer: "We specialize in professional installation of pre-manufactured cabinets for kitchens, bathrooms, and pantries. We also offer water-damage cabinet repair. We work with general contractors, property managers, and homeowners throughout the Denver metro area."
   },
   {
     question: "Do you build custom cabinets?",
     answer: "We assemble and install pre-manufactured cabinets. Depending on your layout, we can provide semi-custom solutions in the field to ensure a perfect fit for your space."
-  },
-  {
-    question: "What is your process?",
-    answer: "We start with a free 30-minute in-home design consultation to assess your space and needs. Once approved, we require a 70% down payment for materials, with the remaining 30% due upon job completion."
-  },
-  {
-    question: "How long does installation take?",
-    answer: "Depending on the kitchen size and complexity, most installations are completed in 4-6 days. We'll provide a specific timeline during your consultation."
   },
   {
     question: "Do you work with contractors?",
@@ -28,7 +32,7 @@ const faqs = [
   },
   {
     question: "Can you handle multi-unit properties?",
-    answer: "Yes! We work extensively with property managers on multi-unit residential properties, including apartment buildings, sobriety houses, and commercial properties."
+    answer: "Yes! We work extensively with property managers on multi-unit residential properties, including apartment buildings and commercial properties."
   },
   {
     question: "What areas do you serve?",
@@ -36,15 +40,7 @@ const faqs = [
   },
   {
     question: "How do I get started?",
-    answer: "Contact us at (720) 224-2908 or josue@denvercabinets.net to schedule your free 30-minute in-home design consultation. We'll assess your space and provide a detailed quote."
-  },
-  {
-    question: "What payment methods do you accept?",
-    answer: "We accept various payment methods. A 70% deposit is required upfront to secure materials, with the remaining 30% due upon project completion."
-  },
-  {
-    question: "Are you licensed and insured?",
-    answer: "Yes, we are fully licensed and insured for your protection and peace of mind."
+    answer: "Contact us at (720) 224-2908 or josue@denvercabinets.net to schedule your free on-site consultation. We'll assess your space and provide a detailed quote."
   }
 ];
 
