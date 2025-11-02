@@ -1,26 +1,25 @@
 import { Card } from "@/components/ui/card";
-import { Package, Pencil, Wrench, Home } from "lucide-react";
+import { Link } from "wouter";
+import { ChefHat, Droplet, Building2 } from "lucide-react";
 
 const services = [
   {
-    icon: Package,
-    title: "Cabinet Supply",
-    description: "Quality pre-manufactured cabinets from trusted suppliers. We source the best materials for your kitchen, bathroom, or pantry project."
+    icon: ChefHat,
+    title: "Kitchen Cabinet Installation",
+    description: "Professional installation of pre-manufactured kitchen cabinets with 4-6 day completion.",
+    href: "/services/kitchen-cabinet-installation"
   },
   {
-    icon: Pencil,
-    title: "Design Renderings",
-    description: "Professional 3D renderings to visualize your space. Free 30-minute in-home consultation to plan your perfect layout."
+    icon: Droplet,
+    title: "Water-Damage Cabinet Repair",
+    description: "Expert repair and replacement of water-damaged cabinets throughout the Denver metro.",
+    href: "/services/water-damage-cabinet-repair"
   },
   {
-    icon: Wrench,
-    title: "Professional Installation",
-    description: "Expert assembly and installation services. Most kitchens completed in 4-6 days with meticulous attention to detail."
-  },
-  {
-    icon: Home,
-    title: "Full-Service Solutions",
-    description: "From design to installation, we handle everything. Serving contractors, property managers, and homeowners."
+    icon: Building2,
+    title: "Multi-Unit & Builders",
+    description: "Specialized services for contractors, property managers, and multi-unit developments.",
+    href: "/services/multi-unit-builders"
   }
 ];
 
@@ -37,19 +36,20 @@ export function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {services.map((service, index) => (
-            <Card
-              key={index}
-              className="p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 hover-elevate"
-              data-testid={`service-${index}`}
-            >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
-                <service.icon className="h-7 w-7 text-primary" />
-              </div>
-              <h3 className="font-semibold text-xl mb-3">{service.title}</h3>
-              <p className="text-muted-foreground">{service.description}</p>
-            </Card>
+            <Link key={index} href={service.href}>
+              <Card
+                className="p-6 rounded-md shadow-sm transition-shadow duration-300 hover-elevate active-elevate-2 cursor-pointer h-full"
+                data-testid={`service-${index}`}
+              >
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
+                  <service.icon className="h-7 w-7 text-primary" />
+                </div>
+                <h3 className="font-semibold text-xl mb-3">{service.title}</h3>
+                <p className="text-muted-foreground">{service.description}</p>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>

@@ -19,25 +19,28 @@ export function HeroSection() {
       
       <div className="relative min-h-[70vh] flex flex-col items-center justify-center text-center px-4 py-12">
         <div className="text-white max-w-4xl mx-auto">
-          <div className="inline-block px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-4 sm:mb-6">
-            <p className="text-sm sm:text-base md:text-lg font-semibold text-white">
-              Denver's Trusted Cabinet Installers • Free Quotes • Licensed & Insured
-            </p>
-          </div>
           <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-            Estate Solutions: Quality Cabinets, Expert Installation
+            Cabinet Installation & Water-Damage Repair — Denver Metro
           </h1>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-white/90 leading-relaxed">
-            Professional cabinetry solutions for Denver metro contractors, property managers, and homeowners
+            Licensed & insured. 4–6 day kitchen installs. Free on-site estimates. Serving homeowners, contractors, and multi-unit properties.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Button
               size="lg"
-              onClick={() => scrollToSection("contact")}
-              data-testid="button-hero-consultation"
+              asChild
+              data-testid="button-hero-call"
               className="text-base sm:text-lg min-h-12 sm:min-h-auto"
             >
-              Free Consultation
+              <a href="tel:+17202242908">Call Now: (720) 224-2908</a>
+            </Button>
+            <Button
+              size="lg"
+              onClick={() => scrollToSection("quote")}
+              data-testid="button-hero-quote"
+              className="text-base sm:text-lg min-h-12 sm:min-h-auto"
+            >
+              Get a Free Quote
             </Button>
             <Button
               size="lg"

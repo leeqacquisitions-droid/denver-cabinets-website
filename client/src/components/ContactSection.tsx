@@ -114,7 +114,7 @@ export function ContactSection() {
   const isLastStep = step === questions.length - 1;
 
   return (
-    <section id="contact" className="py-16 bg-background">
+    <section id="quote" className="py-16 bg-background">
       <div className="w-full max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl lg:text-5xl font-bold mb-4">Get a Quote</h2>
