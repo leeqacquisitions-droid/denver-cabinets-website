@@ -19,7 +19,6 @@ import img8 from "@assets/black_shaker1_1760717094685.webp";
 import img9 from "@assets/black_shaker4_1760717101818.webp";
 import img10 from "@assets/blue kitchen 2_1760717109551.jpg";
 import img11 from "@assets/blue kitchen_1760717117533.jpg";
-import img12 from "@assets/brown shaker 31_1760717130103.jpg";
 import img13 from "@assets/brown shaker 38_1760717138399.jpg";
 import img14 from "@assets/bathrom shaker 41_1760717039753.jpg";
 import img15 from "@assets/bathroom_white_shaker_2_1760717045213.webp";
@@ -34,9 +33,7 @@ import img23 from "@assets/blue kiotchen white counter top_1760665691434.jpg";
 import img24 from "@assets/brown kicthen white counter top_1760665705715.jpg";
 import img25 from "@assets/Brown kitchen with white top_1760665709979.jpg";
 import img26 from "@assets/clean grey cabinets_1760665718488.jpg";
-import img27 from "@assets/clean sleek affordable_1760665724960.jpg";
 import img28 from "@assets/custom dog cabinet with bowl_1760665736157.jpg";
-import img29 from "@assets/custom window cabinets_1760665751120.jpg";
 import img30 from "@assets/denver 2025 selling property_1760665756666.webp";
 import img31 from "@assets/exclelent black shaker combo with black marble counter tops_1760666667882.webp";
 import img32 from "@assets/grey remodel kicthen_1760666782648.jpg";
@@ -83,7 +80,6 @@ const portfolioItems = [
   { id: 4, image: img9, category: "Kitchens", title: "Modern Onyx Shaker Design", alt: "Modern black shaker kitchen cabinets Denver metro remodel" },
   { id: 5, image: img10, category: "Kitchens", title: "White & Signature Blue Shaker", alt: "White and blue shaker kitchen cabinet installation Denver" },
   { id: 6, image: img11, category: "Kitchens", title: "Signature Blue Shaker Kitchen", alt: "Blue shaker kitchen cabinets Denver Colorado installation" },
-  { id: 7, image: img12, category: "Kitchens", title: "Espresso Shaker Kitchen", alt: "Espresso brown shaker kitchen cabinets Denver" },
   { id: 8, image: img15, category: "Bathrooms", title: "White Shaker Bath Vanity", alt: "White shaker bathroom vanity cabinet installation Denver" },
   { id: 9, image: img18, category: "Kitchens", title: "Onyx Shaker Kitchen", alt: "Quality onyx shaker kitchen cabinet installation Denver metro" },
   { id: 10, image: img21, category: "Kitchens", title: "Onyx Shaker Grey Countertops", alt: "Black shaker kitchen cabinets grey countertops Denver" },
@@ -91,7 +87,6 @@ const portfolioItems = [
   { id: 12, image: img23, category: "Kitchens", title: "Signature Blue Shaker Design", alt: "Blue shaker kitchen design Denver metro area" },
   { id: 13, image: img24, category: "Kitchens", title: "Espresso Shaker Kitchen", alt: "Brown espresso shaker kitchen cabinets Denver" },
   { id: 14, image: img25, category: "Kitchens", title: "Mountain Timber & White", alt: "Mountain timber and white kitchen cabinet installation Denver" },
-  { id: 15, image: img27, category: "Kitchens", title: "Contemporary Grey Shaker", alt: "Contemporary grey shaker kitchen cabinets Denver Colorado" },
   { id: 16, image: img30, category: "Bathrooms", title: "White Shaker Vanity", alt: "Professional white shaker bathroom vanity Denver" },
   { id: 17, image: img31, category: "Kitchens", title: "Onyx Shaker Marble Counters", alt: "Black shaker kitchen cabinets marble countertops Denver" },
   { id: 18, image: img32, category: "Kitchens", title: "Grey Shaker Remodel", alt: "Grey shaker kitchen cabinet remodel Denver metro" },
