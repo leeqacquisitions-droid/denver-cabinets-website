@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Award, Clock, Users } from "lucide-react";
-import qualityCraftsmanship from "@assets/black shaker 10_1760717059430.jpg";
+import qualityCraftsmanship from "@assets/white and brown shaker 22_1760722991073.jpg";
 import fastReliable from "@assets/white shaker 8_1760723013546.jpg";
 import contractorPreferred from "@assets/white shaker 32_1760723026350.jpg";
 

@@ -2,6 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
+import before1 from "@assets/IMG_2951 2_1761700443565.jpg";
+import after1 from "@assets/IMG_3037_1761700500526.jpg";
+import after2 from "@assets/IMG_3038_1761700532373.jpg";
 import before3 from "@assets/IMG_3049_1761701315198.jpg";
 import after3 from "@assets/IMG_3052_1761701348687.jpg";
 import before4 from "@assets/IMG_2974_1761702593125.jpg";
@@ -10,6 +13,22 @@ import before5 from "@assets/IMG_3065_1761766571579.jpeg";
 import after5 from "@assets/IMG_3067_1761766690867.jpeg";
 
 const projects = [
+  {
+    title: "Modern Living Room Entertainment Center",
+    description: "Custom cabinets flanking fireplace with integrated lighting",
+    before: before1,
+    after: after1,
+    beforeAlt: "Before custom living room cabinets installation Denver metro area",
+    afterAlt: "After professional entertainment center cabinet installation with integrated lighting Denver",
+  },
+  {
+    title: "Mudroom Organization System",
+    description: "Built-in storage solution for entryway organization",
+    before: null,
+    after: after2,
+    beforeAlt: "",
+    afterAlt: "Professional mudroom cabinet organization system installation Denver Colorado",
+  },
   {
     title: "Water Damage Kitchen Restoration",
     description: "Complete cabinet restoration after water damage",
@@ -40,7 +59,9 @@ export function ProjectsOfTheMonth() {
   const [showBefore, setShowBefore] = useState<{[key: number]: boolean}>({
     0: false,
     1: false,
-    2: false
+    2: false,
+    3: false,
+    4: false
   });
   const [lightboxImage, setLightboxImage] = useState<{ src: string; title: string; type: string } | null>(null);
   const [showAllProjects, setShowAllProjects] = useState(false);
@@ -100,8 +121,8 @@ export function ProjectsOfTheMonth() {
             const hasBefore = project.before !== null;
             const currentlyShowingBefore = showBefore[index];
             
-            // On mobile, only show the most recent project (index 2) unless "Show More" is clicked
-            const shouldShowOnMobile = showAllProjects || index === 2;
+            // On mobile, only show the most recent project (index 4) unless "Show More" is clicked
+            const shouldShowOnMobile = showAllProjects || index === 4;
             
             return (
               <Card 

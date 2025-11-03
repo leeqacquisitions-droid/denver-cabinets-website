@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { FloatingCallButton } from "@/components/FloatingCallButton";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
@@ -10,7 +11,10 @@ import img1 from "@assets/black shaker 10_1760717059430.jpg";
 import img2 from "@assets/black shaker 11_1760717063232.jpg";
 import img3 from "@assets/white shaker 32_1760723026350.jpg";
 import img4 from "@assets/white shaker 8_1760723013546.jpg";
+import img5 from "@assets/white and brown shaker 22_1760722991073.jpg";
 import img6 from "@assets/closet white shaker_1760717144739.jpg";
+import img7 from "@assets/IMG_3037_1761700500526.jpg";
+import img8 from "@assets/IMG_3038_1761700532373.jpg";
 import img9 from "@assets/IMG_3049_1761701315198.jpg";
 import img10 from "@assets/bathroom_white_shaker_2_1760717045213.webp";
 import img11 from "@assets/bathroom_white_shaker_3_1760717051961.webp";
@@ -42,10 +46,28 @@ const portfolioProjects = [
     category: "Kitchen"
   },
   {
+    image: img5,
+    alt: "Bright white shaker kitchen cabinets Denver metro",
+    caption: "Lakewood — Kitchen upgrade. White shaker, soft-close drawers. 4 days.",
+    category: "Kitchen"
+  },
+  {
     image: img6,
     alt: "Traditional white shaker kitchen Denver installation",
     caption: "Centennial — Full kitchen renovation. White shaker, classic design. 6 days.",
     category: "Kitchen"
+  },
+  {
+    image: img7,
+    alt: "Water damage kitchen cabinet restoration after completion Denver",
+    caption: "Aurora — Water damage restoration. Complete cabinet replacement. 6 days.",
+    category: "Water Damage"
+  },
+  {
+    image: img8,
+    alt: "Kitchen cabinet water damage repair Denver metro area",
+    caption: "Thornton — Water damage repair. Cabinet removal and reinstall. 5 days.",
+    category: "Water Damage"
   },
   {
     image: img9,
@@ -135,6 +157,7 @@ export default function Portfolio() {
         </section>
       </main>
       <Footer />
+      <FloatingCallButton />
     </div>
   );
 }
