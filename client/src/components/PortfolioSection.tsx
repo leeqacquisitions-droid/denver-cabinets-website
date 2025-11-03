@@ -41,7 +41,6 @@ import img33 from "@assets/grey remodel with island in middle_1760666799098.jpg"
 import img34 from "@assets/high end bathroom sink_1760666806401.jpg";
 import img35 from "@assets/kitchens that last_1760666876778.jpg";
 import img36 from "@assets/need counter tops for these new cabinets here we are _1760666920187.jpg";
-import img37 from "@assets/need remodeling assitance he we are_1760666930898.jpg";
 import img38 from "@assets/NEED TO SELL YOUR HOME LOOK AT THIS_1760666956139.webp";
 
 // Additional completed projects
@@ -64,13 +63,11 @@ import img50 from "@assets/IMG_2951 2_1761700443565.jpg";
 import img51 from "@assets/IMG_3037_1761700500526.jpg";
 import img52 from "@assets/IMG_3038_1761700532373.jpg";
 import img53 from "@assets/IMG_3035_1761700547671.jpg";
-import img54 from "@assets/IMG_3049_1761701315198.jpg";
 import img55 from "@assets/IMG_3052_1761701348687.jpg";
 import img56 from "@assets/IMG_2974_1761702593125.jpg";
 import img57 from "@assets/IMG_2985_1761702608837.jpg";
 
 // Water Damage Restoration images
-import img58 from "@assets/IMG_3065_1761766571579.jpeg";
 import img59 from "@assets/IMG_3067_1761766690867.jpeg";
 
 const portfolioItems = [
@@ -93,7 +90,6 @@ const portfolioItems = [
   { id: 19, image: img33, category: "Kitchens", title: "Grey Shaker with Island", alt: "Grey shaker kitchen cabinets with island Denver Colorado" },
   { id: 20, image: img34, category: "Bathrooms", title: "White Shaker High-End Vanity", alt: "High-end white shaker bathroom vanity installation Denver" },
   { id: 21, image: img35, category: "Kitchens", title: "Durable White Shaker", alt: "Durable white shaker kitchen cabinets Denver" },
-  { id: 22, image: img37, category: "Kitchens", title: "White Shaker Remodel", alt: "White shaker kitchen cabinet remodel Denver metro area" },
   { id: 23, image: img38, category: "Kitchens", title: "White Shaker Property Value", alt: "White shaker kitchen cabinets increase property value Denver" },
   { id: 24, image: img40, category: "Kitchens", title: "Grey Shaker Installation", alt: "Professional grey shaker kitchen cabinet installation Denver" },
   { id: 25, image: img41, category: "Kitchens", title: "Navy Shaker Gold Hardware", alt: "Navy blue shaker kitchen cabinets gold hardware Denver" },
@@ -108,9 +104,7 @@ const portfolioItems = [
   { id: 34, image: img51, category: "Living Rooms", title: "Entertainment Center with Fireplace", alt: "Custom entertainment center cabinets fireplace Denver" },
   { id: 35, image: img52, category: "Mudrooms", title: "Mudroom Organization System", alt: "Mudroom cabinet organization system Denver Colorado" },
   { id: 36, image: img53, category: "Kitchens", title: "Premium Cabinet Lighting Detail", alt: "Premium kitchen cabinet integrated lighting Denver" },
-  { id: 37, image: img54, category: "Water Damage Restoration", title: "Water Damage Kitchen Before", alt: "Before water damaged kitchen cabinets Aurora Colorado repair" },
   { id: 38, image: img55, category: "Water Damage Restoration", title: "Water Damage Kitchen After", alt: "After water damage kitchen cabinet restoration Denver Aurora" },
-  { id: 39, image: img58, category: "Water Damage Restoration", title: "Water Damage Restoration Before", alt: "Before water damaged kitchen cabinets Denver Colorado" },
   { id: 40, image: img59, category: "Water Damage Restoration", title: "Water Damage Restoration After", alt: "After water damage kitchen cabinet replacement Denver metro area" },
   { id: 41, image: img57, category: "Commercial", title: "Happy Cones Ice Cream Shop", alt: "Commercial refrigeration cabinet installation Denver Colorado" },
 ];
