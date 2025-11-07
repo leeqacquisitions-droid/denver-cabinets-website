@@ -2,69 +2,25 @@ import { useState, useEffect, useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
-import before1 from "@assets/IMG_2951 2_1761700443565.jpg";
-import after1 from "@assets/IMG_3037_1761700500526.jpg";
-import after2 from "@assets/IMG_3038_1761700532373.jpg";
-import before3 from "@assets/IMG_3049_1761701315198.jpg";
-import after3 from "@assets/IMG_3052_1761701348687.jpg";
-import before4 from "@assets/IMG_2974_1761702593125.jpg";
-import after4 from "@assets/IMG_2985_1761702608837.jpg";
-import before5 from "@assets/IMG_3065_1761766571579.jpeg";
-import after5 from "@assets/IMG_3067_1761766690867.jpeg";
+import beforeImage from "@assets/IMG_3122_1762481733829.jpg";
+import afterImage from "@assets/IMG_3124_1762481741361.jpg";
 
 const projects = [
   {
-    title: "Modern Living Room Entertainment Center",
-    description: "Custom cabinets flanking fireplace with integrated lighting",
-    before: before1,
-    after: after1,
-    beforeAlt: "Before custom living room cabinets installation Denver metro area",
-    afterAlt: "After professional entertainment center cabinet installation with integrated lighting Denver",
-  },
-  {
-    title: "Mudroom Organization System",
-    description: "Built-in storage solution for entryway organization",
-    before: null,
-    after: after2,
-    beforeAlt: "",
-    afterAlt: "Professional mudroom cabinet organization system installation Denver Colorado",
-  },
-  {
-    title: "Water Damage Kitchen Restoration",
-    description: "Complete cabinet restoration after water damage",
-    before: before3,
-    after: after3,
-    beforeAlt: "Before water damaged kitchen cabinets Aurora Colorado repair",
-    afterAlt: "After water damage kitchen cabinet restoration and installation Denver metro",
-  },
-  {
-    title: "Happy Cones Ice Cream Shop",
-    description: "Custom cabinet installation for retail refrigeration",
-    before: before4,
-    after: after4,
-    beforeAlt: "Before commercial cabinet installation ice cream shop Denver",
-    afterAlt: "After commercial refrigeration cabinet installation Happy Cones Denver Colorado",
-  },
-  {
-    title: "Water Damage Kitchen Restoration",
-    description: "Complete cabinet replacement after water damage",
-    before: before5,
-    after: after5,
-    beforeAlt: "Before water damaged kitchen cabinets Denver Colorado repair",
-    afterAlt: "After water damage kitchen cabinet restoration and replacement Denver metro area",
+    title: "Water Damage Kitchen Sink Restoration",
+    description: "Complete cabinet restoration after water damage to kitchen sink area",
+    before: beforeImage,
+    after: afterImage,
+    beforeAlt: "Before water damaged kitchen sink cabinets Denver Colorado repair",
+    afterAlt: "After water damage kitchen sink cabinet restoration Denver metro area",
   }
 ];
 
 export function ProjectsOfTheMonth() {
   const [showBefore, setShowBefore] = useState<{[key: number]: boolean}>({
-    0: false,
-    1: false,
-    2: false,
-    3: false,
-    4: false
+    0: false
   });
   const [lightboxImage, setLightboxImage] = useState<{ src: string; title: string; type: string } | null>(null);
-  const [showAllProjects, setShowAllProjects] = useState(false);
   const scrollPositionRef = useRef<number>(0);
 
   const toggleBeforeAfter = (index: number) => {
@@ -115,19 +71,16 @@ export function ProjectsOfTheMonth() {
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 mb-12">
+        {/* Projects Grid - Single Featured Project */}
+        <div className="max-w-2xl mx-auto mb-12">
           {projects.map((project, index) => {
             const hasBefore = project.before !== null;
             const currentlyShowingBefore = showBefore[index];
             
-            // On mobile, only show the most recent project (index 4) unless "Show More" is clicked
-            const shouldShowOnMobile = showAllProjects || index === 4;
-            
             return (
               <Card 
                 key={index} 
-                className={`overflow-hidden group ${!shouldShowOnMobile ? 'hidden md:block' : ''}`}
+                className="overflow-hidden group"
                 data-testid={`card-project-${index}`}
               >
                 {/* Image Container */}
@@ -203,21 +156,6 @@ export function ProjectsOfTheMonth() {
             );
           })}
         </div>
-
-        {/* Show More Button - Mobile Only */}
-        {!showAllProjects && (
-          <div className="text-center mb-12 md:hidden">
-            <Button
-              size="default"
-              variant="default"
-              onClick={() => setShowAllProjects(true)}
-              className="shadow-lg font-semibold"
-              data-testid="button-show-more-projects"
-            >
-              Show More Projects
-            </Button>
-          </div>
-        )}
 
         {/* Bottom Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto text-center">

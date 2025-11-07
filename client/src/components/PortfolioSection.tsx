@@ -101,12 +101,14 @@ const portfolioItems = [
   { id: 31, image: img47, category: "Kitchens", title: "Whitewashed Island Kitchen", alt: "Whitewashed shaker kitchen island cabinets Denver" },
   { id: 32, image: img48, category: "Kitchens", title: "Sage Green Shaker Kitchen", alt: "Sage green shaker kitchen cabinet installation Denver" },
   { id: 33, image: img49, category: "Kitchens", title: "Grey Shaker Installation", alt: "Grey shaker kitchen cabinets professional installation Denver" },
-  { id: 34, image: img51, category: "Living Rooms", title: "Entertainment Center with Fireplace", alt: "Custom entertainment center cabinets fireplace Denver" },
-  { id: 35, image: img52, category: "Mudrooms", title: "Mudroom Organization System", alt: "Mudroom cabinet organization system Denver Colorado" },
-  { id: 36, image: img53, category: "Kitchens", title: "Premium Cabinet Lighting Detail", alt: "Premium kitchen cabinet integrated lighting Denver" },
+  { id: 34, image: img50, category: "Living Rooms", title: "Entertainment Center Before", alt: "Before custom living room cabinets installation Denver metro area" },
+  { id: 35, image: img51, category: "Living Rooms", title: "Entertainment Center After", alt: "After professional entertainment center cabinet installation with integrated lighting Denver" },
+  { id: 36, image: img52, category: "Mudrooms", title: "Mudroom Organization System", alt: "Mudroom cabinet organization system Denver Colorado" },
+  { id: 37, image: img53, category: "Kitchens", title: "Premium Cabinet Lighting Detail", alt: "Premium kitchen cabinet integrated lighting Denver" },
   { id: 38, image: img55, category: "Water Damage Restoration", title: "Water Damage Kitchen After", alt: "After water damage kitchen cabinet restoration Denver Aurora" },
-  { id: 40, image: img59, category: "Water Damage Restoration", title: "Water Damage Restoration After", alt: "After water damage kitchen cabinet replacement Denver metro area" },
-  { id: 41, image: img57, category: "Commercial", title: "Happy Cones Ice Cream Shop", alt: "Commercial refrigeration cabinet installation Denver Colorado" },
+  { id: 39, image: img56, category: "Commercial", title: "Happy Cones Before", alt: "Before commercial cabinet installation ice cream shop Denver" },
+  { id: 40, image: img57, category: "Commercial", title: "Happy Cones After", alt: "After commercial refrigeration cabinet installation Happy Cones Denver Colorado" },
+  { id: 41, image: img59, category: "Water Damage Restoration", title: "Water Damage Restoration After", alt: "After water damage kitchen cabinet replacement Denver metro area" },
 ];
 
 const categories = ["All", "Kitchens", "Bathrooms", "Pantries", "Living Rooms", "Mudrooms", "Water Damage Restoration", "Commercial"];
