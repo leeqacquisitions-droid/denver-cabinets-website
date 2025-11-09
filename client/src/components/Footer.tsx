@@ -123,15 +123,33 @@ export function Footer() {
         <div className="border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
             <div className="flex items-center gap-3">
-              <img 
-                src={bbbLogo} 
-                alt="BBB Accredited Business" 
-                className="h-12 w-12 object-contain"
-                data-testid="img-footer-bbb-logo"
-              />
+              <a 
+                href="https://www.bbb.org/us/co/denver/profile/kitchen-cabinets/estate-solution-llc-1296-1000188702"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="link-footer-bbb-profile"
+              >
+                <img 
+                  src={bbbLogo} 
+                  alt="BBB Accredited Business - Leave a Review" 
+                  className="h-12 w-12 object-contain hover:opacity-80 transition-opacity"
+                  data-testid="img-footer-bbb-logo"
+                />
+              </a>
               <div className="text-sm text-primary-foreground/90">
                 <p className="font-semibold">Estate Solutions • <a href="tel:+17202242908" className="hover:text-primary-foreground">(720) 224-2908</a></p>
-                <p className="text-primary-foreground/80">5321 Columbine Ln, Denver, CO 80221 • BBB Accredited</p>
+                <p className="text-primary-foreground/80">
+                  5321 Columbine Ln, Denver, CO 80221 • 
+                  <a 
+                    href="https://www.bbb.org/us/co/denver/profile/kitchen-cabinets/estate-solution-llc-1296-1000188702"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary-foreground transition-colors ml-1"
+                    data-testid="link-footer-bbb-text"
+                  >
+                    BBB Accredited - Leave a Review
+                  </a>
+                </p>
               </div>
             </div>
             <div className="flex gap-6 text-sm text-primary-foreground/80">

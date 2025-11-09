@@ -39,7 +39,13 @@ export function TrustBadges() {
         </div>
         
         <div className="flex flex-col items-center justify-center gap-4 pt-6 border-t border-border">
-          <div className="flex items-center gap-4">
+          <a 
+            href="https://www.bbb.org/us/co/denver/profile/kitchen-cabinets/estate-solution-llc-1296-1000188702"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-4 hover-elevate active-elevate-2 p-3 rounded-md transition-all"
+            data-testid="link-bbb-profile"
+          >
             <img 
               src={bbbLogo} 
               alt="Better Business Bureau Accredited" 
@@ -53,8 +59,11 @@ export function TrustBadges() {
               <p className="text-sm text-muted-foreground">
                 since November 6, 2025
               </p>
+              <p className="text-xs text-primary font-semibold mt-1">
+                Leave a Review →
+              </p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>

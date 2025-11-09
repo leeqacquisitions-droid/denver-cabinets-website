@@ -8,6 +8,8 @@ The business specializes in professional assembly and installation of pre-manufa
 
 **Important Note:** The AI-powered chatbot has been removed per user request.
 
+**BBB Accreditation:** Estate Solutions is accredited by the Better Business Bureau since November 6, 2025. The accreditation is displayed prominently on the website with clickable "Leave a Review" links to encourage customer reviews.
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
@@ -38,12 +40,13 @@ Preferred communication style: Simple, everyday language.
 
 **Component Architecture:**
 - Single-page application with smooth scroll navigation between sections
-- Modular section components (HeroSection, ProjectsOfTheMonth, PortfolioSection, AboutSection, etc.)
+- Modular section components (HeroSection, ProjectsOfTheMonth, PortfolioSection, AboutSection, TrustBadges, etc.)
 - Reusable UI primitives from shadcn/ui library
 - Responsive navigation with thumb-friendly touch targets (min-h-12 / 48px buttons)
 - Mobile-optimized hero section with responsive min-heights (500px mobile, 600px tablet, 700px desktop)
-- Portfolio filtering system (All, Kitchens, Bathrooms, Pantries) with 33 total projects
-- Projects of the Month carousel featuring 3 recent transformations with before/after comparison
+- Portfolio filtering system (All, Kitchens, Bathrooms, Pantries, Living Rooms, Mudrooms, Water Damage Restoration, Commercial) with 41 total projects
+- Projects of the Month: Single featured project (Water Damage Kitchen Sink Restoration with before/after toggle)
+- Trust Badges section: 4 core badges + BBB accreditation with clickable review link
 
 ### Backend Architecture
 
@@ -97,8 +100,9 @@ Preferred communication style: Simple, everyday language.
 
 **Asset Management:**
 - Static images stored in `attached_assets` directory
-- Portfolio images: 33 unique projects (Kitchens: 28, Bathrooms: 3, Pantries: 2)
-- Projects of the Month: 3 featured before/after transformations (living room entertainment center, mudroom system, cabinet details)
+- Portfolio images: 41 unique projects across 7 categories (Kitchens, Bathrooms, Pantries, Living Rooms, Mudrooms, Water Damage Restoration, Commercial)
+- Projects of the Month: Single featured water damage restoration project with before/after toggle
+- BBB Accredited logo: Stock image used in Trust Badges and Footer sections
 - Best Sellers gallery: 12 popular cabinet style images
 - Material showcase images
 - Favicon: Estate Solutions logo (512x512px) in client/public/favicon.png
