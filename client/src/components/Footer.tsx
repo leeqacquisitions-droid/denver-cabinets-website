@@ -2,6 +2,7 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import logoImage from "@assets/estate solution back face_1760721713621.jpg";
+import bbbLogo from "@assets/stock_images/better_business_bure_c543fd0c.jpg";
 
 export function Footer() {
   const scrollToSection = (id: string) => {
@@ -119,14 +120,28 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-primary-foreground/80 text-sm">
+        <div className="border-t border-primary-foreground/20 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
+            <div className="flex items-center gap-3">
+              <img 
+                src={bbbLogo} 
+                alt="BBB Accredited Business" 
+                className="h-12 w-12 object-contain"
+                data-testid="img-footer-bbb-logo"
+              />
+              <div className="text-sm text-primary-foreground/90">
+                <p className="font-semibold">Estate Solutions • <a href="tel:+17202242908" className="hover:text-primary-foreground">(720) 224-2908</a></p>
+                <p className="text-primary-foreground/80">5321 Columbine Ln, Denver, CO 80221 • BBB Accredited</p>
+              </div>
+            </div>
+            <div className="flex gap-6 text-sm text-primary-foreground/80">
+              <button className="hover:text-primary-foreground transition-colors">Privacy Policy</button>
+              <button className="hover:text-primary-foreground transition-colors">Terms of Service</button>
+            </div>
+          </div>
+          <p className="text-primary-foreground/80 text-sm text-center">
             © {new Date().getFullYear()} Estate Solutions. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm text-primary-foreground/80">
-            <button className="hover:text-primary-foreground transition-colors">Privacy Policy</button>
-            <button className="hover:text-primary-foreground transition-colors">Terms of Service</button>
-          </div>
         </div>
       </div>
     </footer>
