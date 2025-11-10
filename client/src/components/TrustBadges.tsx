@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, Clock, ClipboardCheck, Sparkles } from "lucide-react";
-import bbbLogo from "@assets/stock_images/better_business_bure_c543fd0c.jpg";
+import bbbLogo from "@assets/IMG_3160_1762735445742.jpg";
 
 const badges = [
   {
@@ -43,16 +43,16 @@ export function TrustBadges() {
             href="https://www.bbb.org/us/co/denver/profile/kitchen-cabinets/estate-solution-llc-1296-1000188702"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 hover-elevate active-elevate-2 p-3 rounded-md transition-all"
+            className="flex flex-col md:flex-row items-center gap-4 hover-elevate active-elevate-2 p-4 rounded-md transition-all max-w-2xl mx-auto"
             data-testid="link-bbb-profile"
           >
             <img 
               src={bbbLogo} 
               alt="Better Business Bureau Accredited" 
-              className="h-16 w-16 object-contain"
+              className="w-full max-w-sm h-auto object-contain"
               data-testid="img-bbb-logo"
             />
-            <div className="text-center">
+            <div className="text-center md:text-left">
               <p className="text-sm font-semibold text-foreground" data-testid="text-bbb-accreditation">
                 Accredited by the Better Business Bureau
               </p>
@@ -60,7 +60,7 @@ export function TrustBadges() {
                 since November 6, 2025
               </p>
               <p className="text-xs text-primary font-semibold mt-1">
-                Leave a Review →
+                Click to Leave a Review →
               </p>
             </div>
           </a>

@@ -2,7 +2,7 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import logoImage from "@assets/estate solution back face_1760721713621.jpg";
-import bbbLogo from "@assets/stock_images/better_business_bure_c543fd0c.jpg";
+import bbbLogo from "@assets/IMG_3160_1762735445742.jpg";
 
 export function Footer() {
   const scrollToSection = (id: string) => {
@@ -122,21 +122,22 @@ export function Footer() {
 
         <div className="border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col md:flex-row items-center gap-4">
               <a 
                 href="https://www.bbb.org/us/co/denver/profile/kitchen-cabinets/estate-solution-llc-1296-1000188702"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-90 transition-opacity shrink-0"
                 data-testid="link-footer-bbb-profile"
               >
                 <img 
                   src={bbbLogo} 
                   alt="BBB Accredited Business - Leave a Review" 
-                  className="h-12 w-12 object-contain hover:opacity-80 transition-opacity"
+                  className="h-20 w-auto object-contain max-h-20"
                   data-testid="img-footer-bbb-logo"
                 />
               </a>
-              <div className="text-sm text-primary-foreground/90">
+              <div className="text-sm text-primary-foreground/90 text-center md:text-left">
                 <p className="font-semibold">Estate Solutions • <a href="tel:+17202242908" className="hover:text-primary-foreground">(720) 224-2908</a></p>
                 <p className="text-primary-foreground/80">
                   5321 Columbine Ln, Denver, CO 80221 • 
