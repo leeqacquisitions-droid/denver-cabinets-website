@@ -1,7 +1,6 @@
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { TrustBadges } from "@/components/TrustBadges";
-import { ProjectsOfTheMonth } from "@/components/ProjectsOfTheMonth";
 import { ServicesSection } from "@/components/ServicesSection";
 import { PopularStylesSection } from "@/components/PopularStylesSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
@@ -24,7 +23,6 @@ export default function Home() {
         <TrustBadges />
         <ServicesSection />
         <PopularStylesSection />
-        <ProjectsOfTheMonth />
         <PortfolioSection />
         <WhyChooseSection />
         <MaterialsSection />

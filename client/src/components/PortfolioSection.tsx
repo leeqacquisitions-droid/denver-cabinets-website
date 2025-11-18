@@ -67,8 +67,6 @@ import img55 from "@assets/IMG_3052_1761701348687.jpg";
 import img56 from "@assets/IMG_2974_1761702593125.jpg";
 import img57 from "@assets/IMG_2985_1761702608837.jpg";
 
-// Water Damage Restoration images
-import img59 from "@assets/IMG_3067_1761766690867.jpeg";
 
 const portfolioItems = [
   { id: 1, image: img4, category: "Kitchens", title: "White & Onyx Shaker Combo", alt: "Professional white and onyx shaker kitchen cabinet installation Denver metro area" },
@@ -105,13 +103,11 @@ const portfolioItems = [
   { id: 35, image: img51, category: "Living Rooms", title: "Entertainment Center After", alt: "After professional entertainment center cabinet installation with integrated lighting Denver" },
   { id: 36, image: img52, category: "Mudrooms", title: "Mudroom Organization System", alt: "Mudroom cabinet organization system Denver Colorado" },
   { id: 37, image: img53, category: "Kitchens", title: "Premium Cabinet Lighting Detail", alt: "Premium kitchen cabinet integrated lighting Denver" },
-  { id: 38, image: img55, category: "Water Damage Restoration", title: "Water Damage Kitchen After", alt: "After water damage kitchen cabinet restoration Denver Aurora" },
   { id: 39, image: img56, category: "Commercial", title: "Happy Cones Before", alt: "Before commercial cabinet installation ice cream shop Denver" },
   { id: 40, image: img57, category: "Commercial", title: "Happy Cones After", alt: "After commercial refrigeration cabinet installation Happy Cones Denver Colorado" },
-  { id: 41, image: img59, category: "Water Damage Restoration", title: "Water Damage Restoration After", alt: "After water damage kitchen cabinet replacement Denver metro area" },
 ];
 
-const categories = ["All", "Kitchens", "Bathrooms", "Pantries", "Living Rooms", "Mudrooms", "Water Damage Restoration", "Commercial"];
+const categories = ["All", "Kitchens", "Bathrooms", "Pantries", "Living Rooms", "Mudrooms", "Commercial"];
 
 export function PortfolioSection() {
   const [selectedCategory, setSelectedCategory] = useState("All");
