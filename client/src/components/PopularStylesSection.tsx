@@ -7,6 +7,7 @@ import greyShaker from "@assets/grey-shaker-door.png";
 import naturalOak from "@assets/natural_oak_1763432240988.png";
 import walnut from "@assets/walnut_1763432380510.png";
 import matteWhite from "@assets/matte_white_1763432576301.png";
+import glossWhite from "@assets/gloss_white_1763432719326.png";
 import signatureBlue from "@assets/signature-blue-shaker-door.png";
 import onyxShaker from "@assets/onyx-shaker-door.png";
 import doveWhite from "@assets/dove-white-slim-shaker-door.png";
@@ -95,6 +96,13 @@ const styles = [
     name: "MATTE WHITE",
     image: matteWhite,
     description: "Modern sophistication in matte white finish",
+    category: "Euro Frameless"
+  },
+  {
+    id: 13,
+    name: "GLOSS WHITE",
+    image: glossWhite,
+    description: "High-gloss white finish for contemporary elegance",
     category: "Euro Frameless"
   }
 ];
