@@ -90,11 +90,7 @@ export function Footer() {
                 </a>
               </li>
               <li className="pt-2 font-semibold text-primary-foreground">Service Areas:</li>
-              <li>Denver</li>
-              <li>Southlands</li>
-              <li>Fort Collins</li>
-              <li>Broomfield</li>
-              <li className="text-sm">All Denver metro (30-60 min radius)</li>
+              <li>Denver metro (30-60 mile radius)</li>
             </ul>
           </div>
 
@@ -140,12 +136,11 @@ export function Footer() {
               <div className="text-sm text-primary-foreground/90 text-center md:text-left">
                 <p className="font-semibold">Estate Solutions • <a href="tel:+17202242908" className="hover:text-primary-foreground">(720) 224-2908</a></p>
                 <p className="text-primary-foreground/80">
-                  5321 Columbine Ln, Denver, CO 80221 • 
                   <a 
                     href="https://www.bbb.org/us/co/denver/profile/kitchen-cabinets/estate-solution-llc-1296-1000188702"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-primary-foreground transition-colors ml-1"
+                    className="hover:text-primary-foreground transition-colors"
                     data-testid="link-footer-bbb-text"
                   >
                     BBB Accredited - Leave a Review

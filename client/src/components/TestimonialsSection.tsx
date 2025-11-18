@@ -3,36 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Star, Phone } from "lucide-react";
 import reviewImg from "@assets/excellent reviews_1760666657230.jpg";
 
-const testimonials = [
-  {
-    id: 1,
-    name: "Sarah R.",
-    location: "Broomfield",
-    rating: 5,
-    text: "Clean install at a fair price. The shaker doors look fantastic in our kitchen."
-  },
-  {
-    id: 2,
-    name: "Mike T.",
-    location: "Southlands (property manager)",
-    rating: 5,
-    text: "They handled design renderings and install on schedule. Our tenants love the update."
-  },
-  {
-    id: 3,
-    name: "Lauren M.",
-    location: "Denver (Highlands)",
-    rating: 5,
-    text: "Responsive, professional, and the cabinet fit was spot on. Would hire again."
-  },
-  {
-    id: 4,
-    name: "Daniel K.",
-    location: "Fort Collins",
-    rating: 5,
-    text: "Great communication and value. Garage storage cabinets came out sturdy and clean."
-  },
-];
+const testimonials: any[] = [];
 
 export function TestimonialsSection() {
   return (
@@ -53,22 +24,6 @@ export function TestimonialsSection() {
           </Card>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
-          {testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300" data-testid={`testimonial-${testimonial.id}`}>
-              <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" />
-                ))}
-              </div>
-              <p className="text-lg mb-4 leading-relaxed">"{testimonial.text}"</p>
-              <div className="border-t pt-4">
-                <p className="font-semibold">{testimonial.name}</p>
-                <p className="text-sm text-muted-foreground">{testimonial.location}</p>
-              </div>
-            </Card>
-          ))}
-        </div>
 
         <div className="text-center">
           <Button
