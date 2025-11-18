@@ -6,7 +6,7 @@ import whiteShaker from "@assets/white-shaker-door.png";
 import greyShaker from "@assets/grey-shaker-door.png";
 import naturalOak from "@assets/natural_oak_1763432240988.png";
 import walnut from "@assets/walnut_1763432380510.png";
-import matteWhite from "@assets/matte-white-euro-door.png";
+import matteWhite from "@assets/matte_white_1763432576301.png";
 import signatureBlue from "@assets/signature-blue-shaker-door.png";
 import onyxShaker from "@assets/onyx-shaker-door.png";
 import doveWhite from "@assets/dove-white-slim-shaker-door.png";
