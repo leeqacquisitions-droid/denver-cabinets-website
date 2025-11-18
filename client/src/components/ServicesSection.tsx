@@ -1,25 +1,25 @@
 import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
-import { ChefHat, Droplet, Building2 } from "lucide-react";
+import { Package, Hammer, Ruler } from "lucide-react";
 
 const services = [
   {
-    icon: ChefHat,
-    title: "Kitchen Cabinet Installation",
-    description: "Professional installation of pre-manufactured kitchen cabinets with 4-6 day completion.",
-    href: "/services/kitchen-cabinet-installation"
+    icon: Package,
+    title: "Cabinet Supplier",
+    description: "High-quality pre-manufactured cabinets for kitchens, bathrooms, and all spaces. Wide selection of styles, finishes, and sizes to fit any project.",
+    href: "/services/cabinet-supplier"
   },
   {
-    icon: Droplet,
-    title: "Water-Damage Cabinet Repair",
-    description: "Expert repair and replacement of water-damaged cabinets throughout the Denver metro.",
-    href: "/services/water-damage-cabinet-repair"
+    icon: Hammer,
+    title: "Cabinet Installations",
+    description: "Expert installation with 4-6 day kitchen completion. Licensed and insured professionals ensuring precision fit and lasting quality.",
+    href: "/services/cabinet-installations"
   },
   {
-    icon: Building2,
-    title: "Multi-Unit & Builders",
-    description: "Specialized services for contractors, property managers, and multi-unit developments.",
-    href: "/services/multi-unit-builders"
+    icon: Ruler,
+    title: "On-site Consultation with 3D Renderings and Layout",
+    description: "Free on-site visits with professional design renderings and detailed 3D layouts to visualize your space before installation.",
+    href: "/services/consultation-design"
   }
 ];
 

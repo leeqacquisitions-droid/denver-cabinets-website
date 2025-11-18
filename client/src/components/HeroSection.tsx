@@ -20,10 +20,10 @@ export function HeroSection() {
       <div className="relative min-h-[70vh] flex flex-col items-center justify-center text-center px-4 py-12">
         <div className="text-white max-w-4xl mx-auto">
           <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-            Cabinet Installation & Water-Damage Repair — Denver Metro
+            Denver cabinet supplier & installations team for homeowners and contractors
           </h1>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-white/90 leading-relaxed">
-            Licensed & insured. 4–6 day kitchen installs. Free on-site estimates. Serving homeowners, contractors, and multi-unit properties.
+            Licensed & insured. 4–6 day kitchen installs. Free on-site estimates. Professional pre-manufactured cabinet supply and installation.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Button
