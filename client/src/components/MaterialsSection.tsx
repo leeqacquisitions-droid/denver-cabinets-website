@@ -5,6 +5,7 @@ import { ZoomIn } from "lucide-react";
 import img1 from "@assets/glossy material for cabinets_1760666768295.jpg";
 import img2 from "@assets/material cabinet doors_1760666899185.jpg";
 import cabinetFeatures from "@assets/image000000 6_1760745669766.jpg";
+import euroFramelessSpecs from "@assets/euro_frameless_specs_1763431667618.png";
 
 const materials = [
   {
@@ -27,6 +28,14 @@ const materials = [
     category: "Construction Details",
     image: cabinetFeatures,
     description: "Click to view full construction details - Premium quality with dovetail drawers and soft-close glides",
+    zoomable: true
+  },
+  {
+    id: 4,
+    name: "Euro Frameless Material Specs",
+    category: "Product Specifications",
+    image: euroFramelessSpecs,
+    description: "Click to view detailed specifications - EPA compliant materials, PVC edge banding, and premium finishes",
     zoomable: true
   },
 ];
