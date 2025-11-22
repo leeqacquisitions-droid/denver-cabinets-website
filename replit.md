@@ -30,13 +30,38 @@ Preferred communication style: Simple, everyday language.
 - Custom design system with specific color palette for cabinetry business aesthetic
 - Dark/light theme support with theme toggle functionality
 
-**Design System:**
-- Color palette defined in CSS variables supporting light/dark modes
-- Royal Blue (HSL 233, 48%, 45%) as primary brand color
-- Typography: Playfair Display (headings - elegant serif conveying craftsmanship), Inter (body text - clean modern sans-serif)
-- Consistent section spacing: py-20 lg:py-28 across all major sections for visual hierarchy
-- Custom border radius and spacing tokens
-- Favicon: Custom Estate Solutions logo in client/public/favicon.png
+**Design System (OPS District High-Craft Aesthetic):**
+- **Color Palette**: Cinematic dark design with refined accents
+  - Brand Blue: HSL(233, 48%, 45%) - primary brand color
+  - Brand Blue Soft: HSL(226, 40%, 18%) - darker variant
+  - Accent Wood: HSL(32, 52%, 57%) - #C8945C warm wood accent
+  - Background Soft: HSL(40, 23%, 96%) - refined light background
+  - All CSS variables use H S% L% format for consistency
+- **Typography**: 
+  - Playfair Display (headings) with custom letter-spacing utilities (tracking-studio, tracking-studio-sm)
+  - Inter (body text) for clean readability
+  - Refined heading hierarchy with tracking-tight and custom spacing
+- **Button System**:
+  - .btn-primary: Dark blue button with white text, hover/active elevations
+  - .btn-outline-light: Transparent with white border, backdrop blur on images
+  - All buttons use shadcn Button component with asChild pattern for proper accessibility
+- **Header**: Dark glass morphism design
+  - Transparent background initially, transitions to bg-slate-950/90 with backdrop-blur-xl at 10px scroll
+  - Border-bottom (border-white/5) appears on scroll
+  - Pill-shaped phone CTA with emerald accent and pulse animation
+  - Scroll listener with passive mode for performance
+- **Hero Section**: Cinematic split layout
+  - Dark slate-950 background with gradient overlays
+  - Two-column layout: copy left, image right
+  - Trust badges with emerald pulse indicators
+  - Gradient overlays on images (slate-950 via/to patterns)
+- **Portfolio Cards**: Elevated dark aesthetic
+  - Dark backgrounds (slate-950/90) with gradient overlays
+  - Bottom-left text overlays on hover
+  - Border-white/5 with rounded-3xl corners
+  - Shadow effects for depth
+- Consistent section spacing: py-20 lg:py-28 for visual hierarchy
+- Favicon: Estate Solutions logo in client/public/favicon.png
 
 **Component Architecture:**
 - Single-page application with smooth scroll navigation between sections
