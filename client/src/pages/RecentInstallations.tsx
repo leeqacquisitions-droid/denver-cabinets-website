@@ -1,8 +1,10 @@
+import { useState, useEffect, useRef } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Calendar, MapPin, X } from "lucide-react";
 import mudroom from "@assets/img_3304_1763788353485.jpg";
 import consultation from "@assets/img_3345_1763788353485.jpg";
 import blackKitchen from "@assets/img_3348_1763788353485.jpg";
@@ -62,6 +64,29 @@ const installations = [
 ];
 
 export default function RecentInstallations() {
+  const [lightboxImage, setLightboxImage] = useState<typeof installations[0] | null>(null);
+  const scrollPositionRef = useRef<number>(0);
+
+  // Prevent body scroll when lightbox is open and preserve scroll position
+  useEffect(() => {
+    if (lightboxImage) {
+      // Save current scroll position
+      scrollPositionRef.current = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollPositionRef.current}px`;
+      document.body.style.width = '100%';
+      
+      return () => {
+        // Restore scroll position
+        const savedScrollY = scrollPositionRef.current;
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, savedScrollY);
+      };
+    }
+  }, [lightboxImage]);
+
   return (
     <div className="min-h-screen pt-[120px] overflow-x-hidden">
       <Header />
@@ -91,6 +116,7 @@ export default function RecentInstallations() {
                 <Card
                   key={project.id}
                   className="overflow-hidden hover-elevate cursor-pointer group"
+                  onClick={() => setLightboxImage(project)}
                   data-testid={`card-installation-${project.id}`}
                 >
                   {/* Image */}
@@ -157,6 +183,48 @@ export default function RecentInstallations() {
             </div>
           </div>
         </section>
+
+        {/* Lightbox */}
+        {lightboxImage && (
+          <div
+            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+            onClick={() => setLightboxImage(null)}
+            data-testid="lightbox-overlay"
+          >
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute top-4 right-4 text-white hover:bg-white/20"
+              onClick={() => setLightboxImage(null)}
+              data-testid="button-close-lightbox"
+            >
+              <X className="h-6 w-6" />
+            </Button>
+            <div className="max-w-6xl w-full">
+              <img
+                src={lightboxImage.image}
+                alt={lightboxImage.title}
+                className="w-full h-auto max-h-[80vh] object-contain rounded-md touch-auto select-none"
+                onClick={(e) => e.stopPropagation()}
+                style={{ touchAction: 'auto' }}
+              />
+              <div className="mt-4 text-center">
+                <h3 className="text-white text-2xl font-semibold mb-2">{lightboxImage.title}</h3>
+                <p className="text-white/80 text-sm mb-3">{lightboxImage.description}</p>
+                <div className="flex justify-center gap-4 text-white/70 text-sm">
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-4 h-4" />
+                    <span>{lightboxImage.location}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-4 h-4" />
+                    <span>{lightboxImage.date}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
       <Footer />
     </div>
