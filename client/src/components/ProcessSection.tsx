@@ -52,13 +52,13 @@ const projectPhases = [
 
 export function ProcessSection() {
   return (
-    <section id="process" className="py-16 bg-card">
+    <section id="process" className="py-20 lg:py-28 bg-zinc-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-slate-900 tracking-tight text-3xl md:text-4xl font-bold mb-4">
             Our Process
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             From consultation to completion, we make cabinet installation seamless
           </p>
         </div>
@@ -68,31 +68,31 @@ export function ProcessSection() {
             {steps.map((step, index) => (
               <Card
                 key={index}
-                className="p-6 relative rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300"
+                className="estate-card-light p-6 relative hover-elevate transition-all duration-300"
                 data-testid={`process-step-${index}`}
               >
-                <div className="absolute top-4 right-4 text-4xl font-bold text-muted-foreground/10">
+                <div className="absolute top-4 right-4 text-4xl font-bold text-slate-900/5">
                   {step.number}
                 </div>
                 <div className="relative">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-4">
-                    <step.icon className="h-6 w-6 text-primary" />
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-sky-500/10 mb-4">
+                    <step.icon className="h-6 w-6 text-sky-600" />
                   </div>
-                  <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground">{step.description}</p>
+                  <h3 className="font-semibold text-lg mb-2 text-slate-900">{step.title}</h3>
+                  <p className="text-sm text-slate-600">{step.description}</p>
                 </div>
               </Card>
             ))}
           </div>
 
           <div className="space-y-6">
-            <Card className="p-6 bg-primary text-primary-foreground">
-              <h3 className="font-semibold text-xl mb-2">Payment Structure</h3>
-              <p className="text-primary-foreground/90 mb-4">
+            <Card className="estate-card-light p-6 bg-gradient-to-br from-sky-50 to-blue-50 border-sky-200/50">
+              <h3 className="font-semibold text-xl mb-2 text-slate-900">Payment Structure</h3>
+              <p className="text-slate-700 mb-4">
                 70% down payment to secure materials<br />
                 Remaining 30% due upon completion
               </p>
-              <p className="text-sm text-primary-foreground/80">
+              <p className="text-sm text-slate-600">
                 Timeline: Most kitchens completed in 4-6 days
               </p>
             </Card>
@@ -102,8 +102,8 @@ export function ProcessSection() {
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {projectPhases.map((phase, index) => (
             <div key={index} className="relative" data-testid={`project-phase-${index}`}>
-              <Card className="overflow-hidden p-0 h-full rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                <div className="aspect-[4/3] overflow-hidden bg-muted">
+              <Card className="estate-card-light overflow-hidden p-0 h-full hover-elevate transition-all duration-300">
+                <div className="aspect-[4/3] overflow-hidden bg-slate-100">
                   <img 
                     src={phase.image} 
                     alt={phase.title}
@@ -111,17 +111,17 @@ export function ProcessSection() {
                   />
                 </div>
                 <div className="p-5 text-center">
-                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary font-bold mb-3">
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-sky-500/10 text-sky-600 font-bold mb-3">
                     {index + 1}
                   </div>
-                  <h4 className="font-semibold text-lg mb-1">{phase.title}</h4>
-                  <p className="text-sm text-muted-foreground">{phase.description}</p>
+                  <h4 className="font-semibold text-lg mb-1 text-slate-900">{phase.title}</h4>
+                  <p className="text-sm text-slate-600">{phase.description}</p>
                 </div>
               </Card>
               {index < 2 && (
                 <div className="hidden md:flex absolute top-1/2 -right-4 lg:-right-6 transform -translate-y-1/2 z-10">
-                  <div className="bg-background rounded-full p-2 shadow-md">
-                    <ArrowRight className="h-5 w-5 text-primary" />
+                  <div className="bg-white rounded-full p-2 shadow-md border border-slate-200/70">
+                    <ArrowRight className="h-5 w-5 text-sky-600" />
                   </div>
                 </div>
               )}
@@ -130,8 +130,8 @@ export function ProcessSection() {
         </div>
 
         <div className="mt-8 text-center">
-          <Card className="inline-block p-4 bg-primary/5 border-primary/20">
-            <p className="text-sm font-medium">
+          <Card className="estate-card-light inline-block p-4">
+            <p className="text-sm font-medium text-slate-700">
               Projects like this are completed on a weekly basis
             </p>
           </Card>

@@ -109,17 +109,17 @@ const styles = [
 
 export function PopularStylesSection() {
   return (
-    <section className="py-16 bg-background" id="styles">
+    <section className="py-20 lg:py-28 bg-zinc-50" id="styles">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="text-sm font-semibold tracking-wider text-muted-foreground mb-2">
+          <p className="text-sm font-semibold tracking-wider text-slate-500 mb-2">
             HOT PRODUCTS
           </p>
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+          <h2 className="text-slate-900 tracking-tight text-3xl md:text-4xl font-bold mb-4">
             OUR BEST SELLERS
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-slate-600 max-w-2xl mx-auto">
             Explore our most popular cabinet door styles - from classic shakers to modern frameless designs
           </p>
         </div>
@@ -129,10 +129,10 @@ export function PopularStylesSection() {
           {styles.map((style) => (
             <Card
               key={style.id}
-              className="overflow-hidden rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer group"
+              className="estate-card-light overflow-hidden hover-elevate active-elevate-2 transition-all duration-300 cursor-pointer group"
               data-testid={`card-style-${style.id}`}
             >
-              <div className="aspect-[3/4] bg-muted/30 overflow-hidden">
+              <div className="aspect-[3/4] bg-slate-100/50 overflow-hidden">
                 <img
                   src={style.image}
                   alt={style.name}
@@ -141,13 +141,13 @@ export function PopularStylesSection() {
                 />
               </div>
               <div className="p-3">
-                <p className="text-xs text-muted-foreground mb-1">
+                <p className="text-xs text-slate-500 mb-1">
                   {style.category}
                 </p>
-                <h3 className="text-sm font-bold tracking-wide mb-1">
+                <h3 className="text-sm font-bold tracking-wide mb-1 text-slate-900">
                   {style.name}
                 </h3>
-                <p className="text-xs text-muted-foreground line-clamp-2">
+                <p className="text-xs text-slate-600 line-clamp-2">
                   {style.description}
                 </p>
               </div>
@@ -157,12 +157,12 @@ export function PopularStylesSection() {
 
         {/* Call to Action */}
         <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">
+          <p className="text-slate-600 mb-4">
             Don't see what you're looking for? We offer many more styles and finishes!
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground hover-elevate active-elevate-2 h-10 px-6 font-medium"
+            className="inline-flex items-center justify-center rounded-md bg-sky-600 text-white hover-elevate active-elevate-2 h-10 px-6 font-medium transition-all"
             data-testid="button-contact-styles"
           >
             Contact Us for More Options

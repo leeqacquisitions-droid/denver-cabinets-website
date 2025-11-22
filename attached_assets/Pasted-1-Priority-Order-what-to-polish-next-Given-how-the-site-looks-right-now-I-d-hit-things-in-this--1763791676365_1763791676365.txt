@@ -1,0 +1,73 @@
+1️⃣ Priority Order (what to polish next)
+Given how the site looks right now, I’d hit things in this order:
+Light Sections Harmonization Pack
+(Process, Materials, Best Sellers, FAQ – unify card style + background)
+Reviews & Testimonials Spotlight Pack
+(make those human photos feel intentional and premium)
+Footer Cohesion Pack
+(make footer match new dark header/hero energy, but keep client blue)
+If you do just those three, the whole site will feel like one continuous, upgraded design.
+2️⃣ Light Sections Harmonization Pack
+(Process / Materials / Best Sellers / FAQ)
+Right now each of these uses its own card/border/shadow recipe.
+We want them to share one “Estate Card” style that matches the new portfolio cards.
+a) Define a shared card style
+Tell Cyborg to create a common class / component (mentally):
+// pseudo-class via Tailwind utilities
+const estateCard =
+  "rounded-3xl bg-slate-900/70 border border-slate-800/80 shadow-[0_22px_60px_rgba(15,23,42,0.85)]";
+For light sections where full dark is too much, use:
+const estateCardLight =
+  "rounded-3xl bg-slate-900/2 border border-slate-200/70 shadow-[0_18px_40px_rgba(15,23,42,0.06)]";
+Then:
+Process cards → estateCardLight
+Materials cards → estateCardLight
+Best sellers door cards → estateCardLight + stronger hover
+FAQ items → no more “flat white strips”; wrap each Q/A row in a soft estateCardLight with divide-y on the inside
+This will instantly make all those sections feel like they belong to the same design family as the portfolio.
+b) Background for those sections
+Right now: hard white.
+Shift each of these sections to a very soft warm background:
+<section className="bg-[#F5F4F2] py-16">
+or Tailwind:
+bg-slate-50 is okay,
+bg-zinc-50 even nicer.
+The key: no more pure white slabs. It’ll look more architectural.
+c) Headings
+Make sure all these headings use the exact same treatment the hero and portfolio are using:
+text-slate-900
+tracking-tight
+text-3xl md:text-4xl
+same margin-bottom pattern.
+Right now some headings are a little looser; we just tighten to match.
+3️⃣ Reviews & Testimonials Spotlight Pack
+The “Client Reviews” photo and the little black chat-style form are powerful, but visually under-framed.
+Upgrade pattern:
+Wrap the big review photo in the same card style as portfolio:
+rounded-3xl
+shadow-[0_22px_60px_rgba(15,23,42,0.85)]
+slight border
+Add a small strip above the photo:
+“Homeowner review – Denver, CO”
+4.8 ⭐⭐⭐⭐⭐ on BBB / word-of-mouth (if true / safe to say)
+Put the black “What’s your name?” chat box in its own section, full width,
+and give the whole section a darker background (bg-slate-950/95) so it feels like a focused contact moment, not a random insert.
+This keeps everything you already built, just frames it better.
+4️⃣ Footer Cohesion Pack
+Footer is still the old strong blue slab; header/hero are now dark navy-slate with green call chip.
+Simple way to harmonize without scaring the client:
+Top footer row:
+bg-slate-950 or bg-slate-950/95
+white text
+links, contact, newsletter all in a clean 3- or 4-column grid.
+Bottom bar (thin strip):
+use the client’s blue as an accent: bg-[#3346CC] (whatever exact Get Quote button color is)
+include copyright + BBB badge down there.
+That way their blue becomes a brand accent bar, not a huge wall of color.
+5️⃣ What to Actually Tell Cyborg
+If you want to move this forward today, you can literally say to Cyborg:
+“Use Charles’ ‘Estate Card’ style to unify the Process, Materials, Best Sellers, and FAQ sections.
+Then apply his footer cohesion notes: dark top footer, brand-blue bottom bar with BBB + copyright.”
+And then:
+“Next, upgrade the Reviews section so the homeowner photo and chat-style form feel like intentional, premium testimonial blocks, using the same card and background rules.”
+That will get you 90% of the remaining polish.

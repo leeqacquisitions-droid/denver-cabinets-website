@@ -114,11 +114,11 @@ export function ContactSection() {
   const isLastStep = step === questions.length - 1;
 
   return (
-    <section id="quote" className="py-16 bg-background">
+    <section id="quote" className="py-20 lg:py-28 bg-slate-950/95">
       <div className="w-full max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl lg:text-5xl font-bold mb-4">Get a Quote</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-slate-50 tracking-tight text-3xl md:text-4xl font-bold mb-4">Get a Quote</h2>
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
             Ready to transform your space? Let's discuss your cabinet project
           </p>
         </div>

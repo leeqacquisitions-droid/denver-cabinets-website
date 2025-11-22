@@ -1,3 +1,4 @@
+import { Card } from "@/components/ui/card";
 import {
   Accordion,
   AccordionContent,
@@ -46,34 +47,40 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <section id="faq" className="py-16">
+    <section id="faq" className="py-20 lg:py-28 bg-zinc-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-slate-900 tracking-tight text-3xl md:text-4xl font-bold mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-slate-600">
             Everything you need to know about our cabinet installation services
           </p>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-4">
+        <div className="max-w-4xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
-            <AccordionItem
+            <Card
               key={index}
-              value={`item-${index}`}
-              className="border rounded-lg px-6"
+              className="estate-card-light overflow-hidden"
               data-testid={`faq-item-${index}`}
             >
-              <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
+              <Accordion type="single" collapsible>
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="border-0 px-6"
+                >
+                  <AccordionTrigger className="text-left font-semibold hover:no-underline text-slate-900">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-slate-600">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </Card>
           ))}
-        </Accordion>
+        </div>
       </div>
     </section>
   );

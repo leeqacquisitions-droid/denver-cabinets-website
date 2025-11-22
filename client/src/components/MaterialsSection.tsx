@@ -52,11 +52,11 @@ export function MaterialsSection() {
   };
 
   return (
-    <section id="materials" className="py-16 bg-card">
+    <section id="materials" className="py-20 lg:py-28 bg-zinc-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl lg:text-5xl font-bold mb-4">Premium Materials</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-slate-900 tracking-tight text-3xl md:text-4xl font-bold mb-4">Premium Materials</h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             We work with the finest materials to ensure lasting quality and beauty
           </p>
         </div>
@@ -65,7 +65,7 @@ export function MaterialsSection() {
           {materials.map((material) => (
             <Card
               key={material.id}
-              className="overflow-hidden rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer group"
+              className="estate-card-light overflow-hidden hover-elevate transition-all duration-300 cursor-pointer group"
               data-testid={`material-${material.id}`}
               onClick={() => handleImageClick(material)}
             >
@@ -77,16 +77,16 @@ export function MaterialsSection() {
                 />
                 {material.zoomable && (
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <div className="bg-white dark:bg-black rounded-full p-3">
-                      <ZoomIn className="h-6 w-6" />
+                    <div className="bg-white rounded-full p-3">
+                      <ZoomIn className="h-6 w-6 text-slate-900" />
                     </div>
                   </div>
                 )}
               </div>
               <div className="p-4">
-                <p className="text-sm text-muted-foreground mb-1">{material.category}</p>
-                <h3 className="font-semibold mb-2">{material.name}</h3>
-                <p className="text-sm text-muted-foreground">{material.description}</p>
+                <p className="text-sm text-slate-500 mb-1">{material.category}</p>
+                <h3 className="font-semibold mb-2 text-slate-900">{material.name}</h3>
+                <p className="text-sm text-slate-600">{material.description}</p>
               </div>
             </Card>
           ))}
