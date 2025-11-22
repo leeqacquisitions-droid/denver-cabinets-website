@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { ThemeToggle } from "./ThemeToggle";
 import logoImage from "@assets/estate solutions logo _1760720586570.jpg";
 
 export function Header() {
+  const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isHomePage = location === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,13 +29,14 @@ export function Header() {
   };
 
   const navItems = [
-    { label: "Home", id: "home" },
-    { label: "Portfolio", id: "portfolio" },
-    { label: "Materials", id: "materials" },
-    { label: "Process", id: "process" },
-    { label: "Reviews", id: "reviews" },
-    { label: "About", id: "about" },
-    { label: "Contact", id: "quote" },
+    { label: "Home", id: "home", type: "scroll" as const },
+    { label: "Portfolio", id: "portfolio", type: "scroll" as const },
+    { label: "Recent Installations", id: "recent-installations", type: "page" as const, isNew: true },
+    { label: "Materials", id: "materials", type: "scroll" as const },
+    { label: "Process", id: "process", type: "scroll" as const },
+    { label: "Reviews", id: "reviews", type: "scroll" as const },
+    { label: "About", id: "about", type: "scroll" as const },
+    { label: "Contact", id: "quote", type: "scroll" as const },
   ];
 
   return (
@@ -53,17 +58,37 @@ export function Header() {
 
           {/* Desktop Navigation - Centered */}
           <nav className="hidden md:flex items-center justify-center gap-1 flex-1">
-            {navItems.slice(1).map((item) => (
-              <Button
-                key={item.id}
-                variant="ghost"
-                onClick={() => scrollToSection(item.id)}
-                data-testid={`link-${item.id}`}
-                className="hover-elevate active-elevate-2 min-h-12"
-              >
-                {item.label}
-              </Button>
-            ))}
+            {navItems.slice(1).map((item) => {
+              if (item.type === "page") {
+                return (
+                  <Link key={item.id} href={`/${item.id}`}>
+                    <Button
+                      variant="ghost"
+                      data-testid={`link-${item.id}`}
+                      className="hover-elevate active-elevate-2 min-h-12 gap-2"
+                    >
+                      {item.label}
+                      {item.isNew && (
+                        <Badge className="text-[10px] px-1.5 py-0 h-4" data-testid="badge-new-desktop">
+                          NEW
+                        </Badge>
+                      )}
+                    </Button>
+                  </Link>
+                );
+              }
+              return (
+                <Button
+                  key={item.id}
+                  variant="ghost"
+                  onClick={() => scrollToSection(item.id)}
+                  data-testid={`link-${item.id}`}
+                  className="hover-elevate active-elevate-2 min-h-12"
+                >
+                  {item.label}
+                </Button>
+              );
+            })}
           </nav>
 
           {/* Right side buttons - Fixed right */}
@@ -94,17 +119,38 @@ export function Header() {
         {isMobileMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t pt-4">
             <div className="flex flex-col gap-3">
-              {navItems.slice(1).map((item) => (
-                <Button
-                  key={item.id}
-                  variant="ghost"
-                  onClick={() => scrollToSection(item.id)}
-                  data-testid={`link-mobile-${item.id}`}
-                  className="justify-start hover-elevate active-elevate-2 min-h-12 text-base"
-                >
-                  {item.label}
-                </Button>
-              ))}
+              {navItems.slice(1).map((item) => {
+                if (item.type === "page") {
+                  return (
+                    <Link key={item.id} href={`/${item.id}`}>
+                      <Button
+                        variant="ghost"
+                        data-testid={`link-mobile-${item.id}`}
+                        className="justify-start hover-elevate active-elevate-2 min-h-12 text-base w-full gap-2"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {item.label}
+                        {item.isNew && (
+                          <Badge className="text-[10px] px-1.5 py-0 h-4" data-testid="badge-new-mobile">
+                            NEW
+                          </Badge>
+                        )}
+                      </Button>
+                    </Link>
+                  );
+                }
+                return (
+                  <Button
+                    key={item.id}
+                    variant="ghost"
+                    onClick={() => scrollToSection(item.id)}
+                    data-testid={`link-mobile-${item.id}`}
+                    className="justify-start hover-elevate active-elevate-2 min-h-12 text-base"
+                  >
+                    {item.label}
+                  </Button>
+                );
+              })}
               <Button
                 onClick={() => scrollToSection("quote")}
                 data-testid="button-mobile-quote"
