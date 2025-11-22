@@ -268,23 +268,29 @@ export function PortfolioSection() {
         {/* Portfolio Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {displayedItems.map((item) => (
-            <Card
+            <div
               key={item.id}
-              className="overflow-hidden cursor-pointer group hover-elevate rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
+              className="group relative overflow-hidden rounded-2xl bg-slate-900/60 border border-slate-800/80 shadow-[0_18px_45px_rgba(15,23,42,0.85)] cursor-pointer"
               onClick={() => setLightboxImage(item)}
               data-testid={`portfolio-item-${item.id}`}
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.alt}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute top-3 left-3 bg-primary text-primary-foreground rounded-full h-8 w-8 flex items-center justify-center font-semibold text-sm shadow-lg">
-                  {item.id}
-                </div>
               </div>
-            </Card>
+
+              {/* Gradient overlay */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-80" />
+
+              {/* Text on hover */}
+              <div className="absolute inset-x-4 bottom-4 flex flex-col gap-1">
+                <p className="text-sm font-semibold text-slate-50">{item.title}</p>
+                <p className="text-xs text-slate-300/90">{item.category}</p>
+              </div>
+            </div>
           ))}
         </div>
 

@@ -1,0 +1,263 @@
+1️⃣ Global Direction — OPS District, High-Craft Denver
+Keep these from your current system:
+Primary blue brand
+Real project photos
+Section spacing + container system (max-w-7xl mx-auto px-6)
+BBB + testimonials + contact CTAs
+Add/shift:
+Warm wood accent to complement blue
+--accent-wood: #C8945C; (muted caramel / wood tone)
+Softer background, less pure white
+#F5F4F2 for most “light” sections
+More refined type pairing
+Headings: a slightly more “crafted” serif or display (e.g. Playfair Display, Cormorant Garamond)
+Body: keep your clean sans (e.g. Inter, System UI)
+In index.css (or global styles), you can do something like:
+:root {
+  --brand-blue: 233 48% 45%; /* existing HSL */
+  --brand-blue-soft: 226 40% 18%;
+  --accent-wood: 32 52% 57%;
+  --bg-soft: #F5F4F2;
+}
+
+body {
+  @apply bg-[#060713] text-slate-100; /* for very dark hero routes */
+}
+
+/* Light sections */
+.section-light {
+  background-color: var(--bg-soft);
+}
+
+/* Headings */
+h1, .heading-xl {
+  font-family: "Playfair Display", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Buttons */
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium tracking-wide;
+  background: linear-gradient(135deg, hsl(var(--brand-blue)), hsl(var(--brand-blue-soft)));
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.45);
+}
+.btn-primary:hover {
+  filter: brightness(1.06);
+}
+.btn-outline-light {
+  @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium border border-white/30 text-white/90;
+  backdrop-filter: blur(8px);
+}
+Cyborg can adapt that to however your Tailwind/utility setup is wired.
+2️⃣ Header.tsx — Make It Feel Like a Studio, Not a SaaS
+You’re already:
+fixed header
+scroll detection + blur
+mobile menu
+Changes I’d recommend:
+Shorter vertical footprint
+Drop logo height a bit: h-20 desktop, h-16 mobile.
+Transparent over hero → solid on scroll
+Start with bg-slate-950/0 and border-b border-white/5
+On scroll, switch to bg-slate-950/90 backdrop-blur-xl.
+Center emphasis on “Denver Cabinets” + phone CTA
+One strong CTA in the header: “Call (720) 224-2908” as a pill button.
+Conceptual snippet to guide Cyborg:
+<header
+  className={cn(
+    "fixed inset-x-0 top-0 z-40 transition-all duration-300",
+    isScrolled
+      ? "bg-slate-950/90 border-b border-white/5 backdrop-blur-xl"
+      : "bg-transparent"
+  )}
+>
+  <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    {/* Logo + wordmark */}
+    <div className="flex items-center gap-3">
+      <img src="/logo-estate-solutions.svg" className="h-10 w-auto" />
+      <div className="flex flex-col leading-tight">
+        <span className="text-sm font-semibold tracking-[0.18em] uppercase text-slate-200">
+          Estate Solutions
+        </span>
+        <span className="text-xs text-slate-400">
+          Denver Cabinetry • Since 20XX
+        </span>
+      </div>
+    </div>
+
+    {/* Desktop nav */}
+    <nav className="hidden md:flex items-center gap-8 text-sm text-slate-100/80">
+      {/* links… */}
+    </nav>
+
+    {/* Call CTA */}
+    <a
+      href="tel:+17202242908"
+      className="hidden md:inline-flex items-center gap-2 rounded-full border border-emerald-300/60 bg-emerald-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-200 shadow-lg shadow-emerald-500/20"
+    >
+      <span className="h-2 w-2 rounded-full bg-emerald-300 animate-pulse" />
+      Call (720) 224-2908
+    </a>
+
+    {/* Mobile menu button… */}
+  </div>
+</header>
+Main thing: dark glass, thin lines, pill CTA → instantly more “studio.”
+3️⃣ HeroSection.tsx — The Big Upgrade
+Home hero is where the OPS District should absolutely flex.
+Concept
+Dark, cinematic hero like your LEEQ City gateway, but grounded in cabinetry.
+Right side (lg screens): large photo of a Denver kitchen, softly lit, with subtle gradient overlay.
+Left side: headline + short copy + two CTAs.
+Suggested copy (adjust how you like):
+Denver Cabinets, Crafted for the Homes That Matter.
+Custom cabinet supply and installation for homeowners, builders, and remodelers across the Denver metro.
+CTAs:
+Primary: “View Portfolio”
+Secondary: “Schedule a Free Measure”
+Example Hero component (drop-in replacement idea)
+import heroImg from "@/assets/denver-kitchen-hero.jpg";
+import { Link } from "wouter";
+
+export function HeroSection() {
+  return (
+    <section className="relative overflow-hidden bg-slate-950">
+      {/* Background image + gradient */}
+      <div className="absolute inset-0">
+        <img
+          src={heroImg}
+          alt="Modern Denver kitchen cabinetry"
+          className="h-full w-full object-cover opacity-70"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/20" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(248,250,252,0.14),_transparent_55%)]" />
+      </div>
+
+      {/* Content */}
+      <div className="relative max-w-7xl mx-auto px-6 py-16 lg:py-28 flex flex-col lg:flex-row items-center gap-12">
+        {/* Left copy */}
+        <div className="w-full lg:w-1/2 space-y-8">
+          <p className="text-xs font-semibold tracking-[0.35em] uppercase text-sky-300/80">
+            Denver • Cabinetry • Installation
+          </p>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-tight text-slate-50 heading-xl">
+            Denver cabinets,{" "}
+            <span className="text-sky-300">
+              crafted for the homes that matter.
+            </span>
+          </h1>
+
+          <p className="max-w-xl text-sm sm:text-base text-slate-200/85">
+            Estate Solutions supplies and installs high-quality kitchen and bath
+            cabinets for homeowners, builders, and multi-unit projects across
+            the Denver metro. Real wood options. Precise installs. Clean job
+            sites.
+          </p>
+
+          {/* Trust row */}
+          <div className="flex flex-wrap items-center gap-4 text-xs text-slate-300/80">
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>BBB Accredited • A+ Rating</span>
+            </div>
+            <span className="hidden sm:inline h-4 w-px bg-slate-600" />
+            <span>40+ completed projects in the Denver metro</span>
+          </div>
+
+          {/* CTAs */}
+          <div className="flex flex-wrap items-center gap-4 pt-2">
+            <Link href="/portfolio">
+              <a className="btn-primary">
+                View Portfolio
+              </a>
+            </Link>
+
+            <a href="#contact" className="btn-outline-light">
+              Schedule a Free Measure
+            </a>
+
+            <a
+              href="tel:+17202242908"
+              className="inline-flex items-center gap-2 text-xs font-medium text-slate-300/90"
+            >
+              Or call <span className="font-semibold text-slate-50">(720) 224-2908</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Right visual card */}
+        <div className="w-full lg:w-1/2">
+          <div className="relative rounded-3xl border border-white/5 bg-slate-950/70 backdrop-blur-xl shadow-[0_28px_80px_rgba(15,23,42,0.85)] overflow-hidden">
+            <div className="aspect-[4/3]">
+              <img
+                src={heroImg}
+                alt="Custom Denver kitchen cabinetry installation"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            {/* overlay badge row */}
+            <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-3 text-xs">
+              <div className="inline-flex items-center gap-2 rounded-full bg-slate-950/80 px-3 py-1 text-slate-200">
+                <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                <span>Installed by Estate Solutions • Denver, CO</span>
+              </div>
+              <div className="hidden sm:flex items-center gap-2 rounded-full bg-sky-500/15 px-3 py-1 text-[11px] text-sky-100">
+                <span>Avg. project timeline:</span>
+                <span className="font-semibold">2–4 weeks</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+This keeps:
+your real photography
+your blue brand
+your trust story
+but frames it like a premium studio.
+4️⃣ PortfolioSection — Let the Work Sell It
+You already have:
+40+ images
+Filtering
+Lightbox
+We just want to make the cards themselves more cinematic.
+Suggestions for the project card component:
+Remove heavy borders; use soft rounded corners + subtle shadow.
+On hover:
+slight scale up (scale-105)
+dark overlay with project name + location in bottom left
+Add a small “Before / After” tag if available.
+Example card styling guideline:
+export function ProjectCard({ image, title, location }: Props) {
+  return (
+    <div className="group relative overflow-hidden rounded-2xl bg-slate-900/60 border border-slate-800/80 shadow-[0_18px_45px_rgba(15,23,42,0.85)]">
+      <div className="aspect-[4/3] overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+      </div>
+
+      {/* gradient overlay */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-80" />
+
+      {/* text on hover */}
+      <div className="absolute inset-x-4 bottom-4 flex flex-col gap-1">
+        <p className="text-sm font-semibold text-slate-50">{title}</p>
+        <p className="text-xs text-slate-300/90">{location}</p>
+      </div>
+    </div>
+  );
+}
+This makes the work your hero, instead of UI chrome.
+5️⃣ How to Use This With Cyborg
+You can literally tell Cyborg:
+“Update DenverCabinets HeroSection.tsx to match this Charles 10 design,”
+and paste the hero snippet.
+Then:
+Adjust Header.tsx with the transparent → glass style.
+Add the global CSS tokens so your Tailwind / utilities can re-use them.
+Apply the ProjectCard styling to your current portfolio component.

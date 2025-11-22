@@ -3,7 +3,6 @@ import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ThemeToggle } from "./ThemeToggle";
 import logoImage from "@assets/estate solutions logo _1760720586570.jpg";
 
 export function Header() {
@@ -41,53 +40,142 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-all ${
-        isScrolled ? "bg-white/80 dark:bg-background/80 backdrop-blur-md border-b border-black/10 shadow-sm" : "bg-white/70 dark:bg-background/70 backdrop-blur-sm border-b border-black/10 shadow-sm"
+      className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
+        isScrolled 
+          ? "bg-slate-950/90 border-b border-white/5 backdrop-blur-xl" 
+          : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between gap-4">
-          {/* Logo - Fixed left */}
-          <button
-            onClick={() => scrollToSection("home")}
-            className="hover-elevate active-elevate-2 px-2 py-1 rounded-md flex-shrink-0"
-            data-testid="link-home"
-          >
-            <img src={logoImage} alt="Estate Solutions" className="h-24 md:h-28 w-auto rounded-lg" />
-          </button>
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        {/* Logo + Wordmark */}
+        <button
+          onClick={() => scrollToSection("home")}
+          className="flex items-center gap-3 hover:opacity-90 transition-opacity flex-shrink-0"
+          data-testid="link-home"
+        >
+          <img src={logoImage} alt="Estate Solutions" className="h-16 md:h-20 w-auto rounded-lg" />
+          <div className="hidden sm:flex flex-col leading-tight">
+            <span className="text-xs sm:text-sm font-semibold tracking-studio uppercase text-slate-200">
+              Estate Solutions
+            </span>
+            <span className="text-[10px] sm:text-xs text-slate-400">
+              Denver Cabinetry
+            </span>
+          </div>
+        </button>
 
-          {/* Desktop Navigation - Centered */}
-          <nav className="hidden md:flex items-center justify-center gap-1 flex-1">
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-2">
+          {navItems.slice(1).map((item) => {
+            if (item.type === "page") {
+              return (
+                <Button
+                  key={item.id}
+                  variant="ghost"
+                  data-testid={`link-${item.id}`}
+                  className="text-slate-100/80 hover:text-slate-100 hover:bg-slate-800/60 gap-2"
+                  asChild
+                >
+                  <Link href={`/${item.id}`}>
+                    {item.label}
+                    {item.isNew && (
+                      <Badge className="text-[9px] px-1.5 py-0 h-3.5 bg-sky-400/20 text-sky-200 border-sky-300/30" data-testid="badge-new-desktop">
+                        NEW
+                      </Badge>
+                    )}
+                  </Link>
+                </Button>
+              );
+            }
+            if (!isHomePage) {
+              return (
+                <Button
+                  key={item.id}
+                  variant="ghost"
+                  data-testid={`link-${item.id}`}
+                  className="text-slate-100/80 hover:text-slate-100 hover:bg-slate-800/60"
+                  asChild
+                >
+                  <Link href={`/#${item.id}`}>{item.label}</Link>
+                </Button>
+              );
+            }
+            return (
+              <Button
+                key={item.id}
+                variant="ghost"
+                onClick={() => scrollToSection(item.id)}
+                data-testid={`link-${item.id}`}
+                className="text-slate-100/80 hover:text-slate-100 hover:bg-slate-800/60"
+              >
+                {item.label}
+              </Button>
+            );
+          })}
+        </nav>
+
+        {/* Call CTA + Mobile Menu */}
+        <div className="flex items-center gap-3 flex-shrink-0">
+          <a
+            href="tel:+17202242908"
+            className="hidden md:inline-flex items-center gap-2 rounded-full border border-emerald-300/60 bg-emerald-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-studio-sm text-emerald-200 shadow-lg shadow-emerald-500/20 hover:bg-emerald-400/20 hover:border-emerald-300/80 transition-all"
+            data-testid="button-call-cta"
+          >
+            <span className="h-2 w-2 rounded-full bg-emerald-300 animate-pulse" />
+            Call (720) 224-2908
+          </a>
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="lg:hidden text-slate-200 hover:bg-slate-800/60"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            data-testid="button-mobile-menu"
+          >
+            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </Button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <nav className="lg:hidden bg-slate-950/95 backdrop-blur-xl border-t border-white/5">
+          <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-2">
             {navItems.slice(1).map((item) => {
               if (item.type === "page") {
                 return (
-                  <Link key={item.id} href={`/${item.id}`}>
-                    <Button
-                      variant="ghost"
-                      data-testid={`link-${item.id}`}
-                      className="hover-elevate active-elevate-2 min-h-12 gap-2"
-                    >
+                  <Button
+                    key={item.id}
+                    variant="ghost"
+                    data-testid={`link-mobile-${item.id}`}
+                    className="w-full justify-start text-slate-200 hover:bg-slate-800/60 gap-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    asChild
+                  >
+                    <Link href={`/${item.id}`}>
                       {item.label}
                       {item.isNew && (
-                        <Badge className="text-[10px] px-1.5 py-0 h-4" data-testid="badge-new-desktop">
+                        <Badge className="text-[9px] px-1.5 py-0 h-3.5 bg-sky-400/20 text-sky-200 border-sky-300/30" data-testid="badge-new-mobile">
                           NEW
                         </Badge>
                       )}
-                    </Button>
-                  </Link>
+                    </Link>
+                  </Button>
                 );
               }
               if (!isHomePage) {
                 return (
-                  <Link key={item.id} href={`/#${item.id}`}>
-                    <Button
-                      variant="ghost"
-                      data-testid={`link-${item.id}`}
-                      className="hover-elevate active-elevate-2 min-h-12"
-                    >
-                      {item.label}
-                    </Button>
-                  </Link>
+                  <Button
+                    key={item.id}
+                    variant="ghost"
+                    data-testid={`link-mobile-${item.id}`}
+                    className="w-full justify-start text-slate-200 hover:bg-slate-800/60"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    asChild
+                  >
+                    <Link href={`/#${item.id}`}>{item.label}</Link>
+                  </Button>
                 );
               }
               return (
@@ -95,123 +183,26 @@ export function Header() {
                   key={item.id}
                   variant="ghost"
                   onClick={() => scrollToSection(item.id)}
-                  data-testid={`link-${item.id}`}
-                  className="hover-elevate active-elevate-2 min-h-12"
+                  data-testid={`link-mobile-${item.id}`}
+                  className="w-full justify-start text-slate-200 hover:bg-slate-800/60"
                 >
                   {item.label}
                 </Button>
               );
             })}
-          </nav>
 
-          {/* Right side buttons - Fixed right */}
-          <div className="flex items-center gap-2 flex-shrink-0">
-            <ThemeToggle />
-            {isHomePage ? (
-              <Button
-                onClick={() => scrollToSection("quote")}
-                data-testid="button-get-quote"
-                className="hidden md:inline-flex"
-              >
-                Get Quote
-              </Button>
-            ) : (
-              <Link href="/#quote">
-                <Button
-                  data-testid="button-get-quote"
-                  className="hidden md:inline-flex"
-                >
-                  Get Quote
-                </Button>
-              </Link>
-            )}
-            
-            {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden hover-elevate active-elevate-2 min-h-12 min-w-12"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              data-testid="button-mobile-menu"
+            {/* Mobile Call CTA */}
+            <a
+              href="tel:+17202242908"
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border border-emerald-300/60 bg-emerald-400/10 px-4 py-2.5 text-xs font-semibold uppercase tracking-studio-sm text-emerald-200 shadow-lg shadow-emerald-500/20"
+              data-testid="button-mobile-call-cta"
             >
-              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
+              <span className="h-2 w-2 rounded-full bg-emerald-300 animate-pulse" />
+              Call (720) 224-2908
+            </a>
           </div>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t pt-4">
-            <div className="flex flex-col gap-3">
-              {navItems.slice(1).map((item) => {
-                if (item.type === "page") {
-                  return (
-                    <Link key={item.id} href={`/${item.id}`}>
-                      <Button
-                        variant="ghost"
-                        data-testid={`link-mobile-${item.id}`}
-                        className="justify-start hover-elevate active-elevate-2 min-h-12 text-base w-full gap-2"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {item.label}
-                        {item.isNew && (
-                          <Badge className="text-[10px] px-1.5 py-0 h-4" data-testid="badge-new-mobile">
-                            NEW
-                          </Badge>
-                        )}
-                      </Button>
-                    </Link>
-                  );
-                }
-                if (!isHomePage) {
-                  return (
-                    <Link key={item.id} href={`/#${item.id}`}>
-                      <Button
-                        variant="ghost"
-                        data-testid={`link-mobile-${item.id}`}
-                        className="justify-start hover-elevate active-elevate-2 min-h-12 text-base w-full"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {item.label}
-                      </Button>
-                    </Link>
-                  );
-                }
-                return (
-                  <Button
-                    key={item.id}
-                    variant="ghost"
-                    onClick={() => scrollToSection(item.id)}
-                    data-testid={`link-mobile-${item.id}`}
-                    className="justify-start hover-elevate active-elevate-2 min-h-12 text-base"
-                  >
-                    {item.label}
-                  </Button>
-                );
-              })}
-              {isHomePage ? (
-                <Button
-                  onClick={() => scrollToSection("quote")}
-                  data-testid="button-mobile-quote"
-                  className="mt-2 min-h-12 text-base"
-                >
-                  Get Quote
-                </Button>
-              ) : (
-                <Link href="/#quote">
-                  <Button
-                    data-testid="button-mobile-quote"
-                    className="mt-2 min-h-12 text-base w-full"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Get Quote
-                  </Button>
-                </Link>
-              )}
-            </div>
-          </nav>
-        )}
-      </div>
+        </nav>
+      )}
     </header>
   );
 }

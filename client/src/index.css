@@ -25,6 +25,12 @@ html {
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
+  /* OPS District Brand Colors */
+  --brand-blue: 233 48% 45%;
+  --brand-blue-soft: 226 40% 18%;
+  --accent-wood: 32 52% 57%;
+  --bg-soft: 40 23% 96%;
+
   --background: 0 0% 100%;
 
   --foreground: 220 45% 15%;
@@ -71,9 +77,9 @@ html {
 
   --muted-foreground: 220 30% 35%;
 
-  --accent: 25 15% 91%;
+  --accent: 32 52% 57%;
 
-  --accent-foreground: 25 40% 25%;
+  --accent-foreground: 32 45% 20%;
 
   --destructive: 0 65% 32%;
 
@@ -87,9 +93,10 @@ html {
   --chart-4: 45 55% 35%;
   --chart-5: 280 40% 35%;
 
-  --font-sans: Inter, sans-serif;
-  --font-serif: Playfair Display, serif;
+  --font-sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
   --font-mono: Menlo, monospace;
+  --font-heading: "Playfair Display", Georgia, serif;
   --radius: .5rem; /* 8px */
   --shadow-2xs: 0px 2px 0px 0px hsl(220 20% 20% / 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(220 20% 20% / 0.00);
@@ -251,6 +258,13 @@ html {
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+
+  h1, h2, h3, h4, h5, h6,
+  .heading-xl,
+  .heading-lg,
+  .heading-md {
+    font-family: var(--font-heading);
+  }
 }
 
 /**
@@ -362,5 +376,57 @@ html {
   .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
   .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
     inset: -1px;
+  }
+
+  /* OPS District Studio-Grade Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-all duration-200;
+    background: linear-gradient(135deg, hsl(var(--brand-blue)), hsl(var(--brand-blue-soft)));
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.45);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    filter: brightness(1.06);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.55);
+    transform: translateY(-1px);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium border border-white/30 text-white/90 transition-all duration-200;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.45);
+  }
+
+  .btn-outline-light:active {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Light section background utility */
+  .section-light {
+    background-color: var(--bg-soft);
+  }
+
+  /* Dark hero/section backgrounds */
+  .section-dark {
+    @apply bg-slate-950 text-slate-100;
+  }
+
+  /* Tracking utilities for studio typography */
+  .tracking-studio {
+    letter-spacing: 0.18em;
+  }
+
+  .tracking-studio-sm {
+    letter-spacing: 0.12em;
   }
 }
