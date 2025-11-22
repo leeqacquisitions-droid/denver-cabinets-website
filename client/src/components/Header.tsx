@@ -77,6 +77,19 @@ export function Header() {
                   </Link>
                 );
               }
+              if (!isHomePage) {
+                return (
+                  <Link key={item.id} href={`/#${item.id}`}>
+                    <Button
+                      variant="ghost"
+                      data-testid={`link-${item.id}`}
+                      className="hover-elevate active-elevate-2 min-h-12"
+                    >
+                      {item.label}
+                    </Button>
+                  </Link>
+                );
+              }
               return (
                 <Button
                   key={item.id}
@@ -94,13 +107,24 @@ export function Header() {
           {/* Right side buttons - Fixed right */}
           <div className="flex items-center gap-2 flex-shrink-0">
             <ThemeToggle />
-            <Button
-              onClick={() => scrollToSection("quote")}
-              data-testid="button-get-quote"
-              className="hidden md:inline-flex"
-            >
-              Get Quote
-            </Button>
+            {isHomePage ? (
+              <Button
+                onClick={() => scrollToSection("quote")}
+                data-testid="button-get-quote"
+                className="hidden md:inline-flex"
+              >
+                Get Quote
+              </Button>
+            ) : (
+              <Link href="/#quote">
+                <Button
+                  data-testid="button-get-quote"
+                  className="hidden md:inline-flex"
+                >
+                  Get Quote
+                </Button>
+              </Link>
+            )}
             
             {/* Mobile Menu Button */}
             <Button
@@ -139,6 +163,20 @@ export function Header() {
                     </Link>
                   );
                 }
+                if (!isHomePage) {
+                  return (
+                    <Link key={item.id} href={`/#${item.id}`}>
+                      <Button
+                        variant="ghost"
+                        data-testid={`link-mobile-${item.id}`}
+                        className="justify-start hover-elevate active-elevate-2 min-h-12 text-base w-full"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {item.label}
+                      </Button>
+                    </Link>
+                  );
+                }
                 return (
                   <Button
                     key={item.id}
@@ -151,13 +189,25 @@ export function Header() {
                   </Button>
                 );
               })}
-              <Button
-                onClick={() => scrollToSection("quote")}
-                data-testid="button-mobile-quote"
-                className="mt-2 min-h-12 text-base"
-              >
-                Get Quote
-              </Button>
+              {isHomePage ? (
+                <Button
+                  onClick={() => scrollToSection("quote")}
+                  data-testid="button-mobile-quote"
+                  className="mt-2 min-h-12 text-base"
+                >
+                  Get Quote
+                </Button>
+              ) : (
+                <Link href="/#quote">
+                  <Button
+                    data-testid="button-mobile-quote"
+                    className="mt-2 min-h-12 text-base w-full"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Get Quote
+                  </Button>
+                </Link>
+              )}
             </div>
           </nav>
         )}
