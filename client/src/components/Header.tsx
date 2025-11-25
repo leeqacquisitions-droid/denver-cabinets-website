@@ -59,11 +59,11 @@ export function Header() {
         >
           <img src={logoImage} alt="Estate Solutions" className="h-16 md:h-20 w-auto rounded-lg" />
           <div className="hidden sm:flex flex-col leading-tight">
-            <span className="text-xs sm:text-sm font-semibold tracking-studio uppercase text-slate-200">
-              Estate Solutions
+            <span className="text-xs sm:text-sm font-semibold tracking-studio text-slate-200">
+              Cabinet Installation & Water-Damage Repair
             </span>
             <span className="text-[10px] sm:text-xs text-slate-400">
-              Denver Cabinetry
+              Denver Cabinets | Estate Solutions
             </span>
           </div>
         </button>
