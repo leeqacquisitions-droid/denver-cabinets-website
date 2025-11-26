@@ -57,13 +57,13 @@ export function Header() {
           className="flex items-center gap-3 hover:opacity-90 transition-opacity flex-shrink-0"
           data-testid="link-home"
         >
-          <img src={logoImage} alt="Estate Solutions" className="h-16 md:h-20 w-auto rounded-lg" />
+          <img src={logoImage} alt="Denver Cabinets" className="h-16 md:h-20 w-auto rounded-lg" />
           <div className="hidden sm:flex flex-col leading-tight">
-            <span className="text-xs sm:text-sm font-semibold tracking-studio text-slate-200">
-              Premium Cabinet Supplier & Installation
+            <span className="text-xl sm:text-2xl font-serif font-bold text-slate-50 tracking-tight">
+              DENVER<span className="text-sky-500">.</span> Cabinets
             </span>
-            <span className="text-[10px] sm:text-xs text-slate-400">
-              Denver Metro | Estate Solutions
+            <span className={`text-[10px] tracking-widest uppercase text-slate-400 transition-opacity duration-300 ${isScrolled ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'}`}>
+              Premium Supply & Install
             </span>
           </div>
         </button>

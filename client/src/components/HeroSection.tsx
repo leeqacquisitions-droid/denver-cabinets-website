@@ -20,22 +20,26 @@ export function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-6 py-16 lg:py-28 flex flex-col lg:flex-row items-center gap-12">
         {/* Left copy */}
         <div className="w-full lg:w-1/2 space-y-8">
-          <p className="text-xs font-semibold tracking-studio uppercase text-sky-300/80">
-            Denver • Cabinetry • Installation
-          </p>
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 backdrop-blur-md">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="text-xs font-medium text-slate-300 tracking-studio-sm uppercase">
+              The Denver Standard
+            </span>
+          </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-tight text-slate-50 heading-xl">
-            Denver cabinets,{" "}
-            <span className="text-sky-300">
-              crafted for the homes that matter.
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-50 leading-tight tracking-tight">
+            Denver's Authority in <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-400 italic">
+              Cabinet Installation.
             </span>
           </h1>
 
-          <p className="max-w-xl text-sm sm:text-base text-slate-200/85 leading-relaxed">
-            Estate Solutions supplies and installs high-quality kitchen and bath
-            cabinets for homeowners, builders, and multi-unit projects across
-            the Denver metro. Real wood options. Precise installs. Clean job
-            sites.
+          <p className="max-w-2xl text-lg md:text-xl text-slate-300 font-light leading-relaxed">
+            We don't do custom. We do efficient, premium pre-manufactured installs for homeowners and investors who want it done right.
           </p>
 
           {/* Trust row */}
