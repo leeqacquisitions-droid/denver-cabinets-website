@@ -52,14 +52,14 @@ export function HeroSection() {
             <span>40+ completed projects in the Denver metro</span>
           </div>
 
-          {/* CTAs */}
+          {/* CTAs - Lead generation prioritized */}
           <div className="flex flex-wrap items-center gap-4 pt-2">
-            <Button className="btn-primary" data-testid="button-hero-portfolio" asChild>
-              <Link href="/portfolio">View Portfolio</Link>
+            <Button className="btn-primary" data-testid="button-hero-quote" asChild>
+              <a href="#quote">Schedule a Free Measure</a>
             </Button>
 
-            <Button className="btn-outline-light" data-testid="button-hero-quote" asChild>
-              <a href="#quote">Schedule a Free Measure</a>
+            <Button className="btn-outline-light" data-testid="button-hero-portfolio" asChild>
+              <Link href="/portfolio">View Portfolio</Link>
             </Button>
 
             <a
@@ -87,7 +87,7 @@ export function HeroSection() {
             <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-3 text-xs flex-wrap">
               <div className="inline-flex items-center gap-2 rounded-full bg-slate-950/80 px-3 py-1 text-slate-200 backdrop-blur-sm">
                 <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                <span>Installed by Estate Solutions • Denver, CO</span>
+                <span>Installed by Denver Cabinets • Colorado</span>
               </div>
               <div className="hidden sm:flex items-center gap-2 rounded-full bg-sky-500/15 px-3 py-1 text-[11px] text-sky-100 backdrop-blur-sm">
                 <span>Avg. project timeline:</span>

@@ -1,0 +1,51 @@
+The Problems (Fix this)
+
+1. The "Brand Clash" in the Header (Critical)
+
+What I see: You have the old "Estate Solutions" logo (the blue house icon) sitting right next to the new "DENVER. Cabinets" text.
+
+Why it fails: It looks confused. Is the company Estate Solutions or Denver Cabinets? High-end brands are confident. They don't clutter the header.
+
+The Fix: Remove the image logo entirely from the header.
+
+Let the text "DENVER. Cabinets" be the only logo. It is cleaner, more modern, and looks like a design studio.
+
+Move the "Estate Solutions" legal name/logo to the Footer.
+
+2. The White Header Bar
+
+What I see: A solid white bar at the top with a dark hero section below it.
+
+Why it fails: This feels like a standard "template." It creates a hard line that ruins the cinematic immersion.
+
+The Fix: Glassmorphism (Transparency).
+
+The header should be bg-transparent (transparent) when at the top of the page, so the dark hero image bleeds all the way to the top edge.
+
+It should only turn into a solid color (preferably Dark Slate, not White) after the user scrolls down.
+
+3. The Button Hierarchy
+
+What I see: A bright green "CALL" pill in the header, a Blue "View Portfolio" button, and an Outline "Schedule" button.
+
+Why it fails: Too many colors fighting.
+
+The Fix: Simplify the palette.
+
+Header Button: Make it a "Ghost" button (transparent with white text) or the Emerald Pulse we discussed.
+
+Hero Primary Button: Keep the "Schedule a Free Measure" as the main colored button (Blue Gradient).
+
+Secondary Button: "View Portfolio" should be the outline/subtle one. Prioritize the lead (the measure) over the browsing (the portfolio).
+
+Action Plan
+
+Tell Cyborg (or apply these changes) to refine the header. Here is the specific direction:
+
+"Update the Header component:
+
+Remove the img tag for the Estate Solutions logo. Keep only the text 'DENVER. Cabinets'.
+
+Change the Header background to be transparent (absolute position) on top of the Hero image, not a solid white block.
+
+When scrolling, make the header background bg-slate-950/90 (Dark) instead of white, so it matches the dark theme."

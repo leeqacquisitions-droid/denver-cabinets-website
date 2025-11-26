@@ -3,7 +3,6 @@ import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import logoImage from "@assets/estate solutions logo _1760720586570.jpg";
 
 export function Header() {
   const [location] = useLocation();
@@ -51,21 +50,18 @@ export function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        {/* Logo + Wordmark */}
+        {/* Logo - Text Only */}
         <button
           onClick={() => scrollToSection("home")}
-          className="flex items-center gap-3 hover:opacity-90 transition-opacity flex-shrink-0"
+          className="flex flex-col leading-tight hover:opacity-90 transition-opacity flex-shrink-0"
           data-testid="link-home"
         >
-          <img src={logoImage} alt="Denver Cabinets" className="h-16 md:h-20 w-auto rounded-lg" />
-          <div className="hidden sm:flex flex-col leading-tight">
-            <span className="text-xl sm:text-2xl font-serif font-bold text-slate-50 tracking-tight">
-              DENVER<span className="text-sky-500">.</span> Cabinets
-            </span>
-            <span className={`text-[10px] tracking-widest uppercase text-slate-400 transition-opacity duration-300 ${isScrolled ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'}`}>
-              Premium Supply & Install
-            </span>
-          </div>
+          <span className="text-xl sm:text-2xl font-serif font-bold text-slate-50 tracking-tight">
+            DENVER<span className="text-sky-500">.</span> Cabinets
+          </span>
+          <span className={`text-[10px] tracking-widest uppercase text-slate-400 transition-opacity duration-300 ${isScrolled ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'}`}>
+            Premium Supply & Install
+          </span>
         </button>
 
         {/* Desktop Navigation */}
