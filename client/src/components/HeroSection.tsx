@@ -32,9 +32,9 @@ export function HeroSection() {
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-50 leading-tight tracking-tight">
-            Denver's Authority in <br />
+            Estate Solutions. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-400 italic">
-              Cabinet Installation.
+              Denver Cabinets Premium Supplier and Installations
             </span>
           </h1>
 
