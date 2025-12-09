@@ -39,7 +39,7 @@ export function HeroSection() {
           </h1>
 
           <p className="max-w-2xl text-lg md:text-xl text-slate-300 font-light leading-relaxed">
-            We don't do custom. We do efficient, premium pre-manufactured installs for homeowners and investors who want it done right.
+            Efficient, premium pre-manufactured installs for homeowners and investors who want it done right.
           </p>
 
           {/* Trust row */}
